@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A"
 #include <bits/stdc++.h>
 
 #include "../../data_structures/union_find.hpp"
@@ -9,12 +9,12 @@ int main() {
     cin >> n >> q;
     UnionFind uf(n);
     for (int i = 0; i < q; i++) {
-        int t, u, v;
-        cin >> t >> u >> v;
-        if (t) {
-            cout << uf.same(u, v) << endl;
+        int com, x, y;
+        cin >> com >> x >> y;
+        if (com) {
+            cout << uf.same(x, y) << endl;
         } else {
-            uf.unite(u, v);
+            uf.unite(x, y);
         }
     }
 }
