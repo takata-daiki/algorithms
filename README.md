@@ -5,4 +5,4 @@
 
 ### C++ Library for competitive programming
 
-See the [Docs](https://takata-daiki.github.io/algorithms) for details.
+See the [Docs](https://takata-daiki.github.io/algorithms/) for details.
