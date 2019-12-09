@@ -25,40 +25,32 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/data_structures/union_find.test.cpp
+# :heavy_check_mark: test/maths/mod.test.cpp
 
 
 [Back to top page](../../../index.html)
 
-* see: [https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A](https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A)
+* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D)
 
 
 ## Dependencies
-* :heavy_check_mark: [data_structures/union_find.hpp](../../../library/data_structures/union_find.hpp.html)
+* :heavy_check_mark: [maths/mod.hpp](../../../library/maths/mod.hpp.html)
 
 
 ## Code
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D"
 #include <bits/stdc++.h>
 
-#include "../../data_structures/union_find.hpp"
+#include "../../maths/mod.hpp"
 using namespace std;
 
 int main() {
-    int n, q;
-    cin >> n >> q;
-    UnionFind uf(n);
-    for (int i = 0; i < q; i++) {
-        int com, x, y;
-        cin >> com >> x >> y;
-        if (com) {
-            cout << uf.same(x, y) << endl;
-        } else {
-            uf.unite(x, y);
-        }
-    }
+    int n, k;
+    cin >> n >> k;
+    ModInt::build(2000);
+    cout << ModInt::comb(n + k - 1, n) << endl;
 }
 ```
 {% endraw %}

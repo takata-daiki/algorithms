@@ -38,11 +38,13 @@ layout: default
 
 
 ### maths
+* :heavy_check_mark: [maths/mod.hpp](library/maths/mod.hpp.html)
 * :heavy_check_mark: [maths/prime.hpp](library/maths/prime.hpp.html)
 
 
 ## Verify Files
 * :heavy_check_mark: [test/data_structures/union_find.test.cpp](verify/test/data_structures/union_find.test.cpp.html)
+* :heavy_check_mark: [test/maths/mod.test.cpp](verify/test/maths/mod.test.cpp.html)
 * :heavy_check_mark: [test/maths/prime.test.cpp](verify/test/maths/prime.test.cpp.html)
 
 
