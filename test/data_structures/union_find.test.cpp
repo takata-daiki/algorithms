@@ -1,7 +1,7 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A"
-#include <bits/stdc++.h>
-
 #include "../../data_structures/union_find.hpp"
+
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {

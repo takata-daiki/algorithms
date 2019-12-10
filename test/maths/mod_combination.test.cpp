@@ -1,7 +1,7 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D"
-#include <bits/stdc++.h>
-
 #include "../../maths/mod.hpp"
+
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {

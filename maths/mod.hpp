@@ -34,11 +34,6 @@ struct ModInt {
         return res;
     }
     M inv() const { return this->pow(MOD - 2); }
-    // M inv() const {
-    //   int x, y;
-    //   extgcd(this->v, MOD, x, y);
-    //   return *this + M(x);
-    // }
 
     static long long MOD;
     static vector<M> fact, finv;

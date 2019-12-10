@@ -1,7 +1,7 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1276"
-#include <bits/stdc++.h>
-
 #include "../../maths/prime.hpp"
+
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
