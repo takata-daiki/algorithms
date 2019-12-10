@@ -25,41 +25,37 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/data_structures/union_find.test.cpp
+# :heavy_check_mark: test/strings/rolling_hash.test.cpp
 <a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/union_find.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/strings/rolling_hash.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-10 13:59:37 +0900
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A</a>
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B</a>
 
 
 ## Dependencies
-* :heavy_check_mark: <a href="../../../library/data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
+* :heavy_check_mark: <a href="../../../library/strings/rolling_hash.hpp.html">strings/rolling_hash.hpp</a>
 
 
 ## Code
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A"
-#include "../../data_structures/union_find.hpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B"
+#include "../../strings/rolling_hash.hpp"
 
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    int n, q;
-    cin >> n >> q;
-    UnionFind uf(n);
-    for (int i = 0; i < q; i++) {
-        int com, x, y;
-        cin >> com >> x >> y;
-        if (com) {
-            cout << uf.same(x, y) << endl;
-        } else {
-            uf.unite(x, y);
-        }
+    string t, p;
+    cin >> t >> p;
+    int lt = t.length();
+    int lp = p.length();
+    RollingHash rh(t + p);
+    for (int i = 0; i < lt - lp + 1; i++) {
+        if (rh.match(i, i + lp, lt, lt + lp)) cout << i << endl;
     }
 }
 ```

@@ -25,26 +25,40 @@ layout: default
 <link rel="stylesheet" href="assets/css/copy-button.css" />
 
 
-# ライブラリの HTML ビルドテスト
+# C++ Competitive Programming Library
 
-ここに書いた内容がトップページに足されます
-
-* this unordered seed list will be replaced by toc as unordered list
-{:toc}
+[![Actions Status]({{ site.github.repository_url }}/workflows/verify/badge.svg)]({{ site.github.repository_url }}/actions) <a href="{{ site.github.repository_url }}"><img src="https://img.shields.io/github/last-commit/{{ site.github.owner_name }}/{{ site.github.repository_name }}" /></a>
 
 ## Library Files
 ### data_structures
-* :heavy_check_mark: [data_structures/union_find.hpp](library/data_structures/union_find.hpp.html)
+* :heavy_check_mark: <a href="library/data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
+
+
+### geometry
+* :heavy_check_mark: <a href="library/geometry/geometry.hpp.html">geometry/geometry.hpp</a>
+
+
+### graphs
+* :heavy_check_mark: <a href="library/graphs/dijkstra.hpp.html">graphs/dijkstra.hpp</a>
 
 
 ### maths
-* :heavy_check_mark: [maths/mod.hpp](library/maths/mod.hpp.html)
-* :heavy_check_mark: [maths/prime.hpp](library/maths/prime.hpp.html)
+* :heavy_check_mark: <a href="library/maths/mod.hpp.html">maths/mod.hpp</a>
+* :heavy_check_mark: <a href="library/maths/prime.hpp.html">maths/prime.hpp</a>
+
+
+### strings
+* :heavy_check_mark: <a href="library/strings/rolling_hash.hpp.html">strings/rolling_hash.hpp</a>
 
 
 ## Verify Files
-* :heavy_check_mark: [test/data_structures/union_find.test.cpp](verify/test/data_structures/union_find.test.cpp.html)
-* :heavy_check_mark: [test/maths/mod.test.cpp](verify/test/maths/mod.test.cpp.html)
-* :heavy_check_mark: [test/maths/prime.test.cpp](verify/test/maths/prime.test.cpp.html)
+* :heavy_check_mark: <a href="verify/test/data_structures/union_find.test.cpp.html">test/data_structures/union_find.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/geometry/convex_hull.test.cpp.html">test/geometry/convex_hull.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/geometry/intersection.test.cpp.html">test/geometry/intersection.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/geometry/parallel_orthogonal.test.cpp.html">test/geometry/parallel_orthogonal.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graphs/dijkstra.test.cpp.html">test/graphs/dijkstra.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/maths/mod_combination.test.cpp.html">test/maths/mod_combination.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/maths/sieve_of_eratosthenes.test.cpp.html">test/maths/sieve_of_eratosthenes.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/strings/rolling_hash.test.cpp.html">test/strings/rolling_hash.test.cpp</a>
 
 

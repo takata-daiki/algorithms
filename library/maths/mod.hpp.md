@@ -26,15 +26,17 @@ layout: default
 
 
 # :heavy_check_mark: maths/mod.hpp
+<a href="../../index.html">Back to top page</a>
+
 * category: maths
+* <a href="{{ site.github.repository_url }}/blob/master/maths/mod.hpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-10 13:59:37 +0900
 
-
-[Back to top page](../../index.html)
 
 
 
 ## Verified
-* :heavy_check_mark: [test/maths/mod.test.cpp](../../verify/test/maths/mod.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/maths/mod_combination.test.cpp.html">test/maths/mod_combination.test.cpp</a>
 
 
 ## Code
@@ -76,11 +78,6 @@ struct ModInt {
         return res;
     }
     M inv() const { return this->pow(MOD - 2); }
-    // M inv() const {
-    //   int x, y;
-    //   extgcd(this->v, MOD, x, y);
-    //   return *this + M(x);
-    // }
 
     static long long MOD;
     static vector<M> fact, finv;
@@ -108,9 +105,8 @@ struct ModInt {
 vector<ModInt> ModInt::fact = vector<ModInt>();
 vector<ModInt> ModInt::finv = vector<ModInt>();
 long long ModInt::MOD = 1e9 + 7;
-
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

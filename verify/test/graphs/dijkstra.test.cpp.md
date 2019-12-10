@@ -25,40 +25,44 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/data_structures/union_find.test.cpp
+# :heavy_check_mark: test/graphs/dijkstra.test.cpp
 <a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/union_find.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/graphs/dijkstra.test.cpp">View this file on GitHub</a>
     - Last commit date: 2019-12-10 13:59:37 +0900
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A</a>
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A</a>
 
 
 ## Dependencies
-* :heavy_check_mark: <a href="../../../library/data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
+* :heavy_check_mark: <a href="../../../library/graphs/dijkstra.hpp.html">graphs/dijkstra.hpp</a>
 
 
 ## Code
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A"
-#include "../../data_structures/union_find.hpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A"
+#include "../../graphs/dijkstra.hpp"
 
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    int n, q;
-    cin >> n >> q;
-    UnionFind uf(n);
-    for (int i = 0; i < q; i++) {
-        int com, x, y;
-        cin >> com >> x >> y;
-        if (com) {
-            cout << uf.same(x, y) << endl;
+    int v, e, r;
+    cin >> v >> e >> r;
+    Dijkstra<int> g(v);
+    for (int i = 0; i < e; i++) {
+        int s, t, d;
+        cin >> s >> t >> d;
+        g.add_edge(s, t, d);
+    }
+    auto dist = g.build(r);
+    for (int i = 0; i < v; i++) {
+        if (dist[i] == -1) {
+            cout << "INF" << endl;
         } else {
-            uf.unite(x, y);
+            cout << dist[i] << endl;
         }
     }
 }

@@ -25,38 +25,42 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/maths/prime.test.cpp
+# :heavy_check_mark: test/geometry/convex_hull.test.cpp
+<a href="../../../index.html">Back to top page</a>
+
+* <a href="{{ site.github.repository_url }}/blob/master/test/geometry/convex_hull.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-10 14:10:35 +0900
 
 
-[Back to top page](../../../index.html)
-
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1276](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1276)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [maths/prime.hpp](../../../library/maths/prime.hpp.html)
+* :heavy_check_mark: <a href="../../../library/geometry/geometry.hpp.html">geometry/geometry.hpp</a>
 
 
 ## Code
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1276"
-#include <bits/stdc++.h>
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A"
+#include "../../geometry/geometry.hpp"
 
-#include "../../maths/prime.hpp"
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    auto prime = sieve_of_eratosthenes(1e7);
-    for (int n; cin >> n, n;) {
-        int l = n, r = n;
-        while (!prime[l]) l--;
-        while (!prime[r]) r++;
-        cout << r - l << endl;
+    int n;
+    cin >> n;
+    vector<Point> p(n);
+    for (int i = 0; i < n; i++) cin >> p[i];
+    auto ch = Point::convex_hull(p);
+    cout << ch.size() << endl;
+    for (auto q : ch) {
+        cout << q.x << ' ' << q.y << endl;
     }
 }
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 

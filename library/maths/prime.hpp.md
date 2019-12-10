@@ -26,15 +26,17 @@ layout: default
 
 
 # :heavy_check_mark: maths/prime.hpp
+<a href="../../index.html">Back to top page</a>
+
 * category: maths
+* <a href="{{ site.github.repository_url }}/blob/master/maths/prime.hpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-10 02:26:18 +0900
 
-
-[Back to top page](../../index.html)
 
 
 
 ## Verified
-* :heavy_check_mark: [test/maths/prime.test.cpp](../../verify/test/maths/prime.test.cpp.html)
+* :heavy_check_mark: <a href="../../verify/test/maths/sieve_of_eratosthenes.test.cpp.html">test/maths/sieve_of_eratosthenes.test.cpp</a>
 
 
 ## Code
@@ -58,5 +60,5 @@ vector<int> sieve_of_eratosthenes(int n) {
 ```
 {% endraw %}
 
-[Back to top page](../../index.html)
+<a href="../../index.html">Back to top page</a>
 

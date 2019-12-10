@@ -25,35 +25,40 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/maths/mod.test.cpp
+# :heavy_check_mark: test/geometry/intersection.test.cpp
+<a href="../../../index.html">Back to top page</a>
+
+* <a href="{{ site.github.repository_url }}/blob/master/test/geometry/intersection.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-10 14:10:35 +0900
 
 
-[Back to top page](../../../index.html)
-
-* see: [http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D)
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B</a>
 
 
 ## Dependencies
-* :heavy_check_mark: [maths/mod.hpp](../../../library/maths/mod.hpp.html)
+* :heavy_check_mark: <a href="../../../library/geometry/geometry.hpp.html">geometry/geometry.hpp</a>
 
 
 ## Code
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D"
-#include <bits/stdc++.h>
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_B"
+#include "../../geometry/geometry.hpp"
 
-#include "../../maths/mod.hpp"
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    int n, k;
-    cin >> n >> k;
-    ModInt::build(2000);
-    cout << ModInt::comb(n + k - 1, n) << endl;
+    int q;
+    cin >> q;
+    while (q--) {
+        vector<Point> p(4);
+        for (int i = 0; i < 4; i++) cin >> p[i];
+        cout << Point::intersect(p[0], p[1], p[2], p[3]) << endl;
+    }
 }
 ```
 {% endraw %}
 
-[Back to top page](../../../index.html)
+<a href="../../../index.html">Back to top page</a>
 
