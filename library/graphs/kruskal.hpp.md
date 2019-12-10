@@ -25,22 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: data_structures/union_find.hpp
+# :warning: graphs/kruskal.hpp
 <a href="../../index.html">Back to top page</a>
 
-* category: data_structures
-* <a href="{{ site.github.repository_url }}/blob/master/data_structures/union_find.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-10 13:59:37 +0900
+* category: graphs
+* <a href="{{ site.github.repository_url }}/blob/master/graphs/kruskal.hpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-10 14:56:46 +0900
 
 
 
 
-## Required
-* :warning: <a href="../graphs/kruskal.hpp.html">graphs/kruskal.hpp</a>
-
-
-## Verified
-* :heavy_check_mark: <a href="../../verify/test/data_structures/union_find.test.cpp.html">test/data_structures/union_find.test.cpp</a>
+## Dependencies
+* :heavy_check_mark: <a href="../data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
 
 
 ## Code
@@ -48,22 +44,34 @@ layout: default
 ```cpp
 #pragma once
 #include <bits/stdc++.h>
+#include "../data_structures/union_find.hpp"
 using namespace std;
 
-struct UnionFind {
-    vector<int> data;
-    UnionFind(int n) : data(n, -1) {}
-    int root(int x) { return (data[x] < 0) ? x : data[x] = root(data[x]); }
-    int size(int x) { return -data[root(x)]; }
-    bool same(int x, int y) { return root(x) == root(y); }
-    bool unite(int x, int y) {
-        x = root(x);
-        y = root(y);
-        if (x == y) return false;
-        if (data[x] > data[y]) swap(x, y);
-        data[x] += data[y];
-        data[y] = x;
-        return true;
+template <typename T>
+struct Kruskal {
+    struct Edge {
+        int s, t;
+        T cost;
+    };
+    int n;
+    vector<Edge> es;
+    Kruskal(int n = 0) : n(n) {}
+
+    void add_edge(int u, int v, T w) {
+        n = max(n, max(u, v) + 1);
+        es.push_back({u, v, w});
+    }
+    T build() {
+        UnionFind uf(n);
+        sort(begin(es), end(es), [](Edge e1, Edge e2) { return e1.cost < e2.cost; });
+        T res = 0;
+        for (auto&& e : es) {
+            if (!uf.same(e.s, e.t)) {
+                uf.unite(e.s, e.t);
+                res += e.cost;
+            }
+        }
+        return res;
     }
 };
 ```

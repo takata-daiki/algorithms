@@ -25,22 +25,14 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: data_structures/union_find.hpp
+# :warning: graphs/bellman_ford.hpp
 <a href="../../index.html">Back to top page</a>
 
-* category: data_structures
-* <a href="{{ site.github.repository_url }}/blob/master/data_structures/union_find.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-10 13:59:37 +0900
+* category: graphs
+* <a href="{{ site.github.repository_url }}/blob/master/graphs/bellman_ford.hpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-10 14:56:46 +0900
 
 
-
-
-## Required
-* :warning: <a href="../graphs/kruskal.hpp.html">graphs/kruskal.hpp</a>
-
-
-## Verified
-* :heavy_check_mark: <a href="../../verify/test/data_structures/union_find.test.cpp.html">test/data_structures/union_find.test.cpp</a>
 
 
 ## Code
@@ -50,19 +42,32 @@ layout: default
 #include <bits/stdc++.h>
 using namespace std;
 
-struct UnionFind {
-    vector<int> data;
-    UnionFind(int n) : data(n, -1) {}
-    int root(int x) { return (data[x] < 0) ? x : data[x] = root(data[x]); }
-    int size(int x) { return -data[root(x)]; }
-    bool same(int x, int y) { return root(x) == root(y); }
-    bool unite(int x, int y) {
-        x = root(x);
-        y = root(y);
-        if (x == y) return false;
-        if (data[x] > data[y]) swap(x, y);
-        data[x] += data[y];
-        data[y] = x;
+template <typename T>
+struct BellmanFord {
+    struct Edge {
+        int from, to;
+        T cost;
+    };
+    int n;
+    vector<T> dist;
+    vector<int> has_path;
+    vector<Edge> es;
+    BellmanFord(int n_, T INF = 1e9)
+        : n(n_), dist(n_, INF + INF), has_path(n_, 0) {}
+
+    void add_edge(int u, int v, T w) { es.push_back({u, v, w}); }
+    bool build(int s) {
+        dist[s] = 0;
+        has_path[s] = 1;
+        for (int i = 0; i < n; ++i) {
+            for (auto&& e : es) {
+                if (dist[e.to] > dist[e.from] + e.cost) {
+                    dist[e.to] = dist[e.from] + e.cost;
+                    has_path[e.to] |= has_path[e.from];
+                    if (i == n - 1 && has_path[e.to]) return false;
+                }
+            }
+        }
         return true;
     }
 };

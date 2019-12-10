@@ -31,6 +31,10 @@ layout: default
 
 ## Library Files
 ### data_structures
+* :warning: <a href="library/data_structures/binary_indexed_tree.hpp.html">data_structures/binary_indexed_tree.hpp</a>
+* :warning: <a href="library/data_structures/kd_tree.hpp.html">data_structures/kd_tree.hpp</a>
+* :warning: <a href="library/data_structures/lazy_segment_tree.hpp.html">data_structures/lazy_segment_tree.hpp</a>
+* :warning: <a href="library/data_structures/segment_tree.hpp.html">data_structures/segment_tree.hpp</a>
 * :heavy_check_mark: <a href="library/data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
 
 
@@ -39,12 +43,28 @@ layout: default
 
 
 ### graphs
+* :warning: <a href="library/graphs/bellman_ford.hpp.html">graphs/bellman_ford.hpp</a>
+* :warning: <a href="library/graphs/biconnected_components.cpp.html">graphs/biconnected_components.cpp</a>
 * :heavy_check_mark: <a href="library/graphs/dijkstra.hpp.html">graphs/dijkstra.hpp</a>
+* :warning: <a href="library/graphs/dinic.hpp.html">graphs/dinic.hpp</a>
+* :warning: <a href="library/graphs/ford_fulkerson.hpp.html">graphs/ford_fulkerson.hpp</a>
+* :warning: <a href="library/graphs/heavy_light_decomposition.cpp.html">graphs/heavy_light_decomposition.cpp</a>
+* :warning: <a href="library/graphs/kruskal.hpp.html">graphs/kruskal.hpp</a>
+* :warning: <a href="library/graphs/lowest_common_ancestor.cpp.html">graphs/lowest_common_ancestor.cpp</a>
+* :warning: <a href="library/graphs/primal_dual.hpp.html">graphs/primal_dual.hpp</a>
+* :warning: <a href="library/graphs/strongly_connected_components.hpp.html">graphs/strongly_connected_components.hpp</a>
 
 
 ### maths
 * :heavy_check_mark: <a href="library/maths/mod.hpp.html">maths/mod.hpp</a>
 * :heavy_check_mark: <a href="library/maths/prime.hpp.html">maths/prime.hpp</a>
+
+
+### others
+* :warning: <a href="library/others/compress.hpp.html">others/compress.hpp</a>
+* :warning: <a href="library/others/compress_2d.hpp.html">others/compress_2d.hpp</a>
+* :warning: <a href="library/others/debug.hpp.html">others/debug.hpp</a>
+* :warning: <a href="library/others/split.hpp.html">others/split.hpp</a>
 
 
 ### strings

@@ -25,22 +25,14 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: data_structures/union_find.hpp
+# :warning: others/compress_2d.hpp
 <a href="../../index.html">Back to top page</a>
 
-* category: data_structures
-* <a href="{{ site.github.repository_url }}/blob/master/data_structures/union_find.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-10 13:59:37 +0900
+* category: others
+* <a href="{{ site.github.repository_url }}/blob/master/others/compress_2d.hpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-10 14:56:46 +0900
 
 
-
-
-## Required
-* :warning: <a href="../graphs/kruskal.hpp.html">graphs/kruskal.hpp</a>
-
-
-## Verified
-* :heavy_check_mark: <a href="../../verify/test/data_structures/union_find.test.cpp.html">test/data_structures/union_find.test.cpp</a>
 
 
 ## Code
@@ -50,22 +42,21 @@ layout: default
 #include <bits/stdc++.h>
 using namespace std;
 
-struct UnionFind {
-    vector<int> data;
-    UnionFind(int n) : data(n, -1) {}
-    int root(int x) { return (data[x] < 0) ? x : data[x] = root(data[x]); }
-    int size(int x) { return -data[root(x)]; }
-    bool same(int x, int y) { return root(x) == root(y); }
-    bool unite(int x, int y) {
-        x = root(x);
-        y = root(y);
-        if (x == y) return false;
-        if (data[x] > data[y]) swap(x, y);
-        data[x] += data[y];
-        data[y] = x;
-        return true;
+int compress2D(int n, vector<int>& vs, vector<int>& vt) {
+    vector<int> v;
+    v.push_back(-1);
+    REP(i, n) REP(d, 2) {
+        v.push_back(vs[i] + d);
+        v.push_back(vt[i] + d);
     }
-};
+    sort(begin(v), end(v));
+    v.erase(unique(begin(v), end(v)), end(v));
+    REP(i, n) {
+        vs[i] = lower_bound(begin(v), end(v), vs[i]) - begin(v);
+        vt[i] = lower_bound(begin(v), end(v), vt[i]) - begin(v);
+    }
+    return v.size();
+}
 ```
 {% endraw %}
 
