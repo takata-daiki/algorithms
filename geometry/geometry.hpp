@@ -68,10 +68,10 @@ struct Point {
         });
         vector<P> ch(n * 2);
         for (int i = 0; i < n; ch[k++] = ps[i++]) {
-            while (k >= 2 && ccw(ch[k - 2], ch[k - 1], ps[i]) <= 0) k--;
+            while (k >= 2 && ccw(ch[k - 2], ch[k - 1], ps[i]) == -1) k--;
         }
         for (int i = n - 2, t = k; i >= 0; ch[k++] = ps[i--]) {
-            while (k >= t + 1 && ccw(ch[k - 2], ch[k - 1], ps[i]) <= 0) k--;
+            while (k >= t + 1 && ccw(ch[k - 2], ch[k - 1], ps[i]) == -1) k--;
         }
         ch.resize(k - 1);
         return ch;
