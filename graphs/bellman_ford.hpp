@@ -8,15 +8,16 @@ struct BellmanFord {
         int from, to;
         T cost;
     };
-    int n;
     vector<T> dist;
     vector<int> has_path;
     vector<Edge> es;
-    BellmanFord(int n_, T INF = 1e9)
-        : n(n_), dist(n_, INF + INF), has_path(n_, 0) {}
+    BellmanFord(const int n, const T INF = 1e9
+        : n(n), dist(n, INF + INF), has_path(n, 0) {}
 
-    void add_edge(int u, int v, T w) { es.push_back({u, v, w}); }
-    bool build(int s) {
+    void add_edge(const int u, const int v, const T w) {
+        es.push_back({u, v, w});
+    }
+    bool build(const int s) {
         dist[s] = 0;
         has_path[s] = 1;
         for (int i = 0; i < n; ++i) {

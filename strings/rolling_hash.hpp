@@ -3,13 +3,13 @@
 using namespace std;
 
 struct RollingHash {
-    static constexpr int SIZE = 2;
-    static array<uint64_t, SIZE> mod;
-    static array<uint64_t, SIZE> base;
+    static int SIZE;
+    static vector<uint64_t> mod;
+    static vector<uint64_t> base;
     const int n;
     vector<vector<unsigned>> h, pw;
 
-    RollingHash(string s) : n(s.length()) {
+    RollingHash(const string& s) : n(s.length()) {
         h.assign(SIZE, vector<unsigned>(n + 1, 0));
         pw.assign(SIZE, vector<unsigned>(n + 1, 1));
         for (int i = 0; i < SIZE; i++) {
@@ -20,18 +20,18 @@ struct RollingHash {
         }
     }
 
-    inline unsigned get(int l, int r, int k) const {
+    inline unsigned get(const int l, const int r, const int k) const {
         return (h[k][r] + (mod[k] - h[k][l]) * pw[k][r - l]) % mod[k];
     }
 
-    bool match(int l1, int r1, int l2, int r2) const {
+    bool match(const int l1, const int r1, const int l2, const int r2) const {
         for (int i = 0; i < SIZE; i++) {
             if (get(l1, r1, i) != get(l2, r2, i)) return false;
         }
         return true;
     }
 
-    int lcp(int i, int j) {
+    int lcp(const int i, const int j) {
         int ok = 0;
         int ng = min(n - i, n - j) + 1;
         while (ng - ok > 1) {
@@ -41,5 +41,6 @@ struct RollingHash {
         return ok;
     }
 };
-array<uint64_t, RollingHash::SIZE> RollingHash::mod = {1000000007, 1000000009};
-array<uint64_t, RollingHash::SIZE> RollingHash::base = {1009, 1007};
+int RollingHash::SIZE = 2;
+vector<uint64_t> RollingHash::mod = {1000000007, 1000000009};
+vector<uint64_t> RollingHash::base = {1009, 1007};

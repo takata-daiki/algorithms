@@ -8,16 +8,18 @@ struct Dijkstra {
         int to;
         T cost;
     };
+
     vector<int> prev;
     vector<vector<Edge>> g;
-    Dijkstra(int n) : prev(n, -1), g(n) {}
 
-    void add_edge(int u, int v, T w) {
+    Dijkstra(const int n) : prev(n, -1), g(n) {}
+
+    void add_edge(const int u, const int v, const T w) {
         g[u].push_back({v, w});
     }
-    vector<T> build(int s) {
-        vector<T> dist(g.size(), -1);
+    vector<T> build(const int s) {
         using Node = pair<T, int>;
+        vector<T> dist(g.size(), -1);
         priority_queue<Node, vector<Node>, greater<Node>> pq;
         pq.push({dist[s] = 0, s});
         while (!pq.empty()) {

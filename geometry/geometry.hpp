@@ -4,10 +4,13 @@ using namespace std;
 
 struct Point {
     using P = Point;
+
+    static double EPS;
     double x;
     double y;
     double z;
-    Point(double _x = 0.0, double _y = 0.0, double _z = 0.0)
+
+    Point(const double _x = 0.0, const double _y = 0.0, const double _z = 0.0)
         : x(_x), y(_y), z(_z) {}
 
     // NOTICE: if you use 3d vector, change THIS!!
@@ -19,35 +22,39 @@ struct Point {
     }
     P operator+(const P& p) const { return P(x + p.x, y + p.y, z + p.z); }
     P operator-(const P& p) const { return P(x - p.x, y - p.y, z - p.z); }
-    P operator*(const double& k) const { return P(x * k, y * k, z * k); }
-    P operator/(const double& k) const { return P(x / k, y / k, z / k); }
+    P operator*(const double k) const { return P(x * k, y * k, z * k); }
+    P operator/(const double k) const { return P(x / k, y / k, z / k); }
     P& operator+=(const P& p) { return *this = *this + p; }
     P& operator-=(const P& p) { return *this = *this - p; }
-    P& operator*=(const double& k) { return *this = *this * k; }
-    P& operator/=(const double& k) { return *this = *this / k; }
+    P& operator*=(const double k) { return *this = *this * k; }
+    P& operator/=(const double k) { return *this = *this / k; }
     bool operator<(const P& p) const { return lt(z, p.z); }
     bool operator==(const P& p) const {
         return eq(x, p.x) && eq(y, p.y) && eq(z, p.z);
     }
     bool operator>(const P& p) const { return !(*this < p || *this == p); }
-    double abs() const { return sqrt(norm()); }
-    double norm() const { return x * x + y * y + z * z; };
-    double dot(const P& p) const { return x * p.x + y * p.y + z * p.z; }
-    P cross(const P& p) const {
+    inline double abs() const { return sqrt(norm()); }
+    inline double norm() const { return x * x + y * y + z * z; };
+    inline double dot(const P& p) const { return x * p.x + y * p.y + z * p.z; }
+    inline P cross(const P& p) {
         double a = y * p.z - z * p.y;
         double b = z * p.x - x * p.z;
         double c = x * p.y - y * p.x;
         return P(a, b, c);
     }
-    bool is_orthogonal(const P& p) const { return eq(dot(p), 0.0); }
-    bool is_parallel(const P& p) const { return cross(p) == P(0.0, 0.0, 0.0); }
-
-    static double EPS;
-    static bool eq(const double& a, const double& b) {
+    inline bool is_orthogonal(const P& p) const { return eq(dot(p), 0.0); }
+    inline bool is_parallel(const P& p) const {
+        return cross(p) == P(0.0, 0.0, 0.0);
+    }
+    static bool eq(const double a, const double b) const {
         return std::abs(a - b) < EPS;
     }
-    static bool lt(const double& a, const double& b) { return a - b < -EPS; }
-    static bool le(const double& a, const double& b) { return a - b < EPS; }
+    static bool lt(const double a, const double b) const {
+        return a - b < -EPS;
+    }
+    static bool le(const double a, const double b) const {
+        return a - b < EPS;
+    }
     static int ccw(P a, P b, P c) {
         b -= a;
         c -= a;
@@ -63,7 +70,7 @@ struct Point {
     }
     static vector<P> convex_hull(vector<P> ps) {
         int n = ps.size(), k = 0;
-        sort(begin(ps), end(ps), [](const Point& a, const Point& b) {
+        sort(begin(ps), end(ps), [](const P& a, const P& b) {
             return (!eq(a.y, b.y)) ? lt(a.y, b.y) : lt(a.x, b.x);
         });
         vector<P> ch(n * 2);
