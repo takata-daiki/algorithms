@@ -25,18 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/strings/rolling_hash.test.cpp
+# :warning: test/strings/rolling_hash.test.cpp
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/strings/rolling_hash.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-10 13:59:37 +0900
+    - Last commit date: 2019-12-12 01:50:18 +0900
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B</a>
 
 
-## Dependencies
-* :heavy_check_mark: <a href="../../../library/strings/rolling_hash.hpp.html">strings/rolling_hash.hpp</a>
+## Depends On
+* :warning: <a href="../../../library/strings/rolling_hash.hpp.html">strings/rolling_hash.hpp</a>
 
 
 ## Code

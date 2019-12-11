@@ -25,18 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/data_structures/union_find.test.cpp
+# :warning: test/data_structures/union_find.test.cpp
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/union_find.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-10 13:59:37 +0900
+    - Last commit date: 2019-12-12 01:50:18 +0900
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A</a>
 
 
-## Dependencies
-* :heavy_check_mark: <a href="../../../library/data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
+## Depends On
+* :warning: <a href="../../../library/data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
 
 
 ## Code

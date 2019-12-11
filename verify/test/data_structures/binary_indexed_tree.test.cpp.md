@@ -25,41 +25,41 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/geometry/parallel_orthogonal.test.cpp
+# :warning: test/data_structures/binary_indexed_tree.test.cpp
 <a href="../../../index.html">Back to top page</a>
 
-* <a href="{{ site.github.repository_url }}/blob/master/test/geometry/parallel_orthogonal.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-12 01:55:44 +0900
+* <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/binary_indexed_tree.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-12 01:50:18 +0900
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_B">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_B</a>
 
 
 ## Depends On
-* :warning: <a href="../../../library/geometry/geometry.hpp.html">geometry/geometry.hpp</a>
+* :warning: <a href="../../../library/data_structures/binary_indexed_tree.hpp.html">data_structures/binary_indexed_tree.hpp</a>
 
 
 ## Code
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A"
-#include "../../geometry/geometry.hpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_B"
+#include "../../data_structures/binary_indexed_tree.hpp"
 
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    int q;
-    cin >> q;
-    while (q--) {
-        vector<Point> p(4);
-        for (int i = 0; i < 4; i++) cin >> p[i];
-        Point s1 = p[0] - p[1];
-        Point s2 = p[2] - p[3];
-        int ans = 0;
-        if (s1.is_orthogonal(s2)) ans = 1;
-        if (s1.is_parallel(s2)) ans = 2;
-        cout << ans << endl;
+    int n, q;
+    cin >> n >> q;
+    BinaryIndexedTree<long long> bit(n);
+    for (int i = 0; i < q; i++) {
+        int com, x, y;
+        cin >> com >> x >> y, x--;
+        if (com) {
+            cout << bit.sum(y - 1) - bit.sum(x - 1) << endl;
+        } else {
+            bit.add(x, y);
+        }
     }
 }
 ```

@@ -30,9 +30,13 @@ layout: default
 
 * category: data_structures
 * <a href="{{ site.github.repository_url }}/blob/master/data_structures/binary_indexed_tree.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-10 14:56:46 +0900
+    - Last commit date: 2019-12-12 01:50:18 +0900
 
 
+
+
+## Verified With
+* :warning: <a href="../../verify/test/data_structures/binary_indexed_tree.test.cpp.html">test/data_structures/binary_indexed_tree.test.cpp</a>
 
 
 ## Code
@@ -44,17 +48,17 @@ using namespace std;
 
 template <typename T>
 struct BinaryIndexedTree {
-    vector<T> bit;
-    BinaryIndexedTree(int n) : bit(n + 1, 0) {}
-    T sum(int k) {
-        k++;
+    vector<T> data;
+
+    BinaryIndexedTree(const int n) : data(n + 1, 0) {}
+
+    inline T sum(const int k) {
         T s = 0;
-        for (; k > 0; k -= k & -k) s += bit[k];
+        for (int i = k + 1; i > 0; i -= i & -i) s += data[i];
         return s;
     }
-    void add(int k, T x) {
-        k++;
-        for (; k <= bit.size(); k += k & -k) bit[k] += x;
+    inline void add(const int k, const T x) {
+        for (int i = k + 1; i < (int)data.size(); i += i & -i) data[i] += x;
     }
 };
 ```

@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graphs/biconnected_components.cpp
+# :warning: graphs/lowest_common_ancestor.hpp
 <a href="../../index.html">Back to top page</a>
 
 * category: graphs
-* <a href="{{ site.github.repository_url }}/blob/master/graphs/biconnected_components.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-10 14:56:46 +0900
+* <a href="{{ site.github.repository_url }}/blob/master/graphs/lowest_common_ancestor.hpp">View this file on GitHub</a>
+    - Last commit date: 2019-12-12 01:50:18 +0900
 
 
 
@@ -42,38 +42,45 @@ layout: default
 #include <bits/stdc++.h>
 using namespace std;
 
-struct BiconnectedComponents {
-    int n;
-    int time;
+struct LowestCommonAncestor {
+    using P = pair<int, int>;
+
+    int n, time;
     vector<vector<int>> g;
-    vector<bool> is_art_point;
-    vector<int> num, low;
-    set<pair<int, int>> bridges;
+    vector<int> num, euler_tour;
+    vector<P> depth;
+    SegmentTree<P> seg;
 
-    BiconnectedComponents(int n)
-        : n(n), time(0), g(n), num(n, -1), low(n, -1), is_art_point(n, false) {}
+    LowestCommonAncestor(int n)
+        : n(n), time(0), g(n), num(n), euler_tour(n * 2 - 1), depth(n * 2 - 1) {}
 
-    void add_edge(int u, int v) {
-        g[u].push_back(v);
-        g[v].push_back(u);
+    void build(int r) {
+        dfs(r, r, 0);
+        SegmentTree<P>::F f = [](P a, P b) { return min(a, b); };
+        seg = SegmentTree<P>(n * 2 - 1, f, {INT_MAX, -1}, depth);
     }
-    void dfs(int u, int p) {
-        num[u] = low[u] = time++;
+    void add_edge(int s, int t) {
+        g[s].push_back(t);
+        g[t].push_back(s);
+    }
+    void dfs(int u, int p, int d) {
+        num[u] = time;
+        euler_tour[time] = u;
+        depth[time] = {d, time};
+        ++time;
         for (auto&& v : g[u]) {
-            if (num[v] == -1) {
-                dfs(v, u);
-                low[u] = min(low[u], low[v]);
-                if (num[u] <= low[v]) is_art_point[u] = (num[u] > 0) || (num[v] > 1);
-                if (num[u] < low[v]) bridges.insert({min(u, v), max(u, v)});
-            } else if (v != p) {
-                low[u] = min(low[u], num[v]);
-            }
+            if (v == p) continue;
+            dfs(v, u, d + 1);
+            euler_tour[time] = u;
+            depth[time] = {d, time};
+            ++time;
         }
     }
-    void build() {
-        for (int i = 0; i < n; ++i) {
-            if (num[i] == -1) dfs(i, -1);
-        }
+    int build(int u, int v) {
+        int i = num[u];
+        int j = num[v];
+        if (i > j) swap(i, j);
+        return euler_tour[seg.query(i, j + 1).second];
     }
 };
 ```

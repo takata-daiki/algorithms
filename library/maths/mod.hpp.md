@@ -25,18 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: maths/mod.hpp
+# :warning: maths/mod.hpp
 <a href="../../index.html">Back to top page</a>
 
 * category: maths
 * <a href="{{ site.github.repository_url }}/blob/master/maths/mod.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-10 13:59:37 +0900
+    - Last commit date: 2019-12-12 01:50:18 +0900
 
 
 
 
-## Verified
-* :heavy_check_mark: <a href="../../verify/test/maths/mod_combination.test.cpp.html">test/maths/mod_combination.test.cpp</a>
+## Verified With
+* :warning: <a href="../../verify/test/maths/mod_combination.test.cpp.html">test/maths/mod_combination.test.cpp</a>
 
 
 ## Code
@@ -48,9 +48,14 @@ using namespace std;
 
 struct ModInt {
     using M = ModInt;
+
+    static vector<M> fact, finv;
+    static long long MOD;
     long long v;
-    ModInt(long long _v = 0) : v(_v % MOD + MOD) { norm(); }
-    M& norm() {
+
+    ModInt(const long long _v = 0) : v(_v % MOD + MOD) { norm(); }
+
+    inline M& norm() {
         v = (v < MOD) ? v : v - MOD;
         return *this;
     }
@@ -68,7 +73,7 @@ struct ModInt {
     friend ostream& operator<<(ostream& output, const M& x) {
         return output << x.v;
     }
-    M pow(long long n) const {
+    inline M pow(long long n) const {
         M x(v), res(1);
         while (n) {
             if (n & 1) res *= x;
@@ -77,21 +82,18 @@ struct ModInt {
         }
         return res;
     }
-    M inv() const { return this->pow(MOD - 2); }
-
-    static long long MOD;
-    static vector<M> fact, finv;
-    static void build(int n) {
+    inline M inv() const { return this->pow(MOD - 2); }
+    static void build(const int n) {
         fact.assign(n + 1, 1);
         for (int i = 1; i < n + 1; i++) fact[i] = fact[i - 1] * M(i);
         finv.assign(n + 1, fact[n].inv());
         for (int i = n; i > 0; i--) finv[i - 1] = finv[i] * M(i);
     }
-    static M comb(int n, int k) {
+    static M comb(const int n, const int k) {
         if (n < k || k < 0) return M(0);
         return fact[n] * finv[n - k] * finv[k];
     }
-    static M extgcd(int a, int b, int* x, int* y) {
+    static M extgcd(const int a, const int b, int* x, int* y) {
         M d(a);
         if (b) {
             d = extgcd(b, a % b, y, x);

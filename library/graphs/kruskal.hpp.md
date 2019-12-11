@@ -30,13 +30,13 @@ layout: default
 
 * category: graphs
 * <a href="{{ site.github.repository_url }}/blob/master/graphs/kruskal.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-10 14:56:46 +0900
+    - Last commit date: 2019-12-12 01:50:18 +0900
 
 
 
 
-## Dependencies
-* :heavy_check_mark: <a href="../data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
+## Depends On
+* :warning: <a href="../data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
 
 
 ## Code

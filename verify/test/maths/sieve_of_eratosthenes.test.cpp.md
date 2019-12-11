@@ -25,18 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/maths/sieve_of_eratosthenes.test.cpp
+# :warning: test/maths/sieve_of_eratosthenes.test.cpp
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/maths/sieve_of_eratosthenes.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-10 13:59:37 +0900
+    - Last commit date: 2019-12-12 01:50:18 +0900
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1276">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1276</a>
 
 
-## Dependencies
-* :heavy_check_mark: <a href="../../../library/maths/prime.hpp.html">maths/prime.hpp</a>
+## Depends On
+* :warning: <a href="../../../library/maths/prime.hpp.html">maths/prime.hpp</a>
 
 
 ## Code
