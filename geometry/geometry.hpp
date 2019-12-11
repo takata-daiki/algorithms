@@ -36,7 +36,7 @@ struct Point {
     inline double abs() const { return sqrt(norm()); }
     inline double norm() const { return x * x + y * y + z * z; };
     inline double dot(const P& p) const { return x * p.x + y * p.y + z * p.z; }
-    inline P cross(const P& p) {
+    inline P cross(const P& p) const {
         double a = y * p.z - z * p.y;
         double b = z * p.x - x * p.z;
         double c = x * p.y - y * p.x;
@@ -46,13 +46,13 @@ struct Point {
     inline bool is_parallel(const P& p) const {
         return cross(p) == P(0.0, 0.0, 0.0);
     }
-    static bool eq(const double a, const double b) const {
+    static bool eq(const double a, const double b) {
         return std::abs(a - b) < EPS;
     }
-    static bool lt(const double a, const double b) const {
+    static bool lt(const double a, const double b) {
         return a - b < -EPS;
     }
-    static bool le(const double a, const double b) const {
+    static bool le(const double a, const double b) {
         return a - b < EPS;
     }
     static int ccw(P a, P b, P c) {
