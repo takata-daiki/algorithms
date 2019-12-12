@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: data_structures/binary_indexed_tree.hpp
+# :heavy_check_mark: data_structures/binary_indexed_tree.hpp
 <a href="../../index.html">Back to top page</a>
 
 * category: data_structures
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Verified With
-* :warning: <a href="../../verify/test/data_structures/binary_indexed_tree.test.cpp.html">test/data_structures/binary_indexed_tree.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/data_structures/binary_indexed_tree.test.cpp.html">test/data_structures/binary_indexed_tree.test.cpp</a>
 
 
 ## Code

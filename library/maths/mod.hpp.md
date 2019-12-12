@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: maths/mod.hpp
+# :heavy_check_mark: maths/mod.hpp
 <a href="../../index.html">Back to top page</a>
 
 * category: maths
@@ -36,7 +36,7 @@ layout: default
 
 
 ## Verified With
-* :warning: <a href="../../verify/test/maths/mod_combination.test.cpp.html">test/maths/mod_combination.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/maths/mod_combination.test.cpp.html">test/maths/mod_combination.test.cpp</a>
 
 
 ## Code

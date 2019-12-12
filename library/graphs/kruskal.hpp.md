@@ -36,7 +36,7 @@ layout: default
 
 
 ## Depends On
-* :warning: <a href="../data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
+* :heavy_check_mark: <a href="../data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
 
 
 ## Code

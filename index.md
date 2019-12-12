@@ -31,21 +31,21 @@ layout: default
 
 ## Library Files
 ### data_structures
-* :warning: <a href="library/data_structures/binary_indexed_tree.hpp.html">data_structures/binary_indexed_tree.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/binary_indexed_tree.hpp.html">data_structures/binary_indexed_tree.hpp</a>
 * :warning: <a href="library/data_structures/kd_tree.hpp.html">data_structures/kd_tree.hpp</a>
 * :warning: <a href="library/data_structures/lazy_segment_tree.hpp.html">data_structures/lazy_segment_tree.hpp</a>
 * :warning: <a href="library/data_structures/segment_tree.hpp.html">data_structures/segment_tree.hpp</a>
-* :warning: <a href="library/data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
 
 
 ### geometry
-* :warning: <a href="library/geometry/geometry.hpp.html">geometry/geometry.hpp</a>
+* :heavy_check_mark: <a href="library/geometry/geometry.hpp.html">geometry/geometry.hpp</a>
 
 
 ### graphs
-* :warning: <a href="library/graphs/bellman_ford.hpp.html">graphs/bellman_ford.hpp</a>
+* :heavy_check_mark: <a href="library/graphs/bellman_ford.hpp.html">graphs/bellman_ford.hpp</a>
 * :warning: <a href="library/graphs/biconnected_components.hpp.html">graphs/biconnected_components.hpp</a>
-* :warning: <a href="library/graphs/dijkstra.hpp.html">graphs/dijkstra.hpp</a>
+* :heavy_check_mark: <a href="library/graphs/dijkstra.hpp.html">graphs/dijkstra.hpp</a>
 * :warning: <a href="library/graphs/dinic.hpp.html">graphs/dinic.hpp</a>
 * :warning: <a href="library/graphs/ford_fulkerson.hpp.html">graphs/ford_fulkerson.hpp</a>
 * :warning: <a href="library/graphs/heavy_light_decomposition.hpp.html">graphs/heavy_light_decomposition.hpp</a>
@@ -56,8 +56,8 @@ layout: default
 
 
 ### maths
-* :warning: <a href="library/maths/mod.hpp.html">maths/mod.hpp</a>
-* :warning: <a href="library/maths/prime.hpp.html">maths/prime.hpp</a>
+* :heavy_check_mark: <a href="library/maths/mod.hpp.html">maths/mod.hpp</a>
+* :heavy_check_mark: <a href="library/maths/prime.hpp.html">maths/prime.hpp</a>
 
 
 ### others
@@ -68,18 +68,19 @@ layout: default
 
 
 ### strings
-* :warning: <a href="library/strings/rolling_hash.hpp.html">strings/rolling_hash.hpp</a>
+* :heavy_check_mark: <a href="library/strings/rolling_hash.hpp.html">strings/rolling_hash.hpp</a>
 
 
 ## Verify Files
-* :warning: <a href="verify/test/data_structures/binary_indexed_tree.test.cpp.html">test/data_structures/binary_indexed_tree.test.cpp</a>
-* :warning: <a href="verify/test/data_structures/union_find.test.cpp.html">test/data_structures/union_find.test.cpp</a>
-* :warning: <a href="verify/test/geometry/convex_hull.test.cpp.html">test/geometry/convex_hull.test.cpp</a>
-* :warning: <a href="verify/test/geometry/intersection.test.cpp.html">test/geometry/intersection.test.cpp</a>
-* :warning: <a href="verify/test/geometry/parallel_orthogonal.test.cpp.html">test/geometry/parallel_orthogonal.test.cpp</a>
-* :warning: <a href="verify/test/graphs/dijkstra.test.cpp.html">test/graphs/dijkstra.test.cpp</a>
-* :warning: <a href="verify/test/maths/mod_combination.test.cpp.html">test/maths/mod_combination.test.cpp</a>
-* :warning: <a href="verify/test/maths/sieve_of_eratosthenes.test.cpp.html">test/maths/sieve_of_eratosthenes.test.cpp</a>
-* :warning: <a href="verify/test/strings/rolling_hash.test.cpp.html">test/strings/rolling_hash.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/data_structures/binary_indexed_tree.test.cpp.html">test/data_structures/binary_indexed_tree.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/data_structures/union_find.test.cpp.html">test/data_structures/union_find.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/geometry/convex_hull.test.cpp.html">test/geometry/convex_hull.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/geometry/intersection.test.cpp.html">test/geometry/intersection.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/geometry/parallel_orthogonal.test.cpp.html">test/geometry/parallel_orthogonal.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graphs/bellman_ford.test.cpp.html">test/graphs/bellman_ford.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graphs/dijkstra.test.cpp.html">test/graphs/dijkstra.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/maths/mod_combination.test.cpp.html">test/maths/mod_combination.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/maths/sieve_of_eratosthenes.test.cpp.html">test/maths/sieve_of_eratosthenes.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/strings/rolling_hash.test.cpp.html">test/strings/rolling_hash.test.cpp</a>
 
 

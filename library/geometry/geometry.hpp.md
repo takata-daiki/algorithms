@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: geometry/geometry.hpp
+# :heavy_check_mark: geometry/geometry.hpp
 <a href="../../index.html">Back to top page</a>
 
 * category: geometry
@@ -36,9 +36,9 @@ layout: default
 
 
 ## Verified With
-* :warning: <a href="../../verify/test/geometry/convex_hull.test.cpp.html">test/geometry/convex_hull.test.cpp</a>
-* :warning: <a href="../../verify/test/geometry/intersection.test.cpp.html">test/geometry/intersection.test.cpp</a>
-* :warning: <a href="../../verify/test/geometry/parallel_orthogonal.test.cpp.html">test/geometry/parallel_orthogonal.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/convex_hull.test.cpp.html">test/geometry/convex_hull.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/intersection.test.cpp.html">test/geometry/intersection.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/geometry/parallel_orthogonal.test.cpp.html">test/geometry/parallel_orthogonal.test.cpp</a>
 
 
 ## Code
