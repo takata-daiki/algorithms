@@ -9,7 +9,7 @@ struct BinaryIndexedTree {
     vector<T> data;
 
     BinaryIndexedTree(const int _n) : n(_n) {
-        data.assign(n + 1, 0)
+        data.assign(n + 1, 0);
     }
 
     inline void add(const int k, const T x) {
