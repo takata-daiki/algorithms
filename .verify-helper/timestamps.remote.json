@@ -1,5 +1,6 @@
 {
-"test/data_structures/lazy_segment_tree.rmq_and_raq.test.cpp": "2020-01-31 03:44:28 +0900",
+"test/data_structures/binary_indexed_tree.test.cpp": "2020-01-31 04:22:36 +0900",
+"test/data_structures/lazy_segment_tree.rmq_and_raq.test.cpp": "2020-01-31 04:22:36 +0900",
 "test/data_structures/segment_tree.rmq.test.cpp": "2020-01-31 03:44:28 +0900",
 "test/data_structures/union_find.test.cpp": "2020-01-31 03:44:28 +0900",
 "test/geometry/geometry.convex_hull.test.cpp": "2020-01-31 03:44:28 +0900",
