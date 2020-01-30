@@ -8,7 +8,7 @@ int main() {
     int n, q;
     cin >> n >> q;
     UnionFind uf(n);
-    for (int i = 0; i < q; i++) {
+    while (q--) {
         int com, x, y;
         cin >> com >> x >> y;
         if (com) {

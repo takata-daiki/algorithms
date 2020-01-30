@@ -9,22 +9,19 @@ struct ModInt {
     static long long MOD;
     long long v;
 
-    ModInt(const long long _v = 0) : v(_v % MOD + MOD) { norm(); }
-
-    inline M& norm() {
-        v = (v < MOD) ? v : v - MOD;
-        return *this;
-    }
+    // norm: [-MOD, MOD**2] -> [0, MOD)
+    ModInt(const long long _v = 0) : v((_v < 0) ? _v % MOD + MOD : _v % MOD) {}
+    
     M operator+(const M& x) const { return M(v + x.v); }
-    M operator-(const M& x) const { return M(v + MOD - x.v); }
-    M operator*(const M& x) const { return M(v * x.v % MOD); }
+    M operator-(const M& x) const { return M(v - x.v); }
+    M operator*(const M& x) const { return M(v * x.v); }
     M operator/(const M& x) const { return M(v * x.inv().v); }
     M& operator+=(const M& x) { return *this = *this + x; }
     M& operator-=(const M& x) { return *this = *this - x; }
     M& operator*=(const M& x) { return *this = *this * x; }
     M& operator/=(const M& x) { return *this = *this / x; }
     friend istream& operator>>(istream& input, M& x) {
-        return input >> x.v, x.norm(), input;
+        return input >> x.v, x = M(x), input;
     }
     friend ostream& operator<<(ostream& output, const M& x) {
         return output << x.v;
