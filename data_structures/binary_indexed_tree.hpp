@@ -16,10 +16,11 @@ struct BinaryIndexedTree {
         assert(0 <= k && k < n);
         for (int i = k + 1; i <= n; i += i & -i) data[i] += x;
     }
+    // [0, k)
     inline T sum(const int k) {
-        assert(0 <= k && k < n);
+        assert(0 <= k && k <= n);
         T s = 0;
-        for (int i = k + 1; i > 0; i -= i & -i) s += data[i];
+        for (int i = k; i > 0; i -= i & -i) s += data[i];
         return s;
     }
 };

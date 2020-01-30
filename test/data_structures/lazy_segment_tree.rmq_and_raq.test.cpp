@@ -14,8 +14,7 @@ int main() {
     LazySegmentTree<min_monoid<int>, plus_monoid<int>, plus_min_action<int>> seg(begin(tmp), end(tmp));
     while (q--) {
         int com, s, t;
-        cin >> com >> s >> t;
-        t++;
+        cin >> com >> s >> t, t++;
         if (com) {
             cout << seg.query(s, t) << endl;
         } else {

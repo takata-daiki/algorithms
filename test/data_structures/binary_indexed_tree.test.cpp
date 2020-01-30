@@ -10,11 +10,11 @@ int main() {
     BinaryIndexedTree<long long> bit(n);
     while (q--) {
         int com, x, y;
-        cin >> com >> x >> y, x--;
+        cin >> com >> x >> y;
         if (com) {
-            cout << bit.sum(y - 1) - bit.sum(x - 1) << endl;
+            cout << bit.sum(y) - bit.sum(x - 1) << endl;
         } else {
-            bit.add(x, y);
+            bit.add(x - 1, y);
         }
     }
 }
