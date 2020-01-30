@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#9466edd02bad586f9ccf200a84a4dafd">data_structures</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structures/binary_indexed_tree.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-31 03:44:28+09:00
+    - Last commit date: 2020-01-31 03:47:08+09:00
 
 
 
@@ -57,7 +57,7 @@ struct BinaryIndexedTree {
     vector<T> data;
 
     BinaryIndexedTree(const int _n) : n(_n) {
-        data.assign(n + 1, 0)
+        data.assign(n + 1, 0);
     }
 
     inline void add(const int k, const T x) {
@@ -88,7 +88,7 @@ struct BinaryIndexedTree {
     vector<T> data;
 
     BinaryIndexedTree(const int _n) : n(_n) {
-        data.assign(n + 1, 0)
+        data.assign(n + 1, 0);
     }
 
     inline void add(const int k, const T x) {

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: graphs/dijkstra.hpp
+# :heavy_check_mark: graphs/dijkstra.hpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,7 +38,7 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../verify/test/graphs/dijkstra.test.cpp.html">test/graphs/dijkstra.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/graphs/dijkstra.test.cpp.html">test/graphs/dijkstra.test.cpp</a>
 
 
 ## Code

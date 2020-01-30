@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: graphs/bellman_ford.hpp
+# :heavy_check_mark: graphs/bellman_ford.hpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,7 +38,7 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../verify/test/graphs/bellman_ford.test.cpp.html">test/graphs/bellman_ford.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/graphs/bellman_ford.test.cpp.html">test/graphs/bellman_ford.test.cpp</a>
 
 
 ## Code

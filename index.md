@@ -40,40 +40,40 @@ layout: default
 
 * :x: <a href="library/data_structures/binary_indexed_tree.hpp.html">data_structures/binary_indexed_tree.hpp</a>
 * :warning: <a href="library/data_structures/kd_tree.hpp.html">data_structures/kd_tree.hpp</a>
-* :x: <a href="library/data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
 
 
 <div id="1afc80669d853c132c0b86f1ed055b1e"></div>
 
 ### data_structures/segtrees
 
-* :x: <a href="library/data_structures/segtrees/lazy_segment_tree.hpp.html">data_structures/segtrees/lazy_segment_tree.hpp</a>
-* :x: <a href="library/data_structures/segtrees/segment_tree.hpp.html">data_structures/segtrees/segment_tree.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/segtrees/lazy_segment_tree.hpp.html">data_structures/segtrees/lazy_segment_tree.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/segtrees/segment_tree.hpp.html">data_structures/segtrees/segment_tree.hpp</a>
 
 
 <div id="3530283758733456883f81bc5e73deb0"></div>
 
 ### data_structures/segtrees/monoids
 
-* :x: <a href="library/data_structures/segtrees/monoids/min.hpp.html">data_structures/segtrees/monoids/min.hpp</a>
-* :x: <a href="library/data_structures/segtrees/monoids/plus.hpp.html">data_structures/segtrees/monoids/plus.hpp</a>
-* :x: <a href="library/data_structures/segtrees/monoids/plus_min_action.hpp.html">data_structures/segtrees/monoids/plus_min_action.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/min.hpp.html">data_structures/segtrees/monoids/min.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/plus.hpp.html">data_structures/segtrees/monoids/plus.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/plus_min_action.hpp.html">data_structures/segtrees/monoids/plus_min_action.hpp</a>
 
 
 <div id="ed7daeb157cd9b31e53896ad3c771a26"></div>
 
 ### geometry
 
-* :x: <a href="library/geometry/geometry.hpp.html">geometry/geometry.hpp</a>
+* :heavy_check_mark: <a href="library/geometry/geometry.hpp.html">geometry/geometry.hpp</a>
 
 
 <div id="e8706a28320e46fa20885a2933e42797"></div>
 
 ### graphs
 
-* :x: <a href="library/graphs/bellman_ford.hpp.html">graphs/bellman_ford.hpp</a>
+* :heavy_check_mark: <a href="library/graphs/bellman_ford.hpp.html">graphs/bellman_ford.hpp</a>
 * :warning: <a href="library/graphs/biconnected_components.hpp.html">graphs/biconnected_components.hpp</a>
-* :x: <a href="library/graphs/dijkstra.hpp.html">graphs/dijkstra.hpp</a>
+* :heavy_check_mark: <a href="library/graphs/dijkstra.hpp.html">graphs/dijkstra.hpp</a>
 * :warning: <a href="library/graphs/dinic.hpp.html">graphs/dinic.hpp</a>
 * :warning: <a href="library/graphs/ford_fulkerson.hpp.html">graphs/ford_fulkerson.hpp</a>
 * :warning: <a href="library/graphs/heavy_light_decomposition.hpp.html">graphs/heavy_light_decomposition.hpp</a>
@@ -87,8 +87,8 @@ layout: default
 
 ### maths
 
-* :x: <a href="library/maths/mod.hpp.html">maths/mod.hpp</a>
-* :x: <a href="library/maths/prime.hpp.html">maths/prime.hpp</a>
+* :heavy_check_mark: <a href="library/maths/mod.hpp.html">maths/mod.hpp</a>
+* :heavy_check_mark: <a href="library/maths/prime.hpp.html">maths/prime.hpp</a>
 
 
 <div id="5e2bab0ecb94c4ea40777733195abe1b"></div>
@@ -105,22 +105,22 @@ layout: default
 
 ### strings
 
-* :x: <a href="library/strings/rolling_hash.hpp.html">strings/rolling_hash.hpp</a>
+* :heavy_check_mark: <a href="library/strings/rolling_hash.hpp.html">strings/rolling_hash.hpp</a>
 
 
 ## Verify Files
 
 * :x: <a href="verify/test/data_structures/binary_indexed_tree.test.cpp.html">test/data_structures/binary_indexed_tree.test.cpp</a>
-* :x: <a href="verify/test/data_structures/lazy_segment_tree.rmq_and_raq.test.cpp.html">test/data_structures/lazy_segment_tree.rmq_and_raq.test.cpp</a>
-* :x: <a href="verify/test/data_structures/segment_tree.rmq.test.cpp.html">test/data_structures/segment_tree.rmq.test.cpp</a>
-* :x: <a href="verify/test/data_structures/union_find.test.cpp.html">test/data_structures/union_find.test.cpp</a>
-* :x: <a href="verify/test/geometry/geometry.convex_hull.test.cpp.html">test/geometry/geometry.convex_hull.test.cpp</a>
-* :x: <a href="verify/test/geometry/geometry.intersection.test.cpp.html">test/geometry/geometry.intersection.test.cpp</a>
-* :x: <a href="verify/test/geometry/geometry.parallel_orthogonal.test.cpp.html">test/geometry/geometry.parallel_orthogonal.test.cpp</a>
-* :x: <a href="verify/test/graphs/bellman_ford.test.cpp.html">test/graphs/bellman_ford.test.cpp</a>
-* :x: <a href="verify/test/graphs/dijkstra.test.cpp.html">test/graphs/dijkstra.test.cpp</a>
-* :x: <a href="verify/test/maths/mod.combination.test.cpp.html">test/maths/mod.combination.test.cpp</a>
-* :x: <a href="verify/test/maths/prime.sieve_of_eratosthenes.test.cpp.html">test/maths/prime.sieve_of_eratosthenes.test.cpp</a>
-* :x: <a href="verify/test/strings/rolling_hash.test.cpp.html">test/strings/rolling_hash.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/data_structures/lazy_segment_tree.rmq_and_raq.test.cpp.html">test/data_structures/lazy_segment_tree.rmq_and_raq.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/data_structures/segment_tree.rmq.test.cpp.html">test/data_structures/segment_tree.rmq.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/data_structures/union_find.test.cpp.html">test/data_structures/union_find.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/geometry/geometry.convex_hull.test.cpp.html">test/geometry/geometry.convex_hull.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/geometry/geometry.intersection.test.cpp.html">test/geometry/geometry.intersection.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/geometry/geometry.parallel_orthogonal.test.cpp.html">test/geometry/geometry.parallel_orthogonal.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graphs/bellman_ford.test.cpp.html">test/graphs/bellman_ford.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graphs/dijkstra.test.cpp.html">test/graphs/dijkstra.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/maths/mod.combination.test.cpp.html">test/maths/mod.combination.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/maths/prime.sieve_of_eratosthenes.test.cpp.html">test/maths/prime.sieve_of_eratosthenes.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/strings/rolling_hash.test.cpp.html">test/strings/rolling_hash.test.cpp</a>
 
 
