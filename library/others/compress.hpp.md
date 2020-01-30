@@ -26,16 +26,19 @@ layout: default
 
 
 # :warning: others/compress.hpp
+
 <a href="../../index.html">Back to top page</a>
 
-* category: others
+* category: <a href="../../index.html#5e2bab0ecb94c4ea40777733195abe1b">others</a>
 * <a href="{{ site.github.repository_url }}/blob/master/others/compress.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-10 14:56:46 +0900
+    - Last commit date: 2019-12-10 14:56:46+09:00
 
 
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #pragma once
@@ -54,6 +57,29 @@ map<int, int> compress(vector<int>& unzip) {
     }
     return zip;
 }
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 2 "others/compress.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+
+map<int, int> compress(vector<int>& unzip) {
+    map<int, int> zip;
+    for (auto x : unzip) zip[x] = -1;
+    int idx = 0;
+    unzip = vector<int>();
+    for (auto& p : zip) {
+        unzip.push_back(p.first);
+        p.second = idx;
+        idx++;
+    }
+    return zip;
+}
+
 ```
 {% endraw %}
 

@@ -25,21 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graphs/dijkstra.hpp
+# :x: graphs/dijkstra.hpp
+
 <a href="../../index.html">Back to top page</a>
 
-* category: graphs
+* category: <a href="../../index.html#e8706a28320e46fa20885a2933e42797">graphs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graphs/dijkstra.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-12 01:50:18 +0900
+    - Last commit date: 2019-12-12 01:50:18+09:00
 
 
 
 
-## Verified With
-* :heavy_check_mark: <a href="../../verify/test/graphs/dijkstra.test.cpp.html">test/graphs/dijkstra.test.cpp</a>
+## Verified with
+
+* :x: <a href="../../verify/test/graphs/dijkstra.test.cpp.html">test/graphs/dijkstra.test.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #pragma once
@@ -87,6 +91,58 @@ struct Dijkstra {
         return path;
     }
 };
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 2 "graphs/dijkstra.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+
+template <typename T>
+struct Dijkstra {
+    struct Edge {
+        int to;
+        T cost;
+    };
+
+    vector<int> prev;
+    vector<vector<Edge>> g;
+
+    Dijkstra(const int n) : prev(n, -1), g(n) {}
+
+    void add_edge(const int u, const int v, const T w) {
+        g[u].push_back({v, w});
+    }
+    vector<T> build(const int s) {
+        using Node = pair<T, int>;
+        vector<T> dist(g.size(), -1);
+        priority_queue<Node, vector<Node>, greater<Node>> pq;
+        pq.push({dist[s] = 0, s});
+        while (!pq.empty()) {
+            auto d = pq.top().first;
+            auto u = pq.top().second;
+            pq.pop();
+            if (dist[u] < d) continue;
+            for (auto&& v : g[u]) {
+                if (dist[v.to] < 0 || dist[v.to] > dist[u] + v.cost) {
+                    pq.push({dist[v.to] = dist[u] + v.cost, v.to});
+                    prev[v.to] = u;
+                }
+            }
+        }
+        return dist;
+    }
+    vector<int> get_path(int t) {
+        vector<int> path;
+        for (; t != -1; t = prev[t]) path.push_back(t);
+        reverse(begin(path), end(path));
+        return path;
+    }
+};
+
 ```
 {% endraw %}
 

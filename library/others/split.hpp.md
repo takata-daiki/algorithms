@@ -26,16 +26,19 @@ layout: default
 
 
 # :warning: others/split.hpp
+
 <a href="../../index.html">Back to top page</a>
 
-* category: others
+* category: <a href="../../index.html#5e2bab0ecb94c4ea40777733195abe1b">others</a>
 * <a href="{{ site.github.repository_url }}/blob/master/others/split.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-10 14:56:46 +0900
+    - Last commit date: 2019-12-10 14:56:46+09:00
 
 
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #pragma once
@@ -49,6 +52,24 @@ vector<string> split(const string &str, char sep) {
     while (getline(ss, buffer, sep)) v.push_back(buffer);
     return v;
 }
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 2 "others/split.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<string> split(const string &str, char sep) {
+    vector<string> v;
+    stringstream ss(str);
+    string buffer;
+    while (getline(ss, buffer, sep)) v.push_back(buffer);
+    return v;
+}
+
 ```
 {% endraw %}
 

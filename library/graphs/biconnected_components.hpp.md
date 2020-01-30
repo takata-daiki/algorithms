@@ -26,16 +26,19 @@ layout: default
 
 
 # :warning: graphs/biconnected_components.hpp
+
 <a href="../../index.html">Back to top page</a>
 
-* category: graphs
+* category: <a href="../../index.html#e8706a28320e46fa20885a2933e42797">graphs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graphs/biconnected_components.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-12 01:50:18 +0900
+    - Last commit date: 2019-12-12 01:50:18+09:00
 
 
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #pragma once
@@ -76,6 +79,51 @@ struct BiconnectedComponents {
         }
     }
 };
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 2 "graphs/biconnected_components.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+
+struct BiconnectedComponents {
+    int n;
+    int time;
+    vector<vector<int>> g;
+    vector<bool> is_art_point;
+    vector<int> num, low;
+    set<pair<int, int>> bridges;
+
+    BiconnectedComponents(int n)
+        : n(n), time(0), g(n), num(n, -1), low(n, -1), is_art_point(n, false) {}
+
+    void add_edge(int u, int v) {
+        g[u].push_back(v);
+        g[v].push_back(u);
+    }
+    void dfs(int u, int p) {
+        num[u] = low[u] = time++;
+        for (auto&& v : g[u]) {
+            if (num[v] == -1) {
+                dfs(v, u);
+                low[u] = min(low[u], low[v]);
+                if (num[u] <= low[v]) is_art_point[u] = (num[u] > 0) || (num[v] > 1);
+                if (num[u] < low[v]) bridges.insert({min(u, v), max(u, v)});
+            } else if (v != p) {
+                low[u] = min(low[u], num[v]);
+            }
+        }
+    }
+    void build() {
+        for (int i = 0; i < n; ++i) {
+            if (num[i] == -1) dfs(i, -1);
+        }
+    }
+};
+
 ```
 {% endraw %}
 

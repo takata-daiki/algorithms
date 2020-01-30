@@ -25,25 +25,30 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: data_structures/union_find.hpp
+# :x: data_structures/union_find.hpp
+
 <a href="../../index.html">Back to top page</a>
 
-* category: data_structures
+* category: <a href="../../index.html#9466edd02bad586f9ccf200a84a4dafd">data_structures</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structures/union_find.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-12 01:50:18 +0900
+    - Last commit date: 2019-12-12 01:50:18+09:00
 
 
 
 
-## Required By
+## Required by
+
 * :warning: <a href="../graphs/kruskal.hpp.html">graphs/kruskal.hpp</a>
 
 
-## Verified With
-* :heavy_check_mark: <a href="../../verify/test/data_structures/union_find.test.cpp.html">test/data_structures/union_find.test.cpp</a>
+## Verified with
+
+* :x: <a href="../../verify/test/data_structures/union_find.test.cpp.html">test/data_structures/union_find.test.cpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #pragma once
@@ -70,6 +75,37 @@ struct UnionFind {
         return true;
     }
 };
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 2 "data_structures/union_find.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+
+struct UnionFind {
+    vector<int> data;
+
+    UnionFind(const int n) : data(n, -1) {}
+
+    inline int root(const int x) {
+        return (data[x] < 0) ? x : data[x] = root(data[x]);
+    }
+    inline int size(const int x) { return -data[root(x)]; }
+    inline bool same(const int x, const int y) { return root(x) == root(y); }
+    bool unite(int x, int y) {
+        x = root(x);
+        y = root(y);
+        if (x == y) return false;
+        if (data[x] > data[y]) swap(x, y);
+        data[x] += data[y];
+        data[y] = x;
+        return true;
+    }
+};
+
 ```
 {% endraw %}
 

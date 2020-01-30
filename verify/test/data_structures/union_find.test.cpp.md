@@ -25,21 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/data_structures/union_find.test.cpp
+# :x: test/data_structures/union_find.test.cpp
+
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/union_find.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-12 01:50:18 +0900
+    - Last commit date: 2020-01-31 03:44:28+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A</a>
 
 
-## Depends On
-* :heavy_check_mark: <a href="../../../library/data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
+## Depends on
+
+* :x: <a href="../../../library/data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A"
@@ -52,7 +56,7 @@ int main() {
     int n, q;
     cin >> n >> q;
     UnionFind uf(n);
-    for (int i = 0; i < q; i++) {
+    while (q--) {
         int com, x, y;
         cin >> com >> x >> y;
         if (com) {
@@ -62,6 +66,58 @@ int main() {
         }
     }
 }
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "test/data_structures/union_find.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A"
+#line 2 "test/data_structures/../../data_structures/union_find.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+
+struct UnionFind {
+    vector<int> data;
+
+    UnionFind(const int n) : data(n, -1) {}
+
+    inline int root(const int x) {
+        return (data[x] < 0) ? x : data[x] = root(data[x]);
+    }
+    inline int size(const int x) { return -data[root(x)]; }
+    inline bool same(const int x, const int y) { return root(x) == root(y); }
+    bool unite(int x, int y) {
+        x = root(x);
+        y = root(y);
+        if (x == y) return false;
+        if (data[x] > data[y]) swap(x, y);
+        data[x] += data[y];
+        data[y] = x;
+        return true;
+    }
+};
+#line 3 "test/data_structures/union_find.test.cpp"
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n, q;
+    cin >> n >> q;
+    UnionFind uf(n);
+    while (q--) {
+        int com, x, y;
+        cin >> com >> x >> y;
+        if (com) {
+            cout << uf.same(x, y) << endl;
+        } else {
+            uf.unite(x, y);
+        }
+    }
+}
+
 ```
 {% endraw %}
 

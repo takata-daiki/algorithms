@@ -25,21 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/graphs/dijkstra.test.cpp
+# :x: test/graphs/dijkstra.test.cpp
+
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/graphs/dijkstra.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-12 01:50:18 +0900
+    - Last commit date: 2019-12-12 01:50:18+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A</a>
 
 
-## Depends On
-* :heavy_check_mark: <a href="../../../library/graphs/dijkstra.hpp.html">graphs/dijkstra.hpp</a>
+## Depends on
+
+* :x: <a href="../../../library/graphs/dijkstra.hpp.html">graphs/dijkstra.hpp</a>
 
 
 ## Code
+
+<a id="unbundled"></a>
 {% raw %}
 ```cpp
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A"
@@ -66,6 +70,83 @@ int main() {
         }
     }
 }
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "test/graphs/dijkstra.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A"
+#line 2 "test/graphs/../../graphs/dijkstra.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+
+template <typename T>
+struct Dijkstra {
+    struct Edge {
+        int to;
+        T cost;
+    };
+
+    vector<int> prev;
+    vector<vector<Edge>> g;
+
+    Dijkstra(const int n) : prev(n, -1), g(n) {}
+
+    void add_edge(const int u, const int v, const T w) {
+        g[u].push_back({v, w});
+    }
+    vector<T> build(const int s) {
+        using Node = pair<T, int>;
+        vector<T> dist(g.size(), -1);
+        priority_queue<Node, vector<Node>, greater<Node>> pq;
+        pq.push({dist[s] = 0, s});
+        while (!pq.empty()) {
+            auto d = pq.top().first;
+            auto u = pq.top().second;
+            pq.pop();
+            if (dist[u] < d) continue;
+            for (auto&& v : g[u]) {
+                if (dist[v.to] < 0 || dist[v.to] > dist[u] + v.cost) {
+                    pq.push({dist[v.to] = dist[u] + v.cost, v.to});
+                    prev[v.to] = u;
+                }
+            }
+        }
+        return dist;
+    }
+    vector<int> get_path(int t) {
+        vector<int> path;
+        for (; t != -1; t = prev[t]) path.push_back(t);
+        reverse(begin(path), end(path));
+        return path;
+    }
+};
+#line 3 "test/graphs/dijkstra.test.cpp"
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int v, e, r;
+    cin >> v >> e >> r;
+    Dijkstra<int> g(v);
+    for (int i = 0; i < e; i++) {
+        int s, t, d;
+        cin >> s >> t >> d;
+        g.add_edge(s, t, d);
+    }
+    auto dist = g.build(r);
+    for (int i = 0; i < v; i++) {
+        if (dist[i] == -1) {
+            cout << "INF" << endl;
+        } else {
+            cout << dist[i] << endl;
+        }
+    }
+}
+
 ```
 {% endraw %}
 
