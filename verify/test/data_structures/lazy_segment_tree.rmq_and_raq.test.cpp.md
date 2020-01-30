@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/lazy_segment_tree.rmq_and_raq.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-31 03:44:28+09:00
+    - Last commit date: 2020-01-31 04:22:36+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_H">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_H</a>
@@ -65,8 +65,7 @@ int main() {
     LazySegmentTree<min_monoid<int>, plus_monoid<int>, plus_min_action<int>> seg(begin(tmp), end(tmp));
     while (q--) {
         int com, s, t;
-        cin >> com >> s >> t;
-        t++;
+        cin >> com >> s >> t, t++;
         if (com) {
             cout << seg.query(s, t) << endl;
         } else {
@@ -212,8 +211,7 @@ int main() {
     LazySegmentTree<min_monoid<int>, plus_monoid<int>, plus_min_action<int>> seg(begin(tmp), end(tmp));
     while (q--) {
         int com, s, t;
-        cin >> com >> s >> t;
-        t++;
+        cin >> com >> s >> t, t++;
         if (com) {
             cout << seg.query(s, t) << endl;
         } else {

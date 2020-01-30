@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/data_structures/binary_indexed_tree.test.cpp
+# :heavy_check_mark: test/data_structures/binary_indexed_tree.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/binary_indexed_tree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-31 03:47:08+09:00
+    - Last commit date: 2020-01-31 04:22:36+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_B">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_B</a>
@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/data_structures/binary_indexed_tree.hpp.html">data_structures/binary_indexed_tree.hpp</a>
+* :heavy_check_mark: <a href="../../../library/data_structures/binary_indexed_tree.hpp.html">data_structures/binary_indexed_tree.hpp</a>
 
 
 ## Code
@@ -58,11 +58,11 @@ int main() {
     BinaryIndexedTree<long long> bit(n);
     while (q--) {
         int com, x, y;
-        cin >> com >> x >> y, x--;
+        cin >> com >> x >> y;
         if (com) {
-            cout << bit.sum(y - 1) - bit.sum(x - 1) << endl;
+            cout << bit.sum(y) - bit.sum(x - 1) << endl;
         } else {
-            bit.add(x, y);
+            bit.add(x - 1, y);
         }
     }
 }
@@ -92,10 +92,11 @@ struct BinaryIndexedTree {
         assert(0 <= k && k < n);
         for (int i = k + 1; i <= n; i += i & -i) data[i] += x;
     }
+    // [0, k)
     inline T sum(const int k) {
-        assert(0 <= k && k < n);
+        assert(0 <= k && k <= n);
         T s = 0;
-        for (int i = k + 1; i > 0; i -= i & -i) s += data[i];
+        for (int i = k; i > 0; i -= i & -i) s += data[i];
         return s;
     }
 };
@@ -110,11 +111,11 @@ int main() {
     BinaryIndexedTree<long long> bit(n);
     while (q--) {
         int com, x, y;
-        cin >> com >> x >> y, x--;
+        cin >> com >> x >> y;
         if (com) {
-            cout << bit.sum(y - 1) - bit.sum(x - 1) << endl;
+            cout << bit.sum(y) - bit.sum(x - 1) << endl;
         } else {
-            bit.add(x, y);
+            bit.add(x - 1, y);
         }
     }
 }

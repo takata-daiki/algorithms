@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: data_structures/binary_indexed_tree.hpp
+# :heavy_check_mark: data_structures/binary_indexed_tree.hpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#9466edd02bad586f9ccf200a84a4dafd">data_structures</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structures/binary_indexed_tree.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-31 03:47:08+09:00
+    - Last commit date: 2020-01-31 04:22:36+09:00
 
 
 
 
 ## Verified with
 
-* :x: <a href="../../verify/test/data_structures/binary_indexed_tree.test.cpp.html">test/data_structures/binary_indexed_tree.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/data_structures/binary_indexed_tree.test.cpp.html">test/data_structures/binary_indexed_tree.test.cpp</a>
 
 
 ## Code
@@ -64,10 +64,11 @@ struct BinaryIndexedTree {
         assert(0 <= k && k < n);
         for (int i = k + 1; i <= n; i += i & -i) data[i] += x;
     }
+    // [0, k)
     inline T sum(const int k) {
-        assert(0 <= k && k < n);
+        assert(0 <= k && k <= n);
         T s = 0;
-        for (int i = k + 1; i > 0; i -= i & -i) s += data[i];
+        for (int i = k; i > 0; i -= i & -i) s += data[i];
         return s;
     }
 };
@@ -95,10 +96,11 @@ struct BinaryIndexedTree {
         assert(0 <= k && k < n);
         for (int i = k + 1; i <= n; i += i & -i) data[i] += x;
     }
+    // [0, k)
     inline T sum(const int k) {
-        assert(0 <= k && k < n);
+        assert(0 <= k && k <= n);
         T s = 0;
-        for (int i = k + 1; i > 0; i -= i & -i) s += data[i];
+        for (int i = k; i > 0; i -= i & -i) s += data[i];
         return s;
     }
 };

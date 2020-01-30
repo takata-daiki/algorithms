@@ -38,7 +38,7 @@ layout: default
 
 ### data_structures
 
-* :x: <a href="library/data_structures/binary_indexed_tree.hpp.html">data_structures/binary_indexed_tree.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/binary_indexed_tree.hpp.html">data_structures/binary_indexed_tree.hpp</a>
 * :warning: <a href="library/data_structures/kd_tree.hpp.html">data_structures/kd_tree.hpp</a>
 * :heavy_check_mark: <a href="library/data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
 
@@ -110,7 +110,7 @@ layout: default
 
 ## Verify Files
 
-* :x: <a href="verify/test/data_structures/binary_indexed_tree.test.cpp.html">test/data_structures/binary_indexed_tree.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/data_structures/binary_indexed_tree.test.cpp.html">test/data_structures/binary_indexed_tree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/data_structures/lazy_segment_tree.rmq_and_raq.test.cpp.html">test/data_structures/lazy_segment_tree.rmq_and_raq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/data_structures/segment_tree.rmq.test.cpp.html">test/data_structures/segment_tree.rmq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/data_structures/union_find.test.cpp.html">test/data_structures/union_find.test.cpp</a>
