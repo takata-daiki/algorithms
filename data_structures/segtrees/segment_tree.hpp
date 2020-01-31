@@ -4,7 +4,7 @@ using namespace std;
 
 template <typename Monoid>
 struct SegmentTree {
-    using T = typename Monoid::T;
+    using T = typename Monoid::value_type;
 
     const Monoid monoid;
     int n;
