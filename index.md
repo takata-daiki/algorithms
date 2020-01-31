@@ -48,7 +48,7 @@ layout: default
 ### data_structures/segtrees
 
 * :heavy_check_mark: <a href="library/data_structures/segtrees/lazy_segment_tree.hpp.html">data_structures/segtrees/lazy_segment_tree.hpp</a>
-* :x: <a href="library/data_structures/segtrees/segment_tree.hpp.html">data_structures/segtrees/segment_tree.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/segtrees/segment_tree.hpp.html">data_structures/segtrees/segment_tree.hpp</a>
 
 
 <div id="3530283758733456883f81bc5e73deb0"></div>
@@ -125,7 +125,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/data_structures/lazy_segment_tree.min_update.test.cpp.html">test/data_structures/lazy_segment_tree.min_update.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/data_structures/lazy_segment_tree.sum_add.test.cpp.html">test/data_structures/lazy_segment_tree.sum_add.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/data_structures/lazy_segment_tree.sum_update.test.cpp.html">test/data_structures/lazy_segment_tree.sum_update.test.cpp</a>
-* :x: <a href="verify/test/data_structures/segment_tree.rmq.test.cpp.html">test/data_structures/segment_tree.rmq.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/data_structures/segment_tree.rmq.test.cpp.html">test/data_structures/segment_tree.rmq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/data_structures/union_find.test.cpp.html">test/data_structures/union_find.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometry/geometry.convex_hull.test.cpp.html">test/geometry/geometry.convex_hull.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometry/geometry.intersection.test.cpp.html">test/geometry/geometry.intersection.test.cpp</a>

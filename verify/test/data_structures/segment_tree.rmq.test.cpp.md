@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/data_structures/segment_tree.rmq.test.cpp
+# :heavy_check_mark: test/data_structures/segment_tree.rmq.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/segment_tree.rmq.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-01 02:46:07+09:00
+    - Last commit date: 2020-02-01 02:51:20+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_A</a>
@@ -39,7 +39,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/data_structures/segtrees/monoids/min.hpp.html">data_structures/segtrees/monoids/min.hpp</a>
-* :x: <a href="../../../library/data_structures/segtrees/segment_tree.hpp.html">data_structures/segtrees/segment_tree.hpp</a>
+* :heavy_check_mark: <a href="../../../library/data_structures/segtrees/segment_tree.hpp.html">data_structures/segtrees/segment_tree.hpp</a>
 
 
 ## Code
@@ -82,7 +82,7 @@ using namespace std;
 
 template <typename Monoid>
 struct SegmentTree {
-    using T = typename Monoid::T;
+    using T = typename Monoid::value_type;
 
     const Monoid monoid;
     int n;
