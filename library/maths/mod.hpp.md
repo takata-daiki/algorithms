@@ -31,13 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#d939e7a6b17e374c1e3db59b4df2ae97">maths</a>
 * <a href="{{ site.github.repository_url }}/blob/master/maths/mod.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-31 03:44:28+09:00
+    - Last commit date: 2020-02-01 03:17:28+09:00
 
 
 
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../verify/test/data_structures/lazy_segment_tree.sum_affine.test.cpp.html">test/data_structures/lazy_segment_tree.sum_affine.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/maths/mod.combination.test.cpp.html">test/maths/mod.combination.test.cpp</a>
 
 
@@ -68,6 +69,8 @@ struct ModInt {
     M& operator-=(const M& x) { return *this = *this - x; }
     M& operator*=(const M& x) { return *this = *this * x; }
     M& operator/=(const M& x) { return *this = *this / x; }
+    bool operator==(const M& x) const { return v == x.v; }
+    bool operator!=(const M& x) const { return v != x.v; }
     friend istream& operator>>(istream& input, M& x) {
         return input >> x.v, x = M(x), input;
     }
@@ -136,6 +139,8 @@ struct ModInt {
     M& operator-=(const M& x) { return *this = *this - x; }
     M& operator*=(const M& x) { return *this = *this * x; }
     M& operator/=(const M& x) { return *this = *this / x; }
+    bool operator==(const M& x) const { return v == x.v; }
+    bool operator!=(const M& x) const { return v != x.v; }
     friend istream& operator>>(istream& input, M& x) {
         return input >> x.v, x = M(x), input;
     }

@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/maths/mod.combination.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-31 03:44:28+09:00
+    - Last commit date: 2020-02-01 03:17:28+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D</a>
@@ -88,6 +88,8 @@ struct ModInt {
     M& operator-=(const M& x) { return *this = *this - x; }
     M& operator*=(const M& x) { return *this = *this * x; }
     M& operator/=(const M& x) { return *this = *this / x; }
+    bool operator==(const M& x) const { return v == x.v; }
+    bool operator!=(const M& x) const { return v != x.v; }
     friend istream& operator>>(istream& input, M& x) {
         return input >> x.v, x = M(x), input;
     }
