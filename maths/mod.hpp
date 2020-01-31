@@ -20,6 +20,8 @@ struct ModInt {
     M& operator-=(const M& x) { return *this = *this - x; }
     M& operator*=(const M& x) { return *this = *this * x; }
     M& operator/=(const M& x) { return *this = *this / x; }
+    bool operator==(const M& x) const { return v == x.v; }
+    bool operator!=(const M& x) const { return v != x.v; }
     friend istream& operator>>(istream& input, M& x) {
         return input >> x.v, x = M(x), input;
     }
