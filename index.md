@@ -48,16 +48,24 @@ layout: default
 ### data_structures/segtrees
 
 * :heavy_check_mark: <a href="library/data_structures/segtrees/lazy_segment_tree.hpp.html">data_structures/segtrees/lazy_segment_tree.hpp</a>
-* :heavy_check_mark: <a href="library/data_structures/segtrees/segment_tree.hpp.html">data_structures/segtrees/segment_tree.hpp</a>
+* :x: <a href="library/data_structures/segtrees/segment_tree.hpp.html">data_structures/segtrees/segment_tree.hpp</a>
 
 
 <div id="3530283758733456883f81bc5e73deb0"></div>
 
 ### data_structures/segtrees/monoids
 
+* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/affine.hpp.html">data_structures/segtrees/monoids/affine.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/change.hpp.html">data_structures/segtrees/monoids/change.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/max.hpp.html">data_structures/segtrees/monoids/max.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/max_change_action.hpp.html">data_structures/segtrees/monoids/max_change_action.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/max_plus_action.hpp.html">data_structures/segtrees/monoids/max_plus_action.hpp</a>
 * :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/min.hpp.html">data_structures/segtrees/monoids/min.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/min_change_action.hpp.html">data_structures/segtrees/monoids/min_change_action.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/min_plus_action.hpp.html">data_structures/segtrees/monoids/min_plus_action.hpp</a>
 * :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/plus.hpp.html">data_structures/segtrees/monoids/plus.hpp</a>
-* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/plus_min_action.hpp.html">data_structures/segtrees/monoids/plus_min_action.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/sum.hpp.html">data_structures/segtrees/monoids/sum.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/sum_affine_action.hpp.html">data_structures/segtrees/monoids/sum_affine_action.hpp</a>
 
 
 <div id="ed7daeb157cd9b31e53896ad3c771a26"></div>
@@ -111,8 +119,13 @@ layout: default
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/data_structures/binary_indexed_tree.test.cpp.html">test/data_structures/binary_indexed_tree.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/data_structures/lazy_segment_tree.rmq_and_raq.test.cpp.html">test/data_structures/lazy_segment_tree.rmq_and_raq.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/data_structures/segment_tree.rmq.test.cpp.html">test/data_structures/segment_tree.rmq.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/data_structures/lazy_segment_tree.max_add.test.cpp.html">test/data_structures/lazy_segment_tree.max_add.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/data_structures/lazy_segment_tree.max_update.test.cpp.html">test/data_structures/lazy_segment_tree.max_update.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/data_structures/lazy_segment_tree.min_add.test.cpp.html">test/data_structures/lazy_segment_tree.min_add.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/data_structures/lazy_segment_tree.min_update.test.cpp.html">test/data_structures/lazy_segment_tree.min_update.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/data_structures/lazy_segment_tree.sum_add.test.cpp.html">test/data_structures/lazy_segment_tree.sum_add.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/data_structures/lazy_segment_tree.sum_update.test.cpp.html">test/data_structures/lazy_segment_tree.sum_update.test.cpp</a>
+* :x: <a href="verify/test/data_structures/segment_tree.rmq.test.cpp.html">test/data_structures/segment_tree.rmq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/data_structures/union_find.test.cpp.html">test/data_structures/union_find.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometry/geometry.convex_hull.test.cpp.html">test/geometry/geometry.convex_hull.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometry/geometry.intersection.test.cpp.html">test/geometry/geometry.intersection.test.cpp</a>

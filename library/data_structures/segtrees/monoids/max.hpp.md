@@ -25,20 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: data_structures/segtrees/monoids/plus_min_action.hpp
+# :heavy_check_mark: data_structures/segtrees/monoids/max.hpp
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#3530283758733456883f81bc5e73deb0">data_structures/segtrees/monoids</a>
-* <a href="{{ site.github.repository_url }}/blob/master/data_structures/segtrees/monoids/plus_min_action.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-31 03:44:28+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/data_structures/segtrees/monoids/max.hpp">View this file on GitHub</a>
+    - Last commit date: 2020-02-01 02:46:07+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../../verify/test/data_structures/lazy_segment_tree.rmq_and_raq.test.cpp.html">test/data_structures/lazy_segment_tree.rmq_and_raq.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/test/data_structures/lazy_segment_tree.max_add.test.cpp.html">test/data_structures/lazy_segment_tree.max_add.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/test/data_structures/lazy_segment_tree.max_update.test.cpp.html">test/data_structures/lazy_segment_tree.max_update.test.cpp</a>
 
 
 ## Code
@@ -50,12 +51,11 @@ layout: default
 #include <bits/stdc++.h>
 using namespace std;
 
-template <class T>
-struct plus_min_action {
-    typename min_monoid<T>::T operator()(typename plus_monoid<T>::T f,
-                                         typename min_monoid<T>::T x) const {
-        return (x == min_monoid<T>().identity()) ? x : f + x;
-    }
+template <typename T>
+struct max_monoid {
+    using value_type = T;
+    T identity() const { return numeric_limits<T>::min(); }
+    T merge(const T a, const T b) const { return max(a, b); }
 };
 ```
 {% endraw %}
@@ -63,16 +63,15 @@ struct plus_min_action {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 2 "data_structures/segtrees/monoids/plus_min_action.hpp"
+#line 2 "data_structures/segtrees/monoids/max.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
-template <class T>
-struct plus_min_action {
-    typename min_monoid<T>::T operator()(typename plus_monoid<T>::T f,
-                                         typename min_monoid<T>::T x) const {
-        return (x == min_monoid<T>().identity()) ? x : f + x;
-    }
+template <typename T>
+struct max_monoid {
+    using value_type = T;
+    T identity() const { return numeric_limits<T>::min(); }
+    T merge(const T a, const T b) const { return max(a, b); }
 };
 
 ```

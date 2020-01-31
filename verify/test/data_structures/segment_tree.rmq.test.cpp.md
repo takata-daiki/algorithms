@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/data_structures/segment_tree.rmq.test.cpp
+# :x: test/data_structures/segment_tree.rmq.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/segment_tree.rmq.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-31 03:44:28+09:00
+    - Last commit date: 2020-02-01 02:46:07+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_A</a>
@@ -39,7 +39,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/data_structures/segtrees/monoids/min.hpp.html">data_structures/segtrees/monoids/min.hpp</a>
-* :heavy_check_mark: <a href="../../../library/data_structures/segtrees/segment_tree.hpp.html">data_structures/segtrees/segment_tree.hpp</a>
+* :x: <a href="../../../library/data_structures/segtrees/segment_tree.hpp.html">data_structures/segtrees/segment_tree.hpp</a>
 
 
 ## Code
@@ -132,11 +132,11 @@ struct SegmentTree {
 #include <bits/stdc++.h>
 using namespace std;
 
-template <typename ValueType>
+template <typename T>
 struct min_monoid {
-    using T = ValueType;
-    T identity() const { return numeric_limits<T>::max(); };
-    T merge(const T a, const T b) const { return min(a, b); };
+    using value_type = T;
+    T identity() const { return numeric_limits<T>::max(); }
+    T merge(const T a, const T b) const { return min(a, b); }
 };
 #line 4 "test/data_structures/segment_tree.rmq.test.cpp"
 

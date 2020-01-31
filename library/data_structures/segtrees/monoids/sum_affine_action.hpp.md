@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: data_structures/segtrees/monoids/plus.hpp
+# :heavy_check_mark: data_structures/segtrees/monoids/sum_affine_action.hpp
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#3530283758733456883f81bc5e73deb0">data_structures/segtrees/monoids</a>
-* <a href="{{ site.github.repository_url }}/blob/master/data_structures/segtrees/monoids/plus.hpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/data_structures/segtrees/monoids/sum_affine_action.hpp">View this file on GitHub</a>
     - Last commit date: 2020-02-01 02:46:07+09:00
 
 
@@ -38,8 +38,8 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../../verify/test/data_structures/lazy_segment_tree.max_add.test.cpp.html">test/data_structures/lazy_segment_tree.max_add.test.cpp</a>
-* :heavy_check_mark: <a href="../../../../verify/test/data_structures/lazy_segment_tree.min_add.test.cpp.html">test/data_structures/lazy_segment_tree.min_add.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/test/data_structures/lazy_segment_tree.sum_add.test.cpp.html">test/data_structures/lazy_segment_tree.sum_add.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/test/data_structures/lazy_segment_tree.sum_update.test.cpp.html">test/data_structures/lazy_segment_tree.sum_update.test.cpp</a>
 
 
 ## Code
@@ -51,11 +51,13 @@ layout: default
 #include <bits/stdc++.h>
 using namespace std;
 
-template <typename T>
-struct plus_monoid {
-    using value_type = T;
-    T identity() const { return T(); };
-    T merge(const T a, const T b) const { return a + b; };
+template <class T>
+struct sum_affine_action {
+    typename sum_monoid<T>::value_type operator()(
+        typename sum_monoid<T>::value_type a,
+        typename affine_monoid<T>::value_type b) const {
+        return make_pair(a.first * b.first + a.second * b.second, a.second);
+    }
 };
 ```
 {% endraw %}
@@ -63,15 +65,17 @@ struct plus_monoid {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 2 "data_structures/segtrees/monoids/plus.hpp"
+#line 2 "data_structures/segtrees/monoids/sum_affine_action.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
-template <typename T>
-struct plus_monoid {
-    using value_type = T;
-    T identity() const { return T(); };
-    T merge(const T a, const T b) const { return a + b; };
+template <class T>
+struct sum_affine_action {
+    typename sum_monoid<T>::value_type operator()(
+        typename sum_monoid<T>::value_type a,
+        typename affine_monoid<T>::value_type b) const {
+        return make_pair(a.first * b.first + a.second * b.second, a.second);
+    }
 };
 
 ```
