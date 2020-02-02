@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/lazy_segment_tree.max_add.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-01 02:46:07+09:00
+    - Last commit date: 2020-02-02 22:50:19+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_H">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_H</a>
@@ -38,10 +38,10 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/data_structures/segtrees/lazy_segment_tree.hpp.html">data_structures/segtrees/lazy_segment_tree.hpp</a>
-* :heavy_check_mark: <a href="../../../library/data_structures/segtrees/monoids/max.hpp.html">data_structures/segtrees/monoids/max.hpp</a>
-* :heavy_check_mark: <a href="../../../library/data_structures/segtrees/monoids/max_plus_action.hpp.html">data_structures/segtrees/monoids/max_plus_action.hpp</a>
-* :heavy_check_mark: <a href="../../../library/data_structures/segtrees/monoids/plus.hpp.html">data_structures/segtrees/monoids/plus.hpp</a>
+* :heavy_check_mark: <a href="../../../library/data_structures/lazy_segment_tree.hpp.html">data_structures/lazy_segment_tree.hpp</a>
+* :heavy_check_mark: <a href="../../../library/monoids/max.hpp.html">monoids/max.hpp</a>
+* :heavy_check_mark: <a href="../../../library/monoids/max_plus_action.hpp.html">monoids/max_plus_action.hpp</a>
+* :heavy_check_mark: <a href="../../../library/monoids/plus.hpp.html">monoids/plus.hpp</a>
 
 
 ## Code
@@ -50,10 +50,10 @@ layout: default
 {% raw %}
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_H"
-#include "../../data_structures/segtrees/lazy_segment_tree.hpp"
-#include "../../data_structures/segtrees/monoids/max.hpp"
-#include "../../data_structures/segtrees/monoids/plus.hpp"
-#include "../../data_structures/segtrees/monoids/max_plus_action.hpp"
+#include "../../data_structures/lazy_segment_tree.hpp"
+#include "../../monoids/max.hpp"
+#include "../../monoids/plus.hpp"
+#include "../../monoids/max_plus_action.hpp"
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -83,7 +83,7 @@ int main() {
 ```cpp
 #line 1 "test/data_structures/lazy_segment_tree.max_add.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_H"
-#line 2 "test/data_structures/../../data_structures/segtrees/lazy_segment_tree.hpp"
+#line 2 "test/data_structures/../../data_structures/lazy_segment_tree.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -168,7 +168,7 @@ struct LazySegmentTree {
         return monoid_t.merge(vl, vr);
     }
 };
-#line 2 "test/data_structures/../../data_structures/segtrees/monoids/max.hpp"
+#line 2 "test/data_structures/../../monoids/max.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -178,7 +178,7 @@ struct max_monoid {
     T identity() const { return numeric_limits<T>::min(); }
     T merge(const T a, const T b) const { return max(a, b); }
 };
-#line 2 "test/data_structures/../../data_structures/segtrees/monoids/plus.hpp"
+#line 2 "test/data_structures/../../monoids/plus.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -188,7 +188,7 @@ struct plus_monoid {
     T identity() const { return T(); };
     T merge(const T a, const T b) const { return a + b; };
 };
-#line 2 "test/data_structures/../../data_structures/segtrees/monoids/max_plus_action.hpp"
+#line 2 "test/data_structures/../../monoids/max_plus_action.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 

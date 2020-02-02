@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/lazy_segment_tree.sum_add.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-01 02:46:07+09:00
+    - Last commit date: 2020-02-02 22:50:19+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_G">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_G</a>
@@ -38,10 +38,10 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/data_structures/segtrees/lazy_segment_tree.hpp.html">data_structures/segtrees/lazy_segment_tree.hpp</a>
-* :heavy_check_mark: <a href="../../../library/data_structures/segtrees/monoids/affine.hpp.html">data_structures/segtrees/monoids/affine.hpp</a>
-* :heavy_check_mark: <a href="../../../library/data_structures/segtrees/monoids/sum.hpp.html">data_structures/segtrees/monoids/sum.hpp</a>
-* :heavy_check_mark: <a href="../../../library/data_structures/segtrees/monoids/sum_affine_action.hpp.html">data_structures/segtrees/monoids/sum_affine_action.hpp</a>
+* :heavy_check_mark: <a href="../../../library/data_structures/lazy_segment_tree.hpp.html">data_structures/lazy_segment_tree.hpp</a>
+* :heavy_check_mark: <a href="../../../library/monoids/affine.hpp.html">monoids/affine.hpp</a>
+* :heavy_check_mark: <a href="../../../library/monoids/sum.hpp.html">monoids/sum.hpp</a>
+* :heavy_check_mark: <a href="../../../library/monoids/sum_affine_action.hpp.html">monoids/sum_affine_action.hpp</a>
 
 
 ## Code
@@ -50,10 +50,10 @@ layout: default
 {% raw %}
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_G"
-#include "../../data_structures/segtrees/lazy_segment_tree.hpp"
-#include "../../data_structures/segtrees/monoids/sum.hpp"
-#include "../../data_structures/segtrees/monoids/affine.hpp"
-#include "../../data_structures/segtrees/monoids/sum_affine_action.hpp"
+#include "../../data_structures/lazy_segment_tree.hpp"
+#include "../../monoids/sum.hpp"
+#include "../../monoids/affine.hpp"
+#include "../../monoids/sum_affine_action.hpp"
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -89,7 +89,7 @@ int main() {
 ```cpp
 #line 1 "test/data_structures/lazy_segment_tree.sum_add.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_G"
-#line 2 "test/data_structures/../../data_structures/segtrees/lazy_segment_tree.hpp"
+#line 2 "test/data_structures/../../data_structures/lazy_segment_tree.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -174,7 +174,7 @@ struct LazySegmentTree {
         return monoid_t.merge(vl, vr);
     }
 };
-#line 2 "test/data_structures/../../data_structures/segtrees/monoids/sum.hpp"
+#line 2 "test/data_structures/../../monoids/sum.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -185,7 +185,7 @@ struct sum_monoid {
     P identity() const { return make_pair(T(), 0); }
     P merge(const P a, const P b) const { return make_pair(a.first + b.first, a.second + b.second); }
 };
-#line 2 "test/data_structures/../../data_structures/segtrees/monoids/affine.hpp"
+#line 2 "test/data_structures/../../monoids/affine.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -200,7 +200,7 @@ struct affine_monoid {
         return make_pair(fst, snd);
     }
 };
-#line 2 "test/data_structures/../../data_structures/segtrees/monoids/sum_affine_action.hpp"
+#line 2 "test/data_structures/../../monoids/sum_affine_action.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 

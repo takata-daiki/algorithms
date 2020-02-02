@@ -40,32 +40,9 @@ layout: default
 
 * :heavy_check_mark: <a href="library/data_structures/binary_indexed_tree.hpp.html">data_structures/binary_indexed_tree.hpp</a>
 * :warning: <a href="library/data_structures/kd_tree.hpp.html">data_structures/kd_tree.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/lazy_segment_tree.hpp.html">data_structures/lazy_segment_tree.hpp</a>
+* :heavy_check_mark: <a href="library/data_structures/segment_tree.hpp.html">data_structures/segment_tree.hpp</a>
 * :heavy_check_mark: <a href="library/data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
-
-
-<div id="1afc80669d853c132c0b86f1ed055b1e"></div>
-
-### data_structures/segtrees
-
-* :heavy_check_mark: <a href="library/data_structures/segtrees/lazy_segment_tree.hpp.html">data_structures/segtrees/lazy_segment_tree.hpp</a>
-* :heavy_check_mark: <a href="library/data_structures/segtrees/segment_tree.hpp.html">data_structures/segtrees/segment_tree.hpp</a>
-
-
-<div id="3530283758733456883f81bc5e73deb0"></div>
-
-### data_structures/segtrees/monoids
-
-* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/affine.hpp.html">data_structures/segtrees/monoids/affine.hpp</a>
-* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/change.hpp.html">data_structures/segtrees/monoids/change.hpp</a>
-* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/max.hpp.html">data_structures/segtrees/monoids/max.hpp</a>
-* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/max_change_action.hpp.html">data_structures/segtrees/monoids/max_change_action.hpp</a>
-* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/max_plus_action.hpp.html">data_structures/segtrees/monoids/max_plus_action.hpp</a>
-* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/min.hpp.html">data_structures/segtrees/monoids/min.hpp</a>
-* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/min_change_action.hpp.html">data_structures/segtrees/monoids/min_change_action.hpp</a>
-* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/min_plus_action.hpp.html">data_structures/segtrees/monoids/min_plus_action.hpp</a>
-* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/plus.hpp.html">data_structures/segtrees/monoids/plus.hpp</a>
-* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/sum.hpp.html">data_structures/segtrees/monoids/sum.hpp</a>
-* :heavy_check_mark: <a href="library/data_structures/segtrees/monoids/sum_affine_action.hpp.html">data_structures/segtrees/monoids/sum_affine_action.hpp</a>
 
 
 <div id="ed7daeb157cd9b31e53896ad3c771a26"></div>
@@ -82,10 +59,10 @@ layout: default
 * :heavy_check_mark: <a href="library/graphs/bellman_ford.hpp.html">graphs/bellman_ford.hpp</a>
 * :warning: <a href="library/graphs/biconnected_components.hpp.html">graphs/biconnected_components.hpp</a>
 * :heavy_check_mark: <a href="library/graphs/dijkstra.hpp.html">graphs/dijkstra.hpp</a>
-* :warning: <a href="library/graphs/dinic.hpp.html">graphs/dinic.hpp</a>
-* :warning: <a href="library/graphs/ford_fulkerson.hpp.html">graphs/ford_fulkerson.hpp</a>
+* :heavy_check_mark: <a href="library/graphs/dinic.hpp.html">graphs/dinic.hpp</a>
+* :heavy_check_mark: <a href="library/graphs/ford_fulkerson.hpp.html">graphs/ford_fulkerson.hpp</a>
 * :warning: <a href="library/graphs/heavy_light_decomposition.hpp.html">graphs/heavy_light_decomposition.hpp</a>
-* :warning: <a href="library/graphs/kruskal.hpp.html">graphs/kruskal.hpp</a>
+* :heavy_check_mark: <a href="library/graphs/kruskal.hpp.html">graphs/kruskal.hpp</a>
 * :warning: <a href="library/graphs/lowest_common_ancestor.hpp.html">graphs/lowest_common_ancestor.hpp</a>
 * :warning: <a href="library/graphs/primal_dual.hpp.html">graphs/primal_dual.hpp</a>
 * :warning: <a href="library/graphs/strongly_connected_components.hpp.html">graphs/strongly_connected_components.hpp</a>
@@ -97,6 +74,23 @@ layout: default
 
 * :heavy_check_mark: <a href="library/maths/mod.hpp.html">maths/mod.hpp</a>
 * :heavy_check_mark: <a href="library/maths/prime.hpp.html">maths/prime.hpp</a>
+
+
+<div id="315142c884fa9bdd2be3b42923ffe964"></div>
+
+### monoids
+
+* :heavy_check_mark: <a href="library/monoids/affine.hpp.html">monoids/affine.hpp</a>
+* :heavy_check_mark: <a href="library/monoids/change.hpp.html">monoids/change.hpp</a>
+* :heavy_check_mark: <a href="library/monoids/max.hpp.html">monoids/max.hpp</a>
+* :heavy_check_mark: <a href="library/monoids/max_change_action.hpp.html">monoids/max_change_action.hpp</a>
+* :heavy_check_mark: <a href="library/monoids/max_plus_action.hpp.html">monoids/max_plus_action.hpp</a>
+* :heavy_check_mark: <a href="library/monoids/min.hpp.html">monoids/min.hpp</a>
+* :heavy_check_mark: <a href="library/monoids/min_change_action.hpp.html">monoids/min_change_action.hpp</a>
+* :heavy_check_mark: <a href="library/monoids/min_plus_action.hpp.html">monoids/min_plus_action.hpp</a>
+* :heavy_check_mark: <a href="library/monoids/plus.hpp.html">monoids/plus.hpp</a>
+* :heavy_check_mark: <a href="library/monoids/sum.hpp.html">monoids/sum.hpp</a>
+* :heavy_check_mark: <a href="library/monoids/sum_affine_action.hpp.html">monoids/sum_affine_action.hpp</a>
 
 
 <div id="5e2bab0ecb94c4ea40777733195abe1b"></div>
@@ -133,6 +127,9 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/geometry/geometry.parallel_orthogonal.test.cpp.html">test/geometry/geometry.parallel_orthogonal.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graphs/bellman_ford.test.cpp.html">test/graphs/bellman_ford.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graphs/dijkstra.test.cpp.html">test/graphs/dijkstra.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graphs/dinic.test.cpp.html">test/graphs/dinic.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graphs/ford_fulkerson.test.cpp.html">test/graphs/ford_fulkerson.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graphs/kruskal.test.cpp.html">test/graphs/kruskal.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/maths/mod.combination.test.cpp.html">test/maths/mod.combination.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/maths/prime.sieve_of_eratosthenes.test.cpp.html">test/maths/prime.sieve_of_eratosthenes.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/strings/rolling_hash.test.cpp.html">test/strings/rolling_hash.test.cpp</a>

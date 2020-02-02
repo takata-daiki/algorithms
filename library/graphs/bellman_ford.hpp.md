@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e8706a28320e46fa20885a2933e42797">graphs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graphs/bellman_ford.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-13 03:00:25+09:00
+    - Last commit date: 2020-02-02 23:23:57+09:00
 
 
 
@@ -91,7 +91,7 @@ struct BellmanFord {
     }
 };
 template <typename T>
-T BellmanFord<T>::INF = 1e9;
+T BellmanFord<T>::INF = numeric_limits<T>::max() / 2;
 ```
 {% endraw %}
 
@@ -143,7 +143,7 @@ struct BellmanFord {
     }
 };
 template <typename T>
-T BellmanFord<T>::INF = 1e9;
+T BellmanFord<T>::INF = numeric_limits<T>::max() / 2;
 
 ```
 {% endraw %}

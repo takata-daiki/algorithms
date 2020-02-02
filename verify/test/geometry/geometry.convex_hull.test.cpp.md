@@ -30,10 +30,10 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/geometry/geometry.convex_hull.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-31 03:44:28+09:00
+    - Last commit date: 2020-02-02 22:50:19+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_4_A">https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_4_A</a>
 
 
 ## Depends on
@@ -46,7 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_4_A"
 #include "../../geometry/geometry.hpp"
 
 #include <bits/stdc++.h>
@@ -70,7 +70,7 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "test/geometry/geometry.convex_hull.test.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_4_A"
 #line 2 "test/geometry/../../geometry/geometry.hpp"
 #include <bits/stdc++.h>
 using namespace std;

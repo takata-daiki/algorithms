@@ -30,10 +30,10 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/graphs/bellman_ford.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-13 03:00:25+09:00
+    - Last commit date: 2020-02-02 23:23:57+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_1_B">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_1_B</a>
 
 
 ## Depends on
@@ -46,7 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_1_B"
 #include "../../graphs/bellman_ford.hpp"
 
 #include <bits/stdc++.h>
@@ -56,7 +56,7 @@ int main() {
     int v, e, r;
     cin >> v >> e >> r;
     BellmanFord<int> g(v);
-    for (int i = 0; i < e; i++) {
+    while (e--) {
         int s, t, d;
         cin >> s >> t >> d;
         g.add_edge(s, t, d);
@@ -83,7 +83,7 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "test/graphs/bellman_ford.test.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_1_B"
 #line 2 "test/graphs/../../graphs/bellman_ford.hpp"
 #include <bits/stdc++.h>
 using namespace std;
@@ -129,7 +129,7 @@ struct BellmanFord {
     }
 };
 template <typename T>
-T BellmanFord<T>::INF = 1e9;
+T BellmanFord<T>::INF = numeric_limits<T>::max() / 2;
 #line 3 "test/graphs/bellman_ford.test.cpp"
 
 #include <bits/stdc++.h>
@@ -139,7 +139,7 @@ int main() {
     int v, e, r;
     cin >> v >> e >> r;
     BellmanFord<int> g(v);
-    for (int i = 0; i < e; i++) {
+    while (e--) {
         int s, t, d;
         cin >> s >> t >> d;
         g.add_edge(s, t, d);

@@ -30,10 +30,10 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/graphs/dijkstra.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-12 01:50:18+09:00
+    - Last commit date: 2020-02-02 23:23:57+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_1_A</a>
 
 
 ## Depends on
@@ -46,7 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_1_A"
 #include "../../graphs/dijkstra.hpp"
 
 #include <bits/stdc++.h>
@@ -56,7 +56,7 @@ int main() {
     int v, e, r;
     cin >> v >> e >> r;
     Dijkstra<int> g(v);
-    for (int i = 0; i < e; i++) {
+    while (e--) {
         int s, t, d;
         cin >> s >> t >> d;
         g.add_edge(s, t, d);
@@ -77,7 +77,7 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "test/graphs/dijkstra.test.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_1_A"
 #line 2 "test/graphs/../../graphs/dijkstra.hpp"
 #include <bits/stdc++.h>
 using namespace std;
@@ -132,7 +132,7 @@ int main() {
     int v, e, r;
     cin >> v >> e >> r;
     Dijkstra<int> g(v);
-    for (int i = 0; i < e; i++) {
+    while (e--) {
         int s, t, d;
         cin >> s >> t >> d;
         g.add_edge(s, t, d);

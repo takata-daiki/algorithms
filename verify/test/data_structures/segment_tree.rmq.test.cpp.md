@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/segment_tree.rmq.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-01 02:51:20+09:00
+    - Last commit date: 2020-02-02 22:50:19+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_A</a>
@@ -38,8 +38,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/data_structures/segtrees/monoids/min.hpp.html">data_structures/segtrees/monoids/min.hpp</a>
-* :heavy_check_mark: <a href="../../../library/data_structures/segtrees/segment_tree.hpp.html">data_structures/segtrees/segment_tree.hpp</a>
+* :heavy_check_mark: <a href="../../../library/data_structures/segment_tree.hpp.html">data_structures/segment_tree.hpp</a>
+* :heavy_check_mark: <a href="../../../library/monoids/min.hpp.html">monoids/min.hpp</a>
 
 
 ## Code
@@ -48,8 +48,8 @@ layout: default
 {% raw %}
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_A"
-#include "../../data_structures/segtrees/segment_tree.hpp"
-#include "../../data_structures/segtrees/monoids/min.hpp"
+#include "../../data_structures/segment_tree.hpp"
+#include "../../monoids/min.hpp"
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -76,7 +76,7 @@ int main() {
 ```cpp
 #line 1 "test/data_structures/segment_tree.rmq.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_A"
-#line 2 "test/data_structures/../../data_structures/segtrees/segment_tree.hpp"
+#line 2 "test/data_structures/../../data_structures/segment_tree.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -128,7 +128,7 @@ struct SegmentTree {
         return monoid.merge(vl, vr);
     }
 };
-#line 2 "test/data_structures/../../data_structures/segtrees/monoids/min.hpp"
+#line 2 "test/data_structures/../../monoids/min.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 

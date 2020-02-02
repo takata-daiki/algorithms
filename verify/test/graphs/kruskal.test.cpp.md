@@ -21,29 +21,25 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graphs/kruskal.hpp
+# :heavy_check_mark: test/graphs/kruskal.test.cpp
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#e8706a28320e46fa20885a2933e42797">graphs</a>
-* <a href="{{ site.github.repository_url }}/blob/master/graphs/kruskal.hpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/graphs/kruskal.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-02 22:50:19+09:00
 
 
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_2_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_2_A</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/graphs/kruskal.test.cpp.html">test/graphs/kruskal.test.cpp</a>
+* :heavy_check_mark: <a href="../../../library/data_structures/union_find.hpp.html">data_structures/union_find.hpp</a>
+* :heavy_check_mark: <a href="../../../library/graphs/kruskal.hpp.html">graphs/kruskal.hpp</a>
 
 
 ## Code
@@ -51,50 +47,34 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#pragma once
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_2_A"
+#include "../../graphs/kruskal.hpp"
+
 #include <bits/stdc++.h>
-#include "../data_structures/union_find.hpp"
 using namespace std;
 
-template <typename T>
-struct Kruskal {
-    struct Edge {
-        int s, t;
-        T cost;
-        bool operator<(const Edge& e) const { return cost < e.cost; }
-    };
-
-    int n;
-    vector<Edge> es;
-
-    Kruskal(const int _n = 0) : n(_n) {}
-
-    void add_edge(const int u, const int v, const T w) {
-        n = max(n, max(u, v) + 1);
-        es.push_back({u, v, w});
+int main() {
+    int v, e;
+    cin >> v >> e;
+    Kruskal<int> g(v);
+    for (int i = 0; i < e; i++) {
+        int s, t, w;
+        cin >> s >> t >> w;
+        g.add_edge(s, t, w);
     }
-    T build() {
-        UnionFind uf(n);
-        sort(begin(es), end(es));
-        T res = 0;
-        for (auto&& e : es) {
-            if (!uf.same(e.s, e.t)) {
-                uf.unite(e.s, e.t);
-                res += e.cost;
-            }
-        }
-        return res;
-    }
-};
+    cout << g.build() << endl;
+}
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 2 "graphs/kruskal.hpp"
+#line 1 "test/graphs/kruskal.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_2_A"
+#line 2 "test/graphs/../../graphs/kruskal.hpp"
 #include <bits/stdc++.h>
-#line 2 "graphs/../data_structures/union_find.hpp"
+#line 2 "test/graphs/../../graphs/../data_structures/union_find.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -118,7 +98,7 @@ struct UnionFind {
         return true;
     }
 };
-#line 4 "graphs/kruskal.hpp"
+#line 4 "test/graphs/../../graphs/kruskal.hpp"
 using namespace std;
 
 template <typename T>
@@ -151,9 +131,25 @@ struct Kruskal {
         return res;
     }
 };
+#line 3 "test/graphs/kruskal.test.cpp"
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int v, e;
+    cin >> v >> e;
+    Kruskal<int> g(v);
+    for (int i = 0; i < e; i++) {
+        int s, t, w;
+        cin >> s >> t >> w;
+        g.add_edge(s, t, w);
+    }
+    cout << g.build() << endl;
+}
 
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 

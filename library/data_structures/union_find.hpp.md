@@ -38,12 +38,13 @@ layout: default
 
 ## Required by
 
-* :warning: <a href="../graphs/kruskal.hpp.html">graphs/kruskal.hpp</a>
+* :heavy_check_mark: <a href="../graphs/kruskal.hpp.html">graphs/kruskal.hpp</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/data_structures/union_find.test.cpp.html">test/data_structures/union_find.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/graphs/kruskal.test.cpp.html">test/graphs/kruskal.test.cpp</a>
 
 
 ## Code

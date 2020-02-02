@@ -21,30 +21,30 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: data_structures/segtrees/lazy_segment_tree.hpp
+# :heavy_check_mark: data_structures/lazy_segment_tree.hpp
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#1afc80669d853c132c0b86f1ed055b1e">data_structures/segtrees</a>
-* <a href="{{ site.github.repository_url }}/blob/master/data_structures/segtrees/lazy_segment_tree.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-01 02:46:07+09:00
+* category: <a href="../../index.html#9466edd02bad586f9ccf200a84a4dafd">data_structures</a>
+* <a href="{{ site.github.repository_url }}/blob/master/data_structures/lazy_segment_tree.hpp">View this file on GitHub</a>
+    - Last commit date: 2020-02-02 22:50:19+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../verify/test/data_structures/lazy_segment_tree.max_add.test.cpp.html">test/data_structures/lazy_segment_tree.max_add.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/data_structures/lazy_segment_tree.max_update.test.cpp.html">test/data_structures/lazy_segment_tree.max_update.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/data_structures/lazy_segment_tree.min_add.test.cpp.html">test/data_structures/lazy_segment_tree.min_add.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/data_structures/lazy_segment_tree.min_update.test.cpp.html">test/data_structures/lazy_segment_tree.min_update.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/data_structures/lazy_segment_tree.sum_add.test.cpp.html">test/data_structures/lazy_segment_tree.sum_add.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/data_structures/lazy_segment_tree.sum_affine.test.cpp.html">test/data_structures/lazy_segment_tree.sum_affine.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/data_structures/lazy_segment_tree.sum_update.test.cpp.html">test/data_structures/lazy_segment_tree.sum_update.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/data_structures/lazy_segment_tree.max_add.test.cpp.html">test/data_structures/lazy_segment_tree.max_add.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/data_structures/lazy_segment_tree.max_update.test.cpp.html">test/data_structures/lazy_segment_tree.max_update.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/data_structures/lazy_segment_tree.min_add.test.cpp.html">test/data_structures/lazy_segment_tree.min_add.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/data_structures/lazy_segment_tree.min_update.test.cpp.html">test/data_structures/lazy_segment_tree.min_update.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/data_structures/lazy_segment_tree.sum_add.test.cpp.html">test/data_structures/lazy_segment_tree.sum_add.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/data_structures/lazy_segment_tree.sum_affine.test.cpp.html">test/data_structures/lazy_segment_tree.sum_affine.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/data_structures/lazy_segment_tree.sum_update.test.cpp.html">test/data_structures/lazy_segment_tree.sum_update.test.cpp</a>
 
 
 ## Code
@@ -143,7 +143,7 @@ struct LazySegmentTree {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 2 "data_structures/segtrees/lazy_segment_tree.hpp"
+#line 2 "data_structures/lazy_segment_tree.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -232,5 +232,5 @@ struct LazySegmentTree {
 ```
 {% endraw %}
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../index.html">Back to top page</a>
 

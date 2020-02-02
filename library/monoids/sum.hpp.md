@@ -21,26 +21,26 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: data_structures/segtrees/monoids/sum.hpp
+# :heavy_check_mark: monoids/sum.hpp
 
-<a href="../../../../index.html">Back to top page</a>
+<a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../../../index.html#3530283758733456883f81bc5e73deb0">data_structures/segtrees/monoids</a>
-* <a href="{{ site.github.repository_url }}/blob/master/data_structures/segtrees/monoids/sum.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-01 02:46:07+09:00
+* category: <a href="../../index.html#315142c884fa9bdd2be3b42923ffe964">monoids</a>
+* <a href="{{ site.github.repository_url }}/blob/master/monoids/sum.hpp">View this file on GitHub</a>
+    - Last commit date: 2020-02-02 22:50:19+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../../verify/test/data_structures/lazy_segment_tree.sum_add.test.cpp.html">test/data_structures/lazy_segment_tree.sum_add.test.cpp</a>
-* :heavy_check_mark: <a href="../../../../verify/test/data_structures/lazy_segment_tree.sum_affine.test.cpp.html">test/data_structures/lazy_segment_tree.sum_affine.test.cpp</a>
-* :heavy_check_mark: <a href="../../../../verify/test/data_structures/lazy_segment_tree.sum_update.test.cpp.html">test/data_structures/lazy_segment_tree.sum_update.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/data_structures/lazy_segment_tree.sum_add.test.cpp.html">test/data_structures/lazy_segment_tree.sum_add.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/data_structures/lazy_segment_tree.sum_affine.test.cpp.html">test/data_structures/lazy_segment_tree.sum_affine.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/data_structures/lazy_segment_tree.sum_update.test.cpp.html">test/data_structures/lazy_segment_tree.sum_update.test.cpp</a>
 
 
 ## Code
@@ -65,7 +65,7 @@ struct sum_monoid {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 2 "data_structures/segtrees/monoids/sum.hpp"
+#line 2 "monoids/sum.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -80,5 +80,5 @@ struct sum_monoid {
 ```
 {% endraw %}
 
-<a href="../../../../index.html">Back to top page</a>
+<a href="../../index.html">Back to top page</a>
 
