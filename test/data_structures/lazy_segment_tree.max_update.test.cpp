@@ -1,8 +1,8 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_F"
-#include "../../data_structures/segtrees/lazy_segment_tree.hpp"
-#include "../../data_structures/segtrees/monoids/max.hpp"
-#include "../../data_structures/segtrees/monoids/change.hpp"
-#include "../../data_structures/segtrees/monoids/max_change_action.hpp"
+#include "../../data_structures/lazy_segment_tree.hpp"
+#include "../../monoids/max.hpp"
+#include "../../monoids/change.hpp"
+#include "../../monoids/max_change_action.hpp"
 
 #include <bits/stdc++.h>
 using namespace std;

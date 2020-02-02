@@ -1,8 +1,8 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_G"
-#include "../../data_structures/segtrees/lazy_segment_tree.hpp"
-#include "../../data_structures/segtrees/monoids/sum.hpp"
-#include "../../data_structures/segtrees/monoids/affine.hpp"
-#include "../../data_structures/segtrees/monoids/sum_affine_action.hpp"
+#include "../../data_structures/lazy_segment_tree.hpp"
+#include "../../monoids/sum.hpp"
+#include "../../monoids/affine.hpp"
+#include "../../monoids/sum_affine_action.hpp"
 
 #include <bits/stdc++.h>
 using namespace std;
