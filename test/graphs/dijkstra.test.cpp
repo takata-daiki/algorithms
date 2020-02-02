@@ -8,7 +8,7 @@ int main() {
     int v, e, r;
     cin >> v >> e >> r;
     Dijkstra<int> g(v);
-    for (int i = 0; i < e; i++) {
+    while (e--) {
         int s, t, d;
         cin >> s >> t >> d;
         g.add_edge(s, t, d);

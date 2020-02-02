@@ -43,4 +43,4 @@ struct BellmanFord {
     }
 };
 template <typename T>
-T BellmanFord<T>::INF = 1e9;
+T BellmanFord<T>::INF = numeric_limits<T>::max() / 2;
