@@ -5,6 +5,10 @@
 
 See the [Docs](https://takata-daiki.github.io/algorithms/) for details.
 
+## License
+
+Licensed under the MIT License, but you can use this repo without the copyright notice and the permission notice in your submissions for online judges.
+
 ## Reference
 
 This repo is based on [online-judge-verify-helper](https://github.com/kmyk/online-judge-verify-helper).
