@@ -21,16 +21,15 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graphs/lowest_common_ancestor.hpp
+# :heavy_check_mark: test/graphs/lowest_common_ancestor.test.cpp
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#e8706a28320e46fa20885a2933e42797">graphs</a>
-* <a href="{{ site.github.repository_url }}/blob/master/graphs/lowest_common_ancestor.hpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/graphs/lowest_common_ancestor.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-24 22:28:03+09:00
 
 
@@ -38,13 +37,9 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../data_structures/segment_tree.hpp.html">data_structures/segment_tree.hpp</a>
-* :heavy_check_mark: <a href="../monoids/min_index.hpp.html">monoids/min_index.hpp</a>
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/graphs/lowest_common_ancestor.test.cpp.html">test/graphs/lowest_common_ancestor.test.cpp</a>
+* :heavy_check_mark: <a href="../../../library/data_structures/segment_tree.hpp.html">data_structures/segment_tree.hpp</a>
+* :heavy_check_mark: <a href="../../../library/graphs/lowest_common_ancestor.hpp.html">graphs/lowest_common_ancestor.hpp</a>
+* :heavy_check_mark: <a href="../../../library/monoids/min_index.hpp.html">monoids/min_index.hpp</a>
 
 
 ## Code
@@ -52,59 +47,50 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#pragma once
+#define PROBLEM \
+    "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C"
+#include "../../graphs/lowest_common_ancestor.hpp"
+
 #include <bits/stdc++.h>
-#include "../data_structures/segment_tree.hpp"
-#include "../monoids/min_index.hpp"
 using namespace std;
 
-struct LowestCommonAncestor {
-    using P = pair<int, int>;
+int main() {
+    cin.tie(0);
+    ios::sync_with_stdio(false);
 
     int n;
-    vector<int> idx;
-    vector<P> euler_tour;
-    vector<vector<int>> g;
-    SegmentTree<min_index_monoid<int>> seg;
-
-    LowestCommonAncestor(int _n) : n(_n), idx(_n), g(_n) {}
-
-    void add_edge(int s, int t) {
-        g[s].push_back(t);
-        g[t].push_back(s);
-    }
-    void build(int r) {
-        dfs(r, -1, 0);
-        seg = SegmentTree<min_index_monoid<int>>(begin(euler_tour),
-                                                 end(euler_tour));
-    }
-    void dfs(int u, int par, int dep) {
-        idx[u] = euler_tour.size();
-        euler_tour.push_back({dep, u});
-        for (auto&& v : g[u]) {
-            if (v == par) continue;
-            dfs(v, u, dep + 1);
-            euler_tour.push_back({dep, u});
+    cin >> n;
+    LowestCommonAncestor g(n);
+    for (int i = 0; i < n; i++) {
+        int k;
+        cin >> k;
+        while (k--) {
+            int c;
+            cin >> c;
+            g.add_edge(i, c);
         }
     }
-    int query(int u, int v) {
-        assert(0 <= u && u < n);
-        assert(0 <= v && v < n);
-        int i = idx[u];
-        int j = idx[v];
-        if (i > j) swap(i, j);
-        return seg.query(i, j + 1).second;
+    g.build(0);
+    int q;
+    cin >> q;
+    while (q--) {
+        int u, v;
+        cin >> u >> v;
+        cout << g.query(u, v) << endl;
     }
-};
+}
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 2 "graphs/lowest_common_ancestor.hpp"
+#line 1 "test/graphs/lowest_common_ancestor.test.cpp"
+#define PROBLEM \
+    "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C"
+#line 2 "test/graphs/../../graphs/lowest_common_ancestor.hpp"
 #include <bits/stdc++.h>
-#line 2 "graphs/../data_structures/segment_tree.hpp"
+#line 2 "test/graphs/../../graphs/../data_structures/segment_tree.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -158,7 +144,7 @@ struct SegmentTree {
         return monoid.merge(vl, vr);
     }
 };
-#line 2 "graphs/../monoids/min_index.hpp"
+#line 2 "test/graphs/../../graphs/../monoids/min_index.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -169,7 +155,7 @@ struct min_index_monoid {
     P identity() { return make_pair(numeric_limits<T>::max(), INT_MAX); }
     P merge(P a, P b) { return min(a, b); }
 };
-#line 5 "graphs/lowest_common_ancestor.hpp"
+#line 5 "test/graphs/../../graphs/lowest_common_ancestor.hpp"
 using namespace std;
 
 struct LowestCommonAncestor {
@@ -210,9 +196,39 @@ struct LowestCommonAncestor {
         return seg.query(i, j + 1).second;
     }
 };
+#line 4 "test/graphs/lowest_common_ancestor.test.cpp"
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    cin.tie(0);
+    ios::sync_with_stdio(false);
+
+    int n;
+    cin >> n;
+    LowestCommonAncestor g(n);
+    for (int i = 0; i < n; i++) {
+        int k;
+        cin >> k;
+        while (k--) {
+            int c;
+            cin >> c;
+            g.add_edge(i, c);
+        }
+    }
+    g.build(0);
+    int q;
+    cin >> q;
+    while (q--) {
+        int u, v;
+        cin >> u >> v;
+        cout << g.query(u, v) << endl;
+    }
+}
 
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 

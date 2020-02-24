@@ -25,20 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: maths/prime.hpp
+# :heavy_check_mark: monoids/min_index.hpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#d939e7a6b17e374c1e3db59b4df2ae97">maths</a>
-* <a href="{{ site.github.repository_url }}/blob/master/maths/prime.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-24 17:58:17+09:00
+* category: <a href="../../index.html#315142c884fa9bdd2be3b42923ffe964">monoids</a>
+* <a href="{{ site.github.repository_url }}/blob/master/monoids/min_index.hpp">View this file on GitHub</a>
+    - Last commit date: 2020-02-24 22:28:03+09:00
 
 
+
+
+## Required by
+
+* :heavy_check_mark: <a href="../graphs/lowest_common_ancestor.hpp.html">graphs/lowest_common_ancestor.hpp</a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/maths/prime.sieve_of_eratosthenes.test.cpp.html">test/maths/prime.sieve_of_eratosthenes.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/graphs/lowest_common_ancestor.test.cpp.html">test/graphs/lowest_common_ancestor.test.cpp</a>
 
 
 ## Code
@@ -50,38 +55,30 @@ layout: default
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> sieve_of_eratosthenes(int n) {
-    vector<int> prime(n + 1, 0);
-    for (int i = 2; i <= n; ++i) prime[i] = i;
-    for (int i = 2; i * i <= n; ++i) {
-        if (prime[i]) {
-            for (int j = i * i; j <= n; j += i) prime[j] = 0;
-        }
-    }
-    // prime.erase(remove(begin(prime), end(prime), 0), end(prime));
-    return prime;
-}
+template <typename T>
+struct min_index_monoid {
+    using P = pair<T, int>;
+    using value_type = P;
+    P identity() { return make_pair(numeric_limits<T>::max(), INT_MAX); }
+    P merge(P a, P b) { return min(a, b); }
+};
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 2 "maths/prime.hpp"
+#line 2 "monoids/min_index.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> sieve_of_eratosthenes(int n) {
-    vector<int> prime(n + 1, 0);
-    for (int i = 2; i <= n; ++i) prime[i] = i;
-    for (int i = 2; i * i <= n; ++i) {
-        if (prime[i]) {
-            for (int j = i * i; j <= n; j += i) prime[j] = 0;
-        }
-    }
-    // prime.erase(remove(begin(prime), end(prime), 0), end(prime));
-    return prime;
-}
+template <typename T>
+struct min_index_monoid {
+    using P = pair<T, int>;
+    using value_type = P;
+    P identity() { return make_pair(numeric_limits<T>::max(), INT_MAX); }
+    P merge(P a, P b) { return min(a, b); }
+};
 
 ```
 {% endraw %}

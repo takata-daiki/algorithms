@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/maths/prime.sieve_of_eratosthenes.test.cpp
+# :heavy_check_mark: test/maths/prime.sieve_of_eratosthenes.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/maths/prime.sieve_of_eratosthenes.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-24 17:58:17+09:00
+    - Last commit date: 2020-02-24 22:28:03+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/challenges/search/volumes/1276">https://onlinejudge.u-aizu.ac.jp/challenges/search/volumes/1276</a>
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1276">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1276</a>
 
 
 ## Depends on
 
-* :x: <a href="../../../library/maths/prime.hpp.html">maths/prime.hpp</a>
+* :heavy_check_mark: <a href="../../../library/maths/prime.hpp.html">maths/prime.hpp</a>
 
 
 ## Code
@@ -46,7 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/challenges/search/volumes/1276"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1276"
 #include "../../maths/prime.hpp"
 
 #include <bits/stdc++.h>
@@ -68,7 +68,7 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "test/maths/prime.sieve_of_eratosthenes.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/challenges/search/volumes/1276"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1276"
 #line 2 "test/maths/../../maths/prime.hpp"
 #include <bits/stdc++.h>
 using namespace std;

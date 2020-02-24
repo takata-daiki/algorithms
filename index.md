@@ -63,9 +63,9 @@ layout: default
 * :heavy_check_mark: <a href="library/graphs/ford_fulkerson.hpp.html">graphs/ford_fulkerson.hpp</a>
 * :warning: <a href="library/graphs/heavy_light_decomposition.hpp.html">graphs/heavy_light_decomposition.hpp</a>
 * :heavy_check_mark: <a href="library/graphs/kruskal.hpp.html">graphs/kruskal.hpp</a>
-* :warning: <a href="library/graphs/lowest_common_ancestor.hpp.html">graphs/lowest_common_ancestor.hpp</a>
-* :warning: <a href="library/graphs/primal_dual.hpp.html">graphs/primal_dual.hpp</a>
-* :warning: <a href="library/graphs/strongly_connected_components.hpp.html">graphs/strongly_connected_components.hpp</a>
+* :heavy_check_mark: <a href="library/graphs/lowest_common_ancestor.hpp.html">graphs/lowest_common_ancestor.hpp</a>
+* :heavy_check_mark: <a href="library/graphs/primal_dual.hpp.html">graphs/primal_dual.hpp</a>
+* :heavy_check_mark: <a href="library/graphs/strongly_connected_components.hpp.html">graphs/strongly_connected_components.hpp</a>
 
 
 <div id="d939e7a6b17e374c1e3db59b4df2ae97"></div>
@@ -73,7 +73,7 @@ layout: default
 ### maths
 
 * :heavy_check_mark: <a href="library/maths/mod.hpp.html">maths/mod.hpp</a>
-* :x: <a href="library/maths/prime.hpp.html">maths/prime.hpp</a>
+* :heavy_check_mark: <a href="library/maths/prime.hpp.html">maths/prime.hpp</a>
 
 
 <div id="315142c884fa9bdd2be3b42923ffe964"></div>
@@ -87,6 +87,7 @@ layout: default
 * :heavy_check_mark: <a href="library/monoids/max_plus_action.hpp.html">monoids/max_plus_action.hpp</a>
 * :heavy_check_mark: <a href="library/monoids/min.hpp.html">monoids/min.hpp</a>
 * :heavy_check_mark: <a href="library/monoids/min_change_action.hpp.html">monoids/min_change_action.hpp</a>
+* :heavy_check_mark: <a href="library/monoids/min_index.hpp.html">monoids/min_index.hpp</a>
 * :heavy_check_mark: <a href="library/monoids/min_plus_action.hpp.html">monoids/min_plus_action.hpp</a>
 * :heavy_check_mark: <a href="library/monoids/plus.hpp.html">monoids/plus.hpp</a>
 * :heavy_check_mark: <a href="library/monoids/sum.hpp.html">monoids/sum.hpp</a>
@@ -130,9 +131,12 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/graphs/dinic.test.cpp.html">test/graphs/dinic.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graphs/ford_fulkerson.test.cpp.html">test/graphs/ford_fulkerson.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graphs/kruskal.test.cpp.html">test/graphs/kruskal.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graphs/lowest_common_ancestor.test.cpp.html">test/graphs/lowest_common_ancestor.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graphs/primal_dual.test.cpp.html">test/graphs/primal_dual.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graphs/strongly_connected_components.test.cpp.html">test/graphs/strongly_connected_components.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/maths/mod.combination.test.cpp.html">test/maths/mod.combination.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/maths/mod.extend_gcd.test.cpp.html">test/maths/mod.extend_gcd.test.cpp</a>
-* :x: <a href="verify/test/maths/prime.sieve_of_eratosthenes.test.cpp.html">test/maths/prime.sieve_of_eratosthenes.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/maths/prime.sieve_of_eratosthenes.test.cpp.html">test/maths/prime.sieve_of_eratosthenes.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/strings/rolling_hash.test.cpp.html">test/strings/rolling_hash.test.cpp</a>
 
 

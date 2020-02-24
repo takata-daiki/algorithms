@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/graphs/ford_fulkerson.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-24 17:58:17+09:00
+    - Last commit date: 2020-02-24 22:28:03+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_6_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_6_A</a>
@@ -62,7 +62,6 @@ int main() {
         ssp.add_edge(u, v, c);
     }
     cout << ssp.build(0, n - 1) << endl;
-    return 0;
 }
 ```
 {% endraw %}
@@ -135,7 +134,6 @@ int main() {
         ssp.add_edge(u, v, c);
     }
     cout << ssp.build(0, n - 1) << endl;
-    return 0;
 }
 
 ```
