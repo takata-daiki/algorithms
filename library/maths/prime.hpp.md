@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: maths/prime.hpp
+# :x: maths/prime.hpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#d939e7a6b17e374c1e3db59b4df2ae97">maths</a>
 * <a href="{{ site.github.repository_url }}/blob/master/maths/prime.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-12 01:50:18+09:00
+    - Last commit date: 2020-02-24 17:58:17+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/maths/prime.sieve_of_eratosthenes.test.cpp.html">test/maths/prime.sieve_of_eratosthenes.test.cpp</a>
+* :x: <a href="../../verify/test/maths/prime.sieve_of_eratosthenes.test.cpp.html">test/maths/prime.sieve_of_eratosthenes.test.cpp</a>
 
 
 ## Code
@@ -50,7 +50,7 @@ layout: default
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> sieve_of_eratosthenes(const int n) {
+vector<int> sieve_of_eratosthenes(int n) {
     vector<int> prime(n + 1, 0);
     for (int i = 2; i <= n; ++i) prime[i] = i;
     for (int i = 2; i * i <= n; ++i) {
@@ -71,7 +71,7 @@ vector<int> sieve_of_eratosthenes(const int n) {
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> sieve_of_eratosthenes(const int n) {
+vector<int> sieve_of_eratosthenes(int n) {
     vector<int> prime(n + 1, 0);
     for (int i = 2; i <= n; ++i) prime[i] = i;
     for (int i = 2; i * i <= n; ++i) {

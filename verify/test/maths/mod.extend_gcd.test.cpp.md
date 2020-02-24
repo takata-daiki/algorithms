@@ -21,26 +21,24 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: maths/mod.hpp
+# :heavy_check_mark: test/maths/mod.extend_gcd.test.cpp
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#d939e7a6b17e374c1e3db59b4df2ae97">maths</a>
-* <a href="{{ site.github.repository_url }}/blob/master/maths/mod.hpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/maths/mod.extend_gcd.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-24 19:39:41+09:00
 
 
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_E">https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_E</a>
 
 
-## Verified with
+## Depends on
 
-* :heavy_check_mark: <a href="../../verify/test/data_structures/lazy_segment_tree.sum_affine.test.cpp.html">test/data_structures/lazy_segment_tree.sum_affine.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/maths/mod.combination.test.cpp.html">test/maths/mod.combination.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/maths/mod.extend_gcd.test.cpp.html">test/maths/mod.extend_gcd.test.cpp</a>
+* :heavy_check_mark: <a href="../../../library/maths/mod.hpp.html">maths/mod.hpp</a>
 
 
 ## Code
@@ -48,78 +46,28 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#pragma once
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_E"
+#include "../../maths/mod.hpp"
+
 #include <bits/stdc++.h>
 using namespace std;
 
-struct ModInt {
-    using M = ModInt;
-
-    static vector<M> fact, finv;
-    static long long MOD;
-    long long v;
-
-    // normalize: [-MOD, MOD**2] -> [0, MOD)
-    ModInt(const long long _v = 0) : v((_v < 0) ? _v % MOD + MOD : _v % MOD) {}
-
-    M operator+(const M& x) const { return M(v + x.v); }
-    M operator-(const M& x) const { return M(v - x.v); }
-    M operator*(const M& x) const { return M(v * x.v); }
-    M operator/(const M& x) const { return M(v * x.inv().v); }
-    M& operator+=(const M& x) { return *this = *this + x; }
-    M& operator-=(const M& x) { return *this = *this - x; }
-    M& operator*=(const M& x) { return *this = *this * x; }
-    M& operator/=(const M& x) { return *this = *this / x; }
-    bool operator==(const M& x) const { return v == x.v; }
-    bool operator!=(const M& x) const { return v != x.v; }
-    friend istream& operator>>(istream& input, M& x) {
-        return input >> x.v, x = M(x), input;
-    }
-    friend ostream& operator<<(ostream& output, const M& x) {
-        return output << x.v;
-    }
-    inline M pow(long long n) const {
-        M x(v), res(1);
-        while (n) {
-            if (n & 1) res *= x;
-            x *= x;
-            n >>= 1;
-        }
-        return res;
-    }
-    inline M inv() const { return this->pow(MOD - 2); }
-    static void build(int n) {
-        fact.assign(n + 1, 1);
-        for (int i = 1; i < n + 1; i++) fact[i] = fact[i - 1] * M(i);
-        finv.assign(n + 1, fact[n].inv());
-        for (int i = n; i > 0; i--) finv[i - 1] = finv[i] * M(i);
-    }
-    static M comb(int n, int k) {
-        if (n < k || k < 0) return M(0);
-        return fact[n] * finv[n - k] * finv[k];
-    }
-    static M extgcd(int a, int b, int& x, int& y) {
-        M d(a);
-        if (b) {
-            d = extgcd(b, a % b, y, x);
-            y -= (a / b) * x;
-        } else {
-            x = 1;
-            y = 0;
-        }
-        return d;
-    }
-};
-vector<ModInt> ModInt::fact = vector<ModInt>();
-vector<ModInt> ModInt::finv = vector<ModInt>();
-long long ModInt::MOD = 1e9 + 7;
+int main() {
+    int a, b;
+    cin >> a >> b;
+    int x, y;
+    ModInt::extgcd(a, b, x, y);
+    cout << x << ' ' << y << endl;
+}
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 2 "maths/mod.hpp"
+#line 1 "test/maths/mod.extend_gcd.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_E"
+#line 2 "test/maths/../../maths/mod.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -184,9 +132,21 @@ struct ModInt {
 vector<ModInt> ModInt::fact = vector<ModInt>();
 vector<ModInt> ModInt::finv = vector<ModInt>();
 long long ModInt::MOD = 1e9 + 7;
+#line 3 "test/maths/mod.extend_gcd.test.cpp"
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int a, b;
+    cin >> a >> b;
+    int x, y;
+    ModInt::extgcd(a, b, x, y);
+    cout << x << ' ' << y << endl;
+}
 
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 

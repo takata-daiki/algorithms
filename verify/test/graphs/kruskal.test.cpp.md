@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/graphs/kruskal.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-02 22:50:19+09:00
+    - Last commit date: 2020-02-24 17:58:17+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_2_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_2_A</a>
@@ -81,13 +81,13 @@ using namespace std;
 struct UnionFind {
     vector<int> data;
 
-    UnionFind(const int n) : data(n, -1) {}
+    UnionFind(int n) : data(n, -1) {}
 
-    inline int root(const int x) {
+    inline int root(int x) {
         return (data[x] < 0) ? x : data[x] = root(data[x]);
     }
-    inline int size(const int x) { return -data[root(x)]; }
-    inline bool same(const int x, const int y) { return root(x) == root(y); }
+    inline int size(int x) { return -data[root(x)]; }
+    inline bool same(int x, int y) { return root(x) == root(y); }
     bool unite(int x, int y) {
         x = root(x);
         y = root(y);
@@ -112,9 +112,9 @@ struct Kruskal {
     int n;
     vector<Edge> es;
 
-    Kruskal(const int _n = 0) : n(_n) {}
+    Kruskal(int _n = 0) : n(_n) {}
 
-    void add_edge(const int u, const int v, const T w) {
+    void add_edge(int u, int v, T w) {
         n = max(n, max(u, v) + 1);
         es.push_back({u, v, w});
     }

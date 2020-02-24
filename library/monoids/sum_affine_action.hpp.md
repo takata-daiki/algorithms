@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#315142c884fa9bdd2be3b42923ffe964">monoids</a>
 * <a href="{{ site.github.repository_url }}/blob/master/monoids/sum_affine_action.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-02 22:50:19+09:00
+    - Last commit date: 2020-02-24 17:58:17+09:00
 
 
 
@@ -56,7 +56,7 @@ template <class T>
 struct sum_affine_action {
     typename sum_monoid<T>::value_type operator()(
         typename sum_monoid<T>::value_type a,
-        typename affine_monoid<T>::value_type b) const {
+        typename affine_monoid<T>::value_type b) {
         return make_pair(a.first * b.first + a.second * b.second, a.second);
     }
 };
@@ -74,7 +74,7 @@ template <class T>
 struct sum_affine_action {
     typename sum_monoid<T>::value_type operator()(
         typename sum_monoid<T>::value_type a,
-        typename affine_monoid<T>::value_type b) const {
+        typename affine_monoid<T>::value_type b) {
         return make_pair(a.first * b.first + a.second * b.second, a.second);
     }
 };

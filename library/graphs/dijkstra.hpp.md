@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e8706a28320e46fa20885a2933e42797">graphs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graphs/dijkstra.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-12 01:50:18+09:00
+    - Last commit date: 2020-02-24 17:58:17+09:00
 
 
 
@@ -60,19 +60,17 @@ struct Dijkstra {
     vector<int> prev;
     vector<vector<Edge>> g;
 
-    Dijkstra(const int n) : prev(n, -1), g(n) {}
+    Dijkstra(int n) : prev(n, -1), g(n) {}
 
-    void add_edge(const int u, const int v, const T w) {
-        g[u].push_back({v, w});
-    }
-    vector<T> build(const int s) {
+    void add_edge(int u, int v, T w) { g[u].push_back({v, w}); }
+    vector<T> build(int s) {
         using Node = pair<T, int>;
         vector<T> dist(g.size(), -1);
         priority_queue<Node, vector<Node>, greater<Node>> pq;
         pq.push({dist[s] = 0, s});
         while (!pq.empty()) {
-            auto d = pq.top().first;
-            auto u = pq.top().second;
+            T d = pq.top().first;
+            int u = pq.top().second;
             pq.pop();
             if (dist[u] < d) continue;
             for (auto&& v : g[u]) {
@@ -86,7 +84,7 @@ struct Dijkstra {
     }
     vector<int> get_path(int t) {
         vector<int> path;
-        for (; t != -1; t = prev[t]) path.push_back(t);
+        for (int i = t; i != -1; i = prev[i]) path.push_back(i);
         reverse(begin(path), end(path));
         return path;
     }
@@ -111,19 +109,17 @@ struct Dijkstra {
     vector<int> prev;
     vector<vector<Edge>> g;
 
-    Dijkstra(const int n) : prev(n, -1), g(n) {}
+    Dijkstra(int n) : prev(n, -1), g(n) {}
 
-    void add_edge(const int u, const int v, const T w) {
-        g[u].push_back({v, w});
-    }
-    vector<T> build(const int s) {
+    void add_edge(int u, int v, T w) { g[u].push_back({v, w}); }
+    vector<T> build(int s) {
         using Node = pair<T, int>;
         vector<T> dist(g.size(), -1);
         priority_queue<Node, vector<Node>, greater<Node>> pq;
         pq.push({dist[s] = 0, s});
         while (!pq.empty()) {
-            auto d = pq.top().first;
-            auto u = pq.top().second;
+            T d = pq.top().first;
+            int u = pq.top().second;
             pq.pop();
             if (dist[u] < d) continue;
             for (auto&& v : g[u]) {
@@ -137,7 +133,7 @@ struct Dijkstra {
     }
     vector<int> get_path(int t) {
         vector<int> path;
-        for (; t != -1; t = prev[t]) path.push_back(t);
+        for (int i = t; i != -1; i = prev[i]) path.push_back(i);
         reverse(begin(path), end(path));
         return path;
     }

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#315142c884fa9bdd2be3b42923ffe964">monoids</a>
 * <a href="{{ site.github.repository_url }}/blob/master/monoids/sum.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-02 22:50:19+09:00
+    - Last commit date: 2020-02-24 19:07:41+09:00
 
 
 
@@ -56,8 +56,10 @@ template <typename T>
 struct sum_monoid {
     using P = pair<T, int>;
     using value_type = P;
-    P identity() const { return make_pair(T(), 0); }
-    P merge(const P a, const P b) const { return make_pair(a.first + b.first, a.second + b.second); }
+    P identity() { return make_pair(T(), 0); }
+    P merge(P a, P b) {
+        return make_pair(a.first + b.first, a.second + b.second);
+    }
 };
 ```
 {% endraw %}
@@ -73,8 +75,10 @@ template <typename T>
 struct sum_monoid {
     using P = pair<T, int>;
     using value_type = P;
-    P identity() const { return make_pair(T(), 0); }
-    P merge(const P a, const P b) const { return make_pair(a.first + b.first, a.second + b.second); }
+    P identity() { return make_pair(T(), 0); }
+    P merge(P a, P b) {
+        return make_pair(a.first + b.first, a.second + b.second);
+    }
 };
 
 ```

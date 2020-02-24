@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e8706a28320e46fa20885a2933e42797">graphs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graphs/dinic.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-02 23:23:57+09:00
+    - Last commit date: 2020-02-24 17:58:17+09:00
 
 
 
@@ -55,19 +55,19 @@ struct Dinic {
         int to, cap, rev;
     };
 
-    const int n, init;
+    int n, init;
     vector<int> itr, level;
     vector<vector<Edge>> g;
 
-    Dinic(const int _n, const int _init = 1e9) : n(_n), init(_init), g(_n) {}
+    Dinic(int _n, int _init = 1e9) : n(_n), init(_init), g(_n) {}
 
-    void add_edge(const int u, const int v, const int c) {
+    void add_edge(int u, int v, int c) {
         int sz_u = g[u].size();
         int sz_v = g[v].size();
         g[u].push_back({v, c, sz_v});
         g[v].push_back({u, 0, sz_u});
     }
-    void bfs(const int s) {
+    void bfs(int s) {
         level.assign(n, -1);
         queue<int> que({s});
         level[s] = 0;
@@ -83,7 +83,7 @@ struct Dinic {
             }
         }
     }
-    int dfs(const int u, const int t, const int c) {
+    int dfs(int u, int t, int c) {
         if (u == t) return c;
         for (int& i = itr[u]; i < (int)g[u].size(); ++i) {
             Edge& e = g[u][i];
@@ -99,7 +99,7 @@ struct Dinic {
         }
         return 0;
     }
-    int build(const int s, const int t) {
+    int build(int s, int t) {
         int flow = 0;
         while (true) {
             bfs(s);
@@ -125,19 +125,19 @@ struct Dinic {
         int to, cap, rev;
     };
 
-    const int n, init;
+    int n, init;
     vector<int> itr, level;
     vector<vector<Edge>> g;
 
-    Dinic(const int _n, const int _init = 1e9) : n(_n), init(_init), g(_n) {}
+    Dinic(int _n, int _init = 1e9) : n(_n), init(_init), g(_n) {}
 
-    void add_edge(const int u, const int v, const int c) {
+    void add_edge(int u, int v, int c) {
         int sz_u = g[u].size();
         int sz_v = g[v].size();
         g[u].push_back({v, c, sz_v});
         g[v].push_back({u, 0, sz_u});
     }
-    void bfs(const int s) {
+    void bfs(int s) {
         level.assign(n, -1);
         queue<int> que({s});
         level[s] = 0;
@@ -153,7 +153,7 @@ struct Dinic {
             }
         }
     }
-    int dfs(const int u, const int t, const int c) {
+    int dfs(int u, int t, int c) {
         if (u == t) return c;
         for (int& i = itr[u]; i < (int)g[u].size(); ++i) {
             Edge& e = g[u][i];
@@ -169,7 +169,7 @@ struct Dinic {
         }
         return 0;
     }
-    int build(const int s, const int t) {
+    int build(int s, int t) {
         int flow = 0;
         while (true) {
             bfs(s);

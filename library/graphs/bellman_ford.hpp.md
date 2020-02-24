@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e8706a28320e46fa20885a2933e42797">graphs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graphs/bellman_ford.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-02 23:23:57+09:00
+    - Last commit date: 2020-02-24 17:58:17+09:00
 
 
 
@@ -57,17 +57,15 @@ struct BellmanFord {
         T cost;
     };
 
-    const int n;
+    int n;
     static T INF;
     vector<int> prev;
     vector<Edge> es;
 
-    BellmanFord(const int _n) : n(_n), prev(_n, -1) {}
+    BellmanFord(int _n) : n(_n), prev(_n, -1) {}
 
-    void add_edge(const int u, const int v, const T w) {
-        es.push_back({u, v, w});
-    }
-    vector<T> build(const int s, bool& neg_cycle) {
+    void add_edge(int u, int v, const T w) { es.push_back({u, v, w}); }
+    vector<T> build(int s, bool& neg_cycle) {
         neg_cycle = false;
         vector<T> dist(n, INF + INF);
         dist[s] = 0;
@@ -85,7 +83,7 @@ struct BellmanFord {
     }
     vector<int> get_path(int t) {
         vector<int> path;
-        for (; t != -1; t = prev[t]) path.push_back(t);
+        for (int i = t; i != -1; i = prev[i]) path.push_back(i);
         reverse(begin(path), end(path));
         return path;
     }
@@ -109,17 +107,15 @@ struct BellmanFord {
         T cost;
     };
 
-    const int n;
+    int n;
     static T INF;
     vector<int> prev;
     vector<Edge> es;
 
-    BellmanFord(const int _n) : n(_n), prev(_n, -1) {}
+    BellmanFord(int _n) : n(_n), prev(_n, -1) {}
 
-    void add_edge(const int u, const int v, const T w) {
-        es.push_back({u, v, w});
-    }
-    vector<T> build(const int s, bool& neg_cycle) {
+    void add_edge(int u, int v, const T w) { es.push_back({u, v, w}); }
+    vector<T> build(int s, bool& neg_cycle) {
         neg_cycle = false;
         vector<T> dist(n, INF + INF);
         dist[s] = 0;
@@ -137,7 +133,7 @@ struct BellmanFord {
     }
     vector<int> get_path(int t) {
         vector<int> path;
-        for (; t != -1; t = prev[t]) path.push_back(t);
+        for (int i = t; i != -1; i = prev[i]) path.push_back(i);
         reverse(begin(path), end(path));
         return path;
     }

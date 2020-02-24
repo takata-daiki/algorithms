@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#315142c884fa9bdd2be3b42923ffe964">monoids</a>
 * <a href="{{ site.github.repository_url }}/blob/master/monoids/max.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-02 22:50:19+09:00
+    - Last commit date: 2020-02-24 17:58:17+09:00
 
 
 
@@ -54,8 +54,8 @@ using namespace std;
 template <typename T>
 struct max_monoid {
     using value_type = T;
-    T identity() const { return numeric_limits<T>::min(); }
-    T merge(const T a, const T b) const { return max(a, b); }
+    T identity() { return numeric_limits<T>::min(); }
+    T merge(T a, T b) { return max(a, b); }
 };
 ```
 {% endraw %}
@@ -70,8 +70,8 @@ using namespace std;
 template <typename T>
 struct max_monoid {
     using value_type = T;
-    T identity() const { return numeric_limits<T>::min(); }
-    T merge(const T a, const T b) const { return max(a, b); }
+    T identity() { return numeric_limits<T>::min(); }
+    T merge(T a, T b) { return max(a, b); }
 };
 
 ```

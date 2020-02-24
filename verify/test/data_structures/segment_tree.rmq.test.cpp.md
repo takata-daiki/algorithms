@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/segment_tree.rmq.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-02 22:50:19+09:00
+    - Last commit date: 2020-02-24 18:12:30+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_A</a>
@@ -84,13 +84,12 @@ template <typename Monoid>
 struct SegmentTree {
     using T = typename Monoid::value_type;
 
-    const Monoid monoid;
     int n;
     vector<T> data;
+    Monoid monoid;
 
     SegmentTree() {}
-    SegmentTree(const int _n, const Monoid& _monoid = Monoid())
-        : monoid(_monoid) {
+    SegmentTree(int _n, const Monoid& _monoid = Monoid()) : monoid(_monoid) {
         n = 1;
         while (n < _n) n <<= 1;
         data.assign(n << 1, monoid.identity());
@@ -110,18 +109,21 @@ struct SegmentTree {
         }
     }
 
-    void update(const int k, const T x) {
+    void update(int k, T x) {
         assert(0 <= k && k < n);
-        data[k + n] = x;
-        for (int i = (k + n) >> 1; i > 0; i >>= 1) {
+        k += n;
+        data[k] = x;
+        for (int i = k >> 1; i > 0; i >>= 1) {
             data[i] = monoid.merge(data[i << 1], data[i << 1 | 1]);
         }
     }
     // [a, b)
-    T query(const int a, const int b) {
+    T query(int a, int b) {
         assert(0 <= a && a <= b && b <= n);
+        a += n;
+        b += n - 1;
         T vl = monoid.identity(), vr = monoid.identity();
-        for (int l = a + n, r = b + n; l < r; l >>= 1, r >>= 1) {
+        for (int l = a, r = b + 1; l < r; l >>= 1, r >>= 1) {
             if (l & 1) vl = monoid.merge(vl, data[l++]);
             if (r & 1) vr = monoid.merge(data[--r], vr);
         }
@@ -135,8 +137,8 @@ using namespace std;
 template <typename T>
 struct min_monoid {
     using value_type = T;
-    T identity() const { return numeric_limits<T>::max(); }
-    T merge(const T a, const T b) const { return min(a, b); }
+    T identity() { return numeric_limits<T>::max(); }
+    T merge(T a, T b) { return min(a, b); }
 };
 #line 4 "test/data_structures/segment_tree.rmq.test.cpp"
 

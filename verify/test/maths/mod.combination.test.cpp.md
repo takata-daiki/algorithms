@@ -30,10 +30,10 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/maths/mod.combination.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-01 03:17:28+09:00
+    - Last commit date: 2020-02-24 19:39:41+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/all/DPL_5_D">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/all/DPL_5_D</a>
 
 
 ## Depends on
@@ -46,7 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/all/DPL_5_D"
 #include "../../maths/mod.hpp"
 
 #include <bits/stdc++.h>
@@ -65,7 +65,7 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "test/maths/mod.combination.test.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_D"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/all/DPL_5_D"
 #line 2 "test/maths/../../maths/mod.hpp"
 #include <bits/stdc++.h>
 using namespace std;
@@ -77,9 +77,9 @@ struct ModInt {
     static long long MOD;
     long long v;
 
-    // norm: [-MOD, MOD**2] -> [0, MOD)
+    // normalize: [-MOD, MOD**2] -> [0, MOD)
     ModInt(const long long _v = 0) : v((_v < 0) ? _v % MOD + MOD : _v % MOD) {}
-    
+
     M operator+(const M& x) const { return M(v + x.v); }
     M operator-(const M& x) const { return M(v - x.v); }
     M operator*(const M& x) const { return M(v * x.v); }
@@ -106,23 +106,24 @@ struct ModInt {
         return res;
     }
     inline M inv() const { return this->pow(MOD - 2); }
-    static void build(const int n) {
+    static void build(int n) {
         fact.assign(n + 1, 1);
         for (int i = 1; i < n + 1; i++) fact[i] = fact[i - 1] * M(i);
         finv.assign(n + 1, fact[n].inv());
         for (int i = n; i > 0; i--) finv[i - 1] = finv[i] * M(i);
     }
-    static M comb(const int n, const int k) {
+    static M comb(int n, int k) {
         if (n < k || k < 0) return M(0);
         return fact[n] * finv[n - k] * finv[k];
     }
-    static M extgcd(const int a, const int b, int* x, int* y) {
+    static M extgcd(int a, int b, int& x, int& y) {
         M d(a);
         if (b) {
             d = extgcd(b, a % b, y, x);
-            *y -= (a / b) * *x;
+            y -= (a / b) * x;
         } else {
-            *x = 1, *y = 0;
+            x = 1;
+            y = 0;
         }
         return d;
     }

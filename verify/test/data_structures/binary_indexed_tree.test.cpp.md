@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/binary_indexed_tree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-31 04:22:36+09:00
+    - Last commit date: 2020-02-24 17:58:17+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_B">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_B</a>
@@ -81,19 +81,17 @@ using namespace std;
 // 0-indexed
 template <typename T>
 struct BinaryIndexedTree {
-    const int n;
+    int n;
     vector<T> data;
 
-    BinaryIndexedTree(const int _n) : n(_n) {
-        data.assign(n + 1, 0);
-    }
+    BinaryIndexedTree(int _n) : n(_n) { data.assign(n + 1, 0); }
 
-    inline void add(const int k, const T x) {
+    inline void add(int k, T x) {
         assert(0 <= k && k < n);
         for (int i = k + 1; i <= n; i += i & -i) data[i] += x;
     }
     // [0, k)
-    inline T sum(const int k) {
+    inline T sum(int k) {
         assert(0 <= k && k <= n);
         T s = 0;
         for (int i = k; i > 0; i -= i & -i) s += data[i];

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ed7daeb157cd9b31e53896ad3c771a26">geometry</a>
 * <a href="{{ site.github.repository_url }}/blob/master/geometry/geometry.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-12 01:55:44+09:00
+    - Last commit date: 2020-02-24 19:39:41+09:00
 
 
 
@@ -60,10 +60,10 @@ struct Point {
     double y;
     double z;
 
-    Point(const double _x = 0.0, const double _y = 0.0, const double _z = 0.0)
+    Point(double _x = 0.0, double _y = 0.0, double _z = 0.0)
         : x(_x), y(_y), z(_z) {}
 
-    // NOTICE: if you use 3d vector, change THIS!!
+    // NOTE: change this if you use 3d vector.
     friend istream& operator>>(istream& input, P& p) {
         return input >> p.x >> p.y, p.z = 0, input;
     }
@@ -72,39 +72,31 @@ struct Point {
     }
     P operator+(const P& p) const { return P(x + p.x, y + p.y, z + p.z); }
     P operator-(const P& p) const { return P(x - p.x, y - p.y, z - p.z); }
-    P operator*(const double k) const { return P(x * k, y * k, z * k); }
-    P operator/(const double k) const { return P(x / k, y / k, z / k); }
+    P operator*(double k) const { return P(x * k, y * k, z * k); }
+    P operator/(double k) const { return P(x / k, y / k, z / k); }
     P& operator+=(const P& p) { return *this = *this + p; }
     P& operator-=(const P& p) { return *this = *this - p; }
-    P& operator*=(const double k) { return *this = *this * k; }
-    P& operator/=(const double k) { return *this = *this / k; }
+    P& operator*=(double k) { return *this = *this * k; }
+    P& operator/=(double k) { return *this = *this / k; }
     bool operator<(const P& p) const { return lt(z, p.z); }
     bool operator==(const P& p) const {
         return eq(x, p.x) && eq(y, p.y) && eq(z, p.z);
     }
     bool operator>(const P& p) const { return !(*this < p || *this == p); }
-    inline double abs() const { return sqrt(norm()); }
-    inline double norm() const { return x * x + y * y + z * z; };
-    inline double dot(const P& p) const { return x * p.x + y * p.y + z * p.z; }
-    inline P cross(const P& p) const {
+    inline double length() { return sqrt(norm()); }
+    inline double norm() { return x * x + y * y + z * z; };
+    inline double dot(const P& p) { return x * p.x + y * p.y + z * p.z; }
+    inline P cross(const P& p) {
         double a = y * p.z - z * p.y;
         double b = z * p.x - x * p.z;
         double c = x * p.y - y * p.x;
         return P(a, b, c);
     }
-    inline bool is_orthogonal(const P& p) const { return eq(dot(p), 0.0); }
-    inline bool is_parallel(const P& p) const {
-        return cross(p) == P(0.0, 0.0, 0.0);
-    }
-    static bool eq(const double a, const double b) {
-        return std::abs(a - b) < EPS;
-    }
-    static bool lt(const double a, const double b) {
-        return a - b < -EPS;
-    }
-    static bool le(const double a, const double b) {
-        return a - b < EPS;
-    }
+    inline bool is_orthogonal(const P& p) { return eq(dot(p), 0.0); }
+    inline bool is_parallel(const P& p) { return cross(p) == P(0.0, 0.0, 0.0); }
+    static bool eq(double a, double b) { return abs(a - b) < EPS; }
+    static bool lt(double a, double b) { return a - b < -EPS; }
+    static bool le(double a, double b) { return a - b < EPS; }
     static int ccw(P a, P b, P c) {
         b -= a;
         c -= a;
@@ -153,10 +145,10 @@ struct Point {
     double y;
     double z;
 
-    Point(const double _x = 0.0, const double _y = 0.0, const double _z = 0.0)
+    Point(double _x = 0.0, double _y = 0.0, double _z = 0.0)
         : x(_x), y(_y), z(_z) {}
 
-    // NOTICE: if you use 3d vector, change THIS!!
+    // NOTE: change this if you use 3d vector.
     friend istream& operator>>(istream& input, P& p) {
         return input >> p.x >> p.y, p.z = 0, input;
     }
@@ -165,39 +157,31 @@ struct Point {
     }
     P operator+(const P& p) const { return P(x + p.x, y + p.y, z + p.z); }
     P operator-(const P& p) const { return P(x - p.x, y - p.y, z - p.z); }
-    P operator*(const double k) const { return P(x * k, y * k, z * k); }
-    P operator/(const double k) const { return P(x / k, y / k, z / k); }
+    P operator*(double k) const { return P(x * k, y * k, z * k); }
+    P operator/(double k) const { return P(x / k, y / k, z / k); }
     P& operator+=(const P& p) { return *this = *this + p; }
     P& operator-=(const P& p) { return *this = *this - p; }
-    P& operator*=(const double k) { return *this = *this * k; }
-    P& operator/=(const double k) { return *this = *this / k; }
+    P& operator*=(double k) { return *this = *this * k; }
+    P& operator/=(double k) { return *this = *this / k; }
     bool operator<(const P& p) const { return lt(z, p.z); }
     bool operator==(const P& p) const {
         return eq(x, p.x) && eq(y, p.y) && eq(z, p.z);
     }
     bool operator>(const P& p) const { return !(*this < p || *this == p); }
-    inline double abs() const { return sqrt(norm()); }
-    inline double norm() const { return x * x + y * y + z * z; };
-    inline double dot(const P& p) const { return x * p.x + y * p.y + z * p.z; }
-    inline P cross(const P& p) const {
+    inline double length() { return sqrt(norm()); }
+    inline double norm() { return x * x + y * y + z * z; };
+    inline double dot(const P& p) { return x * p.x + y * p.y + z * p.z; }
+    inline P cross(const P& p) {
         double a = y * p.z - z * p.y;
         double b = z * p.x - x * p.z;
         double c = x * p.y - y * p.x;
         return P(a, b, c);
     }
-    inline bool is_orthogonal(const P& p) const { return eq(dot(p), 0.0); }
-    inline bool is_parallel(const P& p) const {
-        return cross(p) == P(0.0, 0.0, 0.0);
-    }
-    static bool eq(const double a, const double b) {
-        return std::abs(a - b) < EPS;
-    }
-    static bool lt(const double a, const double b) {
-        return a - b < -EPS;
-    }
-    static bool le(const double a, const double b) {
-        return a - b < EPS;
-    }
+    inline bool is_orthogonal(const P& p) { return eq(dot(p), 0.0); }
+    inline bool is_parallel(const P& p) { return cross(p) == P(0.0, 0.0, 0.0); }
+    static bool eq(double a, double b) { return abs(a - b) < EPS; }
+    static bool lt(double a, double b) { return a - b < -EPS; }
+    static bool le(double a, double b) { return a - b < EPS; }
     static int ccw(P a, P b, P c) {
         b -= a;
         c -= a;

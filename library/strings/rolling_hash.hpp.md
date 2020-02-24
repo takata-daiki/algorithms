@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#8bcf6629759bd278a5c6266bd9c054f8">strings</a>
 * <a href="{{ site.github.repository_url }}/blob/master/strings/rolling_hash.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-12 01:50:18+09:00
+    - Last commit date: 2020-02-24 17:58:17+09:00
 
 
 
@@ -54,7 +54,7 @@ struct RollingHash {
     static int SIZE;
     static vector<uint64_t> mod;
     static vector<uint64_t> base;
-    const int n;
+    int n;
     vector<vector<unsigned>> h, pw;
 
     RollingHash(const string& s) : n(s.length()) {
@@ -68,18 +68,18 @@ struct RollingHash {
         }
     }
 
-    inline unsigned get(const int l, const int r, const int k) const {
+    inline unsigned get(int l, int r, int k) const {
         return (h[k][r] + (mod[k] - h[k][l]) * pw[k][r - l]) % mod[k];
     }
 
-    bool match(const int l1, const int r1, const int l2, const int r2) const {
+    bool match(int l1, int r1, int l2, int r2) const {
         for (int i = 0; i < SIZE; i++) {
             if (get(l1, r1, i) != get(l2, r2, i)) return false;
         }
         return true;
     }
 
-    int lcp(const int i, const int j) {
+    int lcp(int i, int j) {
         int ok = 0;
         int ng = min(n - i, n - j) + 1;
         while (ng - ok > 1) {
@@ -106,7 +106,7 @@ struct RollingHash {
     static int SIZE;
     static vector<uint64_t> mod;
     static vector<uint64_t> base;
-    const int n;
+    int n;
     vector<vector<unsigned>> h, pw;
 
     RollingHash(const string& s) : n(s.length()) {
@@ -120,18 +120,18 @@ struct RollingHash {
         }
     }
 
-    inline unsigned get(const int l, const int r, const int k) const {
+    inline unsigned get(int l, int r, int k) const {
         return (h[k][r] + (mod[k] - h[k][l]) * pw[k][r - l]) % mod[k];
     }
 
-    bool match(const int l1, const int r1, const int l2, const int r2) const {
+    bool match(int l1, int r1, int l2, int r2) const {
         for (int i = 0; i < SIZE; i++) {
             if (get(l1, r1, i) != get(l2, r2, i)) return false;
         }
         return true;
     }
 
-    int lcp(const int i, const int j) {
+    int lcp(int i, int j) {
         int ok = 0;
         int ng = min(n - i, n - j) + 1;
         while (ng - ok > 1) {

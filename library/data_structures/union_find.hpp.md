@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#9466edd02bad586f9ccf200a84a4dafd">data_structures</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structures/union_find.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-12 01:50:18+09:00
+    - Last commit date: 2020-02-24 17:58:17+09:00
 
 
 
@@ -59,13 +59,13 @@ using namespace std;
 struct UnionFind {
     vector<int> data;
 
-    UnionFind(const int n) : data(n, -1) {}
+    UnionFind(int n) : data(n, -1) {}
 
-    inline int root(const int x) {
+    inline int root(int x) {
         return (data[x] < 0) ? x : data[x] = root(data[x]);
     }
-    inline int size(const int x) { return -data[root(x)]; }
-    inline bool same(const int x, const int y) { return root(x) == root(y); }
+    inline int size(int x) { return -data[root(x)]; }
+    inline bool same(int x, int y) { return root(x) == root(y); }
     bool unite(int x, int y) {
         x = root(x);
         y = root(y);
@@ -89,13 +89,13 @@ using namespace std;
 struct UnionFind {
     vector<int> data;
 
-    UnionFind(const int n) : data(n, -1) {}
+    UnionFind(int n) : data(n, -1) {}
 
-    inline int root(const int x) {
+    inline int root(int x) {
         return (data[x] < 0) ? x : data[x] = root(data[x]);
     }
-    inline int size(const int x) { return -data[root(x)]; }
-    inline bool same(const int x, const int y) { return root(x) == root(y); }
+    inline int size(int x) { return -data[root(x)]; }
+    inline bool same(int x, int y) { return root(x) == root(y); }
     bool unite(int x, int y) {
         x = root(x);
         y = root(y);

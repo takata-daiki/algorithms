@@ -30,10 +30,10 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/strings/rolling_hash.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-12 01:50:18+09:00
+    - Last commit date: 2020-02-24 17:58:17+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/all/ALDS1_14_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/all/ALDS1_14_B</a>
 
 
 ## Depends on
@@ -46,7 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/all/ALDS1_14_B"
 #include "../../strings/rolling_hash.hpp"
 
 #include <bits/stdc++.h>
@@ -69,7 +69,7 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "test/strings/rolling_hash.test.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/all/ALDS1_14_B"
 #line 2 "test/strings/../../strings/rolling_hash.hpp"
 #include <bits/stdc++.h>
 using namespace std;
@@ -78,7 +78,7 @@ struct RollingHash {
     static int SIZE;
     static vector<uint64_t> mod;
     static vector<uint64_t> base;
-    const int n;
+    int n;
     vector<vector<unsigned>> h, pw;
 
     RollingHash(const string& s) : n(s.length()) {
@@ -92,18 +92,18 @@ struct RollingHash {
         }
     }
 
-    inline unsigned get(const int l, const int r, const int k) const {
+    inline unsigned get(int l, int r, int k) const {
         return (h[k][r] + (mod[k] - h[k][l]) * pw[k][r - l]) % mod[k];
     }
 
-    bool match(const int l1, const int r1, const int l2, const int r2) const {
+    bool match(int l1, int r1, int l2, int r2) const {
         for (int i = 0; i < SIZE; i++) {
             if (get(l1, r1, i) != get(l2, r2, i)) return false;
         }
         return true;
     }
 
-    int lcp(const int i, const int j) {
+    int lcp(int i, int j) {
         int ok = 0;
         int ng = min(n - i, n - j) + 1;
         while (ng - ok > 1) {
