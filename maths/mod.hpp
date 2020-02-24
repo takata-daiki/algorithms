@@ -12,16 +12,16 @@ struct ModInt {
     // normalize: [-MOD, MOD**2] -> [0, MOD)
     ModInt(const long long _v = 0) : v((_v < 0) ? _v % MOD + MOD : _v % MOD) {}
 
-    M operator+(const M& x) { return M(v + x.v); }
-    M operator-(const M& x) { return M(v - x.v); }
-    M operator*(const M& x) { return M(v * x.v); }
-    M operator/(const M& x) { return M(v * x.inv().v); }
+    M operator+(const M& x) const { return M(v + x.v); }
+    M operator-(const M& x) const { return M(v - x.v); }
+    M operator*(const M& x) const { return M(v * x.v); }
+    M operator/(const M& x) const { return M(v * x.inv().v); }
     M& operator+=(const M& x) { return *this = *this + x; }
     M& operator-=(const M& x) { return *this = *this - x; }
     M& operator*=(const M& x) { return *this = *this * x; }
     M& operator/=(const M& x) { return *this = *this / x; }
-    bool operator==(const M& x) { return v == x.v; }
-    bool operator!=(const M& x) { return v != x.v; }
+    bool operator==(const M& x) const { return v == x.v; }
+    bool operator!=(const M& x) const { return v != x.v; }
     friend istream& operator>>(istream& input, M& x) {
         return input >> x.v, x = M(x), input;
     }

@@ -20,19 +20,19 @@ struct Point {
     friend ostream& operator<<(ostream& output, const P& p) {
         return output << '(' << p.x << ", " << p.y << ')';
     }
-    P operator+(const P& p) { return P(x + p.x, y + p.y, z + p.z); }
-    P operator-(const P& p) { return P(x - p.x, y - p.y, z - p.z); }
-    P operator*(double k) { return P(x * k, y * k, z * k); }
-    P operator/(double k) { return P(x / k, y / k, z / k); }
+    P operator+(const P& p) const { return P(x + p.x, y + p.y, z + p.z); }
+    P operator-(const P& p) const { return P(x - p.x, y - p.y, z - p.z); }
+    P operator*(double k) const { return P(x * k, y * k, z * k); }
+    P operator/(double k) const { return P(x / k, y / k, z / k); }
     P& operator+=(const P& p) { return *this = *this + p; }
     P& operator-=(const P& p) { return *this = *this - p; }
     P& operator*=(double k) { return *this = *this * k; }
     P& operator/=(double k) { return *this = *this / k; }
-    bool operator<(const P& p) { return lt(z, p.z); }
-    bool operator==(const P& p) {
+    bool operator<(const P& p) const { return lt(z, p.z); }
+    bool operator==(const P& p) const {
         return eq(x, p.x) && eq(y, p.y) && eq(z, p.z);
     }
-    bool operator>(const P& p) { return !(*this < p || *this == p); }
+    bool operator>(const P& p) const { return !(*this < p || *this == p); }
     inline double length() { return sqrt(norm()); }
     inline double norm() { return x * x + y * y + z * z; };
     inline double dot(const P& p) { return x * p.x + y * p.y + z * p.z; }
