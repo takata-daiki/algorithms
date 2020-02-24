@@ -14,11 +14,14 @@
 "test/geometry/geometry.parallel_orthogonal.test.cpp": "2020-02-24 19:39:41 +0900",
 "test/graphs/bellman_ford.test.cpp": "2020-02-24 17:58:17 +0900",
 "test/graphs/dijkstra.test.cpp": "2020-02-24 17:58:17 +0900",
-"test/graphs/dinic.test.cpp": "2020-02-24 17:58:17 +0900",
-"test/graphs/ford_fulkerson.test.cpp": "2020-02-24 17:58:17 +0900",
+"test/graphs/dinic.test.cpp": "2020-02-24 22:28:03 +0900",
+"test/graphs/ford_fulkerson.test.cpp": "2020-02-24 22:28:03 +0900",
 "test/graphs/kruskal.test.cpp": "2020-02-24 17:58:17 +0900",
+"test/graphs/lowest_common_ancestor.test.cpp": "2020-02-24 22:28:03 +0900",
+"test/graphs/primal_dual.test.cpp": "2020-02-24 22:28:03 +0900",
+"test/graphs/strongly_connected_components.test.cpp": "2020-02-24 22:28:03 +0900",
 "test/maths/mod.combination.test.cpp": "2020-02-24 19:39:41 +0900",
 "test/maths/mod.extend_gcd.test.cpp": "2020-02-24 19:39:41 +0900",
-"test/maths/prime.sieve_of_eratosthenes.test.cpp": "2020-01-31 03:44:28 +0900",
+"test/maths/prime.sieve_of_eratosthenes.test.cpp": "2020-02-24 22:28:03 +0900",
 "test/strings/rolling_hash.test.cpp": "2020-02-24 17:58:17 +0900"
 }
