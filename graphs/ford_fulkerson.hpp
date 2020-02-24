@@ -7,20 +7,19 @@ struct FordFulkerson {
         int to, cap, rev;
     };
 
-    const int n, init;
+    int n, init;
     vector<bool> used;
     vector<vector<Edge>> g;
 
-    FordFulkerson(const int _n, const int _init = 1e9)
-        : n(_n), init(_init), g(_n) {}
+    FordFulkerson(int _n, int _init = 1e9) : n(_n), init(_init), g(_n) {}
 
-    void add_edge(const int u, const int v, const int c) {
+    void add_edge(int u, int v, int c) {
         int sz_u = g[u].size();
         int sz_v = g[v].size();
         g[u].push_back({v, c, sz_v});
         g[v].push_back({u, 0, sz_u});
     }
-    int dfs(const int u, const int t, const int c) {
+    int dfs(int u, int t, int c) {
         if (u == t) return c;
         used[u] = true;
         for (auto&& e : g[u]) {
@@ -36,7 +35,7 @@ struct FordFulkerson {
         }
         return 0;
     }
-    int build(const int s, const int t) {
+    int build(int s, int t) {
         int flow = 0;
         while (true) {
             used.assign(n, false);

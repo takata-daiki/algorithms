@@ -11,8 +11,7 @@ struct SegmentTree {
     vector<T> data;
 
     SegmentTree() {}
-    SegmentTree(const int _n, const Monoid& _monoid = Monoid())
-        : monoid(_monoid) {
+    SegmentTree(int _n, const Monoid& _monoid = Monoid()) : monoid(_monoid) {
         n = 1;
         while (n < _n) n <<= 1;
         data.assign(n << 1, monoid.identity());
@@ -32,18 +31,21 @@ struct SegmentTree {
         }
     }
 
-    void update(const int k, const T x) {
+    void update(int k, T x) {
         assert(0 <= k && k < n);
-        data[k + n] = x;
-        for (int i = (k + n) >> 1; i > 0; i >>= 1) {
+        k += n;
+        data[k] = x;
+        for (int i = k >> 1; i > 0; i >>= 1) {
             data[i] = monoid.merge(data[i << 1], data[i << 1 | 1]);
         }
     }
     // [a, b)
-    T query(const int a, const int b) {
+    T query(int a, int b) {
         assert(0 <= a && a <= b && b <= n);
+        a += n;
+        b += n - 1;
         T vl = monoid.identity(), vr = monoid.identity();
-        for (int l = a + n, r = b + n; l < r; l >>= 1, r >>= 1) {
+        for (int l = a, r = b + 1; l < r; l >>= 1, r >>= 1) {
             if (l & 1) vl = monoid.merge(vl, data[l++]);
             if (r & 1) vr = monoid.merge(data[--r], vr);
         }

@@ -5,13 +5,13 @@ using namespace std;
 struct UnionFind {
     vector<int> data;
 
-    UnionFind(const int n) : data(n, -1) {}
+    UnionFind(int n) : data(n, -1) {}
 
-    inline int root(const int x) {
+    inline int root(int x) {
         return (data[x] < 0) ? x : data[x] = root(data[x]);
     }
-    inline int size(const int x) { return -data[root(x)]; }
-    inline bool same(const int x, const int y) { return root(x) == root(y); }
+    inline int size(int x) { return -data[root(x)]; }
+    inline bool same(int x, int y) { return root(x) == root(y); }
     bool unite(int x, int y) {
         x = root(x);
         y = root(y);

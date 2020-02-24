@@ -14,9 +14,9 @@ struct Kruskal {
     int n;
     vector<Edge> es;
 
-    Kruskal(const int _n = 0) : n(_n) {}
+    Kruskal(int _n = 0) : n(_n) {}
 
-    void add_edge(const int u, const int v, const T w) {
+    void add_edge(int u, int v, T w) {
         n = max(n, max(u, v) + 1);
         es.push_back({u, v, w});
     }

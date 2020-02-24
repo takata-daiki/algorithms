@@ -9,19 +9,19 @@ struct ModInt {
     static long long MOD;
     long long v;
 
-    // norm: [-MOD, MOD**2] -> [0, MOD)
+    // normalize: [-MOD, MOD**2] -> [0, MOD)
     ModInt(const long long _v = 0) : v((_v < 0) ? _v % MOD + MOD : _v % MOD) {}
-    
-    M operator+(const M& x) const { return M(v + x.v); }
-    M operator-(const M& x) const { return M(v - x.v); }
-    M operator*(const M& x) const { return M(v * x.v); }
-    M operator/(const M& x) const { return M(v * x.inv().v); }
+
+    M operator+(const M& x) { return M(v + x.v); }
+    M operator-(const M& x) { return M(v - x.v); }
+    M operator*(const M& x) { return M(v * x.v); }
+    M operator/(const M& x) { return M(v * x.inv().v); }
     M& operator+=(const M& x) { return *this = *this + x; }
     M& operator-=(const M& x) { return *this = *this - x; }
     M& operator*=(const M& x) { return *this = *this * x; }
     M& operator/=(const M& x) { return *this = *this / x; }
-    bool operator==(const M& x) const { return v == x.v; }
-    bool operator!=(const M& x) const { return v != x.v; }
+    bool operator==(const M& x) { return v == x.v; }
+    bool operator!=(const M& x) { return v != x.v; }
     friend istream& operator>>(istream& input, M& x) {
         return input >> x.v, x = M(x), input;
     }
@@ -38,23 +38,24 @@ struct ModInt {
         return res;
     }
     inline M inv() const { return this->pow(MOD - 2); }
-    static void build(const int n) {
+    static void build(int n) {
         fact.assign(n + 1, 1);
         for (int i = 1; i < n + 1; i++) fact[i] = fact[i - 1] * M(i);
         finv.assign(n + 1, fact[n].inv());
         for (int i = n; i > 0; i--) finv[i - 1] = finv[i] * M(i);
     }
-    static M comb(const int n, const int k) {
+    static M comb(int n, int k) {
         if (n < k || k < 0) return M(0);
         return fact[n] * finv[n - k] * finv[k];
     }
-    static M extgcd(const int a, const int b, int* x, int* y) {
+    static M extgcd(int a, int b, int& x, int& y) {
         M d(a);
         if (b) {
             d = extgcd(b, a % b, y, x);
-            *y -= (a / b) * *x;
+            y -= (a / b) * x;
         } else {
-            *x = 1, *y = 0;
+            x = 1;
+            y = 0;
         }
         return d;
     }
