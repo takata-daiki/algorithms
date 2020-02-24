@@ -1,4 +1,4 @@
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/challenges/search/volumes/1276"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1276"
 #include "../../maths/prime.hpp"
 
 #include <bits/stdc++.h>

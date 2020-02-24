@@ -6,13 +6,14 @@ struct PrimalDual {
     struct Edge {
         int to, cap, cost, rev;
     };
+
     int n, init;
-    vector<vector<Edge>> g;
     vector<int> dist, pv, pe, h;
+    vector<vector<Edge>> g;
 
     PrimalDual() {}
-    PrimalDual(int n, int INF = 1e9)
-        : n(n), init(INF), g(n), dist(n), pv(n), pe(n) {}
+    PrimalDual(int _n, int _init = 1e9)
+        : n(_n), init(_init), dist(_n), pv(_n), pe(_n), g(_n) {}
 
     void add_edge(int u, int v, int cap, int cost) {
         int szU = g[u].size();
@@ -46,7 +47,7 @@ struct PrimalDual {
     }
     int build(int s, int t, int f) {
         int res = 0;
-        h = vector<int>(n, 0);
+        h.assign(n, 0);
         while (f > 0) {
             if (dijkstra(s, t) == init) return -1;
             for (int i = 0; i < n; ++i) h[i] += dist[i];

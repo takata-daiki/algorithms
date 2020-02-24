@@ -1,45 +1,44 @@
 #pragma once
 #include <bits/stdc++.h>
+#include "../data_structures/segment_tree.hpp"
+#include "../monoids/min_index.hpp"
 using namespace std;
 
 struct LowestCommonAncestor {
     using P = pair<int, int>;
 
-    int n, time;
+    int n;
+    vector<int> idx;
+    vector<P> euler_tour;
     vector<vector<int>> g;
-    vector<int> num, euler_tour;
-    vector<P> depth;
-    SegmentTree<P> seg;
+    SegmentTree<min_index_monoid<int>> seg;
 
-    LowestCommonAncestor(int n)
-        : n(n), time(0), g(n), num(n), euler_tour(n * 2 - 1), depth(n * 2 - 1) {}
+    LowestCommonAncestor(int _n) : n(_n), idx(_n), g(_n) {}
 
-    void build(int r) {
-        dfs(r, r, 0);
-        SegmentTree<P>::F f = [](P a, P b) { return min(a, b); };
-        seg = SegmentTree<P>(n * 2 - 1, f, {INT_MAX, -1}, depth);
-    }
     void add_edge(int s, int t) {
         g[s].push_back(t);
         g[t].push_back(s);
     }
-    void dfs(int u, int p, int d) {
-        num[u] = time;
-        euler_tour[time] = u;
-        depth[time] = {d, time};
-        ++time;
+    void build(int r) {
+        dfs(r, -1, 0);
+        seg = SegmentTree<min_index_monoid<int>>(begin(euler_tour),
+                                                 end(euler_tour));
+    }
+    void dfs(int u, int par, int dep) {
+        idx[u] = euler_tour.size();
+        euler_tour.push_back({dep, u});
         for (auto&& v : g[u]) {
-            if (v == p) continue;
-            dfs(v, u, d + 1);
-            euler_tour[time] = u;
-            depth[time] = {d, time};
-            ++time;
+            if (v == par) continue;
+            dfs(v, u, dep + 1);
+            euler_tour.push_back({dep, u});
         }
     }
-    int build(int u, int v) {
-        int i = num[u];
-        int j = num[v];
+    int query(int u, int v) {
+        assert(0 <= u && u < n);
+        assert(0 <= v && v < n);
+        int i = idx[u];
+        int j = idx[v];
         if (i > j) swap(i, j);
-        return euler_tour[seg.query(i, j + 1).second];
+        return seg.query(i, j + 1).second;
     }
 };

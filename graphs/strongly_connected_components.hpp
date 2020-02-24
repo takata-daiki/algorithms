@@ -5,42 +5,41 @@ using namespace std;
 struct StronglyConnectedComponents {
     int n;
     int time;
-    vector<vector<int>> g;
-    vector<int> num, low;
-    vector<vector<int>> scc;
-    stack<int, deque<int>> S;
-    vector<bool> inS;
+    vector<bool> in_stk;
+    vector<int> idx, low;
+    vector<vector<int>> g, scc;
+    stack<int, deque<int>> stk;
 
-    StronglyConnectedComponents(int n)
-        : n(n), g(n), num(n, -1), low(n, -1), inS(n, false) {}
+    StronglyConnectedComponents(int _n)
+        : n(_n), in_stk(n, false), idx(n, -1), low(n, -1), g(_n) {}
 
     void add_edge(int u, int v) { g[u].push_back(v); }
+    void build() {
+        for (int i = 0; i < n; ++i) {
+            if (idx[i] == -1) dfs(i);
+        }
+    }
     void dfs(int u) {
-        num[u] = low[u] = time++;
-        S.push(u);
-        inS[u] = true;
+        idx[u] = low[u] = time++;
+        stk.push(u);
+        in_stk[u] = true;
         for (auto&& v : g[u]) {
-            if (num[v] == -1) {
+            if (idx[v] == -1) {
                 dfs(v);
                 low[u] = min(low[u], low[v]);
-            } else if (inS[v]) {
-                low[u] = min(low[u], num[v]);
+            } else if (in_stk[v]) {
+                low[u] = min(low[u], idx[v]);
             }
         }
-        if (low[u] == num[u]) {
+        if (low[u] == idx[u]) {
             scc.push_back({});
             while (true) {
-                int v = S.top();
-                S.pop();
-                inS[v] = false;
+                int v = stk.top();
+                stk.pop();
+                in_stk[v] = false;
                 scc.back().push_back(v);
                 if (u == v) break;
             }
-        }
-    }
-    void build() {
-        for (int i = 0; i < n; ++i) {
-            if (num[i] == -1) dfs(i);
         }
     }
 };

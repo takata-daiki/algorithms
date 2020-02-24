@@ -14,5 +14,4 @@ int main() {
         ssp.add_edge(u, v, c);
     }
     cout << ssp.build(0, n - 1) << endl;
-    return 0;
 }
