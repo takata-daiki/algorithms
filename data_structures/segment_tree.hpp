@@ -6,9 +6,9 @@ template <typename Monoid>
 struct SegmentTree {
     using T = typename Monoid::value_type;
 
-    const Monoid monoid;
     int n;
     vector<T> data;
+    Monoid monoid;
 
     SegmentTree() {}
     SegmentTree(int _n, const Monoid& _monoid = Monoid()) : monoid(_monoid) {

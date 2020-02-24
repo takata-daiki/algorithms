@@ -7,12 +7,12 @@ struct LazySegmentTree {
     using T = typename MonoidT::value_type;
     using U = typename MonoidU::value_type;
 
-    const MonoidT monoid_t;
-    const MonoidU monoid_u;
-    const Action act;
     int n, height;
     vector<T> data;
     vector<U> lazy;
+    MonoidT monoid_t;
+    MonoidU monoid_u;
+    Action act;
 
     LazySegmentTree() {}
     LazySegmentTree(int _n, const MonoidT& _monoid_t = MonoidT(),
@@ -34,8 +34,8 @@ struct LazySegmentTree {
         int size = distance(first, last);
         n = 1, height = 0;
         while (n < size) n <<= 1, height++;
-        data.resize(n << 1, monoid_t.identity());
-        lazy.resize(n << 1, monoid_u.identity());
+        data.assign(n << 1, monoid_t.identity());
+        lazy.assign(n << 1, monoid_u.identity());
         copy(first, last, begin(data) + n);
         for (int i = n - 1; i > 0; i--) {
             data[i] = monoid_t.merge(data[i << 1], data[i << 1 | 1]);
