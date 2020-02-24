@@ -7,7 +7,7 @@ struct affine_monoid {
     using P = pair<T, T>;
     using value_type = P;
     P identity() { return make_pair(1, 0); }
-    P merge(P a, P b) const {
+    P merge(P a, P b) {
         T fst = a.first * b.first;
         T snd = a.second * b.first + b.second;
         return make_pair(fst, snd);

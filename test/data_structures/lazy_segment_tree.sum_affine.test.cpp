@@ -9,7 +9,7 @@
 using namespace std;
 using P = pair<ModInt, int>;
 
-ModInt operator*(int x, ModInt m) { return ModInt(x) * m; }
+ModInt operator*(int x, const ModInt& m) { return ModInt(x) * m; }
 
 int main() {
     ModInt::MOD = 998244353;
