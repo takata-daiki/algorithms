@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e8706a28320e46fa20885a2933e42797">graphs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graphs/ford_fulkerson.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-24 17:58:17+09:00
+    - Last commit date: 2020-02-25 12:34:16+09:00
 
 
 
@@ -67,6 +67,16 @@ struct FordFulkerson {
         g[u].push_back({v, c, sz_v});
         g[v].push_back({u, 0, sz_u});
     }
+    int build(int s, int t) {
+        int flow = 0;
+        while (true) {
+            used.assign(n, false);
+            int f = dfs(s, t, init);
+            if (f == 0) break;
+            flow += f;
+        }
+        return flow;
+    }
     int dfs(int u, int t, int c) {
         if (u == t) return c;
         used[u] = true;
@@ -82,16 +92,6 @@ struct FordFulkerson {
             }
         }
         return 0;
-    }
-    int build(int s, int t) {
-        int flow = 0;
-        while (true) {
-            used.assign(n, false);
-            int f = dfs(s, t, init);
-            if (f == 0) break;
-            flow += f;
-        }
-        return flow;
     }
 };
 ```
@@ -121,6 +121,16 @@ struct FordFulkerson {
         g[u].push_back({v, c, sz_v});
         g[v].push_back({u, 0, sz_u});
     }
+    int build(int s, int t) {
+        int flow = 0;
+        while (true) {
+            used.assign(n, false);
+            int f = dfs(s, t, init);
+            if (f == 0) break;
+            flow += f;
+        }
+        return flow;
+    }
     int dfs(int u, int t, int c) {
         if (u == t) return c;
         used[u] = true;
@@ -136,16 +146,6 @@ struct FordFulkerson {
             }
         }
         return 0;
-    }
-    int build(int s, int t) {
-        int flow = 0;
-        while (true) {
-            used.assign(n, false);
-            int f = dfs(s, t, init);
-            if (f == 0) break;
-            flow += f;
-        }
-        return flow;
     }
 };
 

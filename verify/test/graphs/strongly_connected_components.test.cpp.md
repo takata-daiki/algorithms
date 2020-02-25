@@ -30,9 +30,10 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/graphs/strongly_connected_components.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-24 22:28:03+09:00
+    - Last commit date: 2020-02-25 12:34:16+09:00
 
 
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_3_C">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_3_C</a>
 
 
 ## Depends on
@@ -45,8 +46,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM \
-    "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_3_C"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_3_C"
 #include "../../graphs/strongly_connected_components.hpp"
 
 #include <bits/stdc++.h>
@@ -83,8 +83,7 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "test/graphs/strongly_connected_components.test.cpp"
-#define PROBLEM \
-    "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_3_C"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_3_C"
 #line 2 "test/graphs/../../graphs/strongly_connected_components.hpp"
 #include <bits/stdc++.h>
 using namespace std;
@@ -98,7 +97,7 @@ struct StronglyConnectedComponents {
     stack<int, deque<int>> stk;
 
     StronglyConnectedComponents(int _n)
-        : n(_n), in_stk(n, false), idx(n, -1), low(n, -1), g(_n) {}
+        : n(_n), in_stk(_n, false), idx(_n, -1), low(_n, -1), g(_n) {}
 
     void add_edge(int u, int v) { g[u].push_back(v); }
     void build() {
@@ -130,7 +129,7 @@ struct StronglyConnectedComponents {
         }
     }
 };
-#line 4 "test/graphs/strongly_connected_components.test.cpp"
+#line 3 "test/graphs/strongly_connected_components.test.cpp"
 
 #include <bits/stdc++.h>
 using namespace std;

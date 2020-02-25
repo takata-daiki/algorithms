@@ -21,25 +21,24 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graphs/biconnected_components.hpp
+# :heavy_check_mark: test/graphs/biconnected_components.articulation_points.test.cpp
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#e8706a28320e46fa20885a2933e42797">graphs</a>
-* <a href="{{ site.github.repository_url }}/blob/master/graphs/biconnected_components.hpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/graphs/biconnected_components.articulation_points.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-25 12:34:16+09:00
 
 
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_3_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_3_A</a>
 
 
-## Verified with
+## Depends on
 
-* :heavy_check_mark: <a href="../../verify/test/graphs/biconnected_components.articulation_points.test.cpp.html">test/graphs/biconnected_components.articulation_points.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/graphs/biconnected_components.bridges.test.cpp.html">test/graphs/biconnected_components.bridges.test.cpp</a>
+* :heavy_check_mark: <a href="../../../library/graphs/biconnected_components.hpp.html">graphs/biconnected_components.hpp</a>
 
 
 ## Code
@@ -47,57 +46,39 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#pragma once
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_3_A"
+#include "../../graphs/biconnected_components.hpp"
+
 #include <bits/stdc++.h>
 using namespace std;
 
-struct BiconnectedComponents {
-    int n;
-    int time;
-    vector<bool> is_art_point;
-    vector<int> idx, low;
-    set<pair<int, int>> bridges;
-    vector<vector<int>> g;
+int main() {
+    cin.tie(0);
+    ios::sync_with_stdio(false);
 
-    BiconnectedComponents(int _n)
-        : n(_n),
-          time(0),
-          is_art_point(_n, false),
-          idx(_n, -1),
-          low(_n, -1),
-          g(_n) {}
+    int n, m;
+    cin >> n >> m;
+    BiconnectedComponents g(n);
+    while (m--) {
+        int s, t;
+        cin >> s >> t;
+        g.add_edge(s, t);
+    }
+    g.build();
 
-    void add_edge(int u, int v) {
-        g[u].push_back(v);
-        g[v].push_back(u);
+    for (int i = 0; i < n; i++) {
+        if (g.is_art_point[i]) cout << i << endl;
     }
-    void build() {
-        for (int i = 0; i < n; ++i) {
-            if (idx[i] == -1) dfs(i, -1);
-        }
-    }
-    void dfs(int u, int p) {
-        idx[u] = low[u] = time++;
-        for (auto&& v : g[u]) {
-            if (idx[v] == -1) {
-                dfs(v, u);
-                low[u] = min(low[u], low[v]);
-                if (idx[u] <= low[v])
-                    is_art_point[u] = (idx[u] > 0) || (idx[v] > 1);
-                if (idx[u] < low[v]) bridges.insert({min(u, v), max(u, v)});
-            } else if (v != p) {
-                low[u] = min(low[u], idx[v]);
-            }
-        }
-    }
-};
+}
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 2 "graphs/biconnected_components.hpp"
+#line 1 "test/graphs/biconnected_components.articulation_points.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_3_A"
+#line 2 "test/graphs/../../graphs/biconnected_components.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -141,9 +122,32 @@ struct BiconnectedComponents {
         }
     }
 };
+#line 3 "test/graphs/biconnected_components.articulation_points.test.cpp"
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    cin.tie(0);
+    ios::sync_with_stdio(false);
+
+    int n, m;
+    cin >> n >> m;
+    BiconnectedComponents g(n);
+    while (m--) {
+        int s, t;
+        cin >> s >> t;
+        g.add_edge(s, t);
+    }
+    g.build();
+
+    for (int i = 0; i < n; i++) {
+        if (g.is_art_point[i]) cout << i << endl;
+    }
+}
 
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 

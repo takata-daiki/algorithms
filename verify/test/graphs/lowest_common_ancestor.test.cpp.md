@@ -30,9 +30,10 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/graphs/lowest_common_ancestor.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-24 22:28:03+09:00
+    - Last commit date: 2020-02-25 12:34:16+09:00
 
 
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C</a>
 
 
 ## Depends on
@@ -47,8 +48,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM \
-    "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C"
 #include "../../graphs/lowest_common_ancestor.hpp"
 
 #include <bits/stdc++.h>
@@ -86,8 +86,7 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "test/graphs/lowest_common_ancestor.test.cpp"
-#define PROBLEM \
-    "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C"
 #line 2 "test/graphs/../../graphs/lowest_common_ancestor.hpp"
 #include <bits/stdc++.h>
 #line 2 "test/graphs/../../graphs/../data_structures/segment_tree.hpp"
@@ -196,7 +195,7 @@ struct LowestCommonAncestor {
         return seg.query(i, j + 1).second;
     }
 };
-#line 4 "test/graphs/lowest_common_ancestor.test.cpp"
+#line 3 "test/graphs/lowest_common_ancestor.test.cpp"
 
 #include <bits/stdc++.h>
 using namespace std;

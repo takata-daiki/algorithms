@@ -30,7 +30,7 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/test/graphs/primal_dual.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-24 22:28:03+09:00
+    - Last commit date: 2020-02-25 12:34:16+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_6_B">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_6_B</a>
@@ -94,6 +94,26 @@ struct PrimalDual {
         g[u].push_back({v, cap, cost, szV});
         g[v].push_back({u, 0, -cost, szU});
     }
+    int build(int s, int t, int f) {
+        int res = 0;
+        h.assign(n, 0);
+        while (f > 0) {
+            if (dijkstra(s, t) == init) return -1;
+            for (int i = 0; i < n; ++i) h[i] += dist[i];
+            int flow = f;
+            for (int u = t; u != s; u = pv[u]) {
+                flow = min(flow, g[pv[u]][pe[u]].cap);
+            }
+            f -= flow;
+            res += flow * h[t];
+            for (int u = t; u != s; u = pv[u]) {
+                Edge& e = g[pv[u]][pe[u]];
+                e.cap -= flow;
+                g[u][e.rev].cap += flow;
+            }
+        }
+        return res;
+    }
     int dijkstra(int s, int t) {
         dist = vector<int>(n, init);
         using Node = pair<int, int>;
@@ -117,26 +137,6 @@ struct PrimalDual {
             }
         }
         return dist[t];
-    }
-    int build(int s, int t, int f) {
-        int res = 0;
-        h.assign(n, 0);
-        while (f > 0) {
-            if (dijkstra(s, t) == init) return -1;
-            for (int i = 0; i < n; ++i) h[i] += dist[i];
-            int flow = f;
-            for (int u = t; u != s; u = pv[u]) {
-                flow = min(flow, g[pv[u]][pe[u]].cap);
-            }
-            f -= flow;
-            res += flow * h[t];
-            for (int u = t; u != s; u = pv[u]) {
-                Edge& e = g[pv[u]][pe[u]];
-                e.cap -= flow;
-                g[u][e.rev].cap += flow;
-            }
-        }
-        return res;
     }
 };
 #line 3 "test/graphs/primal_dual.test.cpp"

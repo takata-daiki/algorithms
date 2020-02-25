@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: graphs/heavy_light_decomposition.hpp
+# :heavy_check_mark: graphs/heavy_light_decomposition.hpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#e8706a28320e46fa20885a2933e42797">graphs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graphs/heavy_light_decomposition.hpp">View this file on GitHub</a>
-    - Last commit date: 2019-12-12 01:50:18+09:00
+    - Last commit date: 2020-02-25 12:34:16+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/graphs/heavy_light_decomposition.range_query_on_a_tree.test.cpp.html">test/graphs/heavy_light_decomposition.range_query_on_a_tree.test.cpp</a>
 
 
 ## Code
@@ -50,33 +55,33 @@ struct HeavyLightDecomposition {
     using F = function<void(int, int)>;
 
     int n, time;
+    vector<int> idx, next, sub_size, head, par, depth, inv, chain;
     vector<vector<int>> g;
-    vector<int> num, next, sub_size, head, par, depth, inv, chain;
 
     HeavyLightDecomposition() {}
-    HeavyLightDecomposition(int n)
-        : n(n),
+    HeavyLightDecomposition(int _n)
+        : n(_n),
           time(0),
-          g(n),
-          num(n, -1),
-          next(n, -1),
-          sub_size(n, 1),
-          head(n),
-          par(n),
-          depth(n),
-          inv(n),
-          chain(n) {}
+          idx(_n, -1),
+          next(_n, -1),
+          sub_size(_n, 1),
+          head(_n),
+          par(_n),
+          depth(_n),
+          inv(_n),
+          chain(_n),
+          g(_n) {}
 
+    void add_edge(int s, int t) {
+        g[s].push_back(t);
+        g[t].push_back(s);
+    }
     void build(vector<int> roots = vector<int>(1, 0)) {
         int c = 0;
         for (auto&& r : roots) {
             dfs(r);
             bfs(r, c++);
         }
-    }
-    void add_edge(int s, int t) {
-        g[s].push_back(t);
-        g[t].push_back(s);
     }
     void dfs(int r) {
         stack<P, deque<P>> s;
@@ -105,15 +110,14 @@ struct HeavyLightDecomposition {
         }
     }
     void bfs(int r, int c) {
-        int& k = time;
         queue<int> q({r});
         while (!q.empty()) {
             int h = q.front();
             q.pop();
             for (int u = h; u != -1; u = next[u]) {
                 chain[u] = c;
-                num[u] = k++;
-                inv[num[u]] = u;
+                idx[u] = time++;
+                inv[idx[u]] = u;
                 head[u] = h;
                 for (auto&& v : g[u]) {
                     if (v != par[u] && v != next[u]) q.push(v);
@@ -121,10 +125,10 @@ struct HeavyLightDecomposition {
             }
         }
     }
-    int for_each_vertex(int u, int v, const F& f) {
+    void for_each_vertex(int u, int v, const F& f) {
         while (true) {
-            if (num[u] > num[v]) swap(u, v);
-            f(max(num[head[v]], num[u]), num[v]);
+            if (idx[u] > idx[v]) swap(u, v);
+            f(max(idx[head[v]], idx[u]), idx[v]);
             if (head[u] != head[v]) {
                 v = par[head[v]];
             } else {
@@ -132,21 +136,21 @@ struct HeavyLightDecomposition {
             }
         }
     }
-    int for_each_edge(int u, int v, const F& f) {
+    void for_each_edge(int u, int v, const F& f) {
         while (true) {
-            if (num[u] > num[v]) swap(u, v);
+            if (idx[u] > idx[v]) swap(u, v);
             if (head[u] != head[v]) {
-                f(num[head[v]], num[v]);
+                f(idx[head[v]], idx[v]);
                 v = par[head[v]];
             } else {
-                if (u != v) f(num[u] + 1, num[v]);
+                if (u != v) f(idx[u] + 1, idx[v]);
                 break;
             }
         }
     }
     int lca(int u, int v) {
         while (true) {
-            if (num[u] > num[v]) swap(u, v);
+            if (idx[u] > idx[v]) swap(u, v);
             if (head[u] == head[v]) return u;
             v = par[head[v]];
         }
@@ -170,33 +174,33 @@ struct HeavyLightDecomposition {
     using F = function<void(int, int)>;
 
     int n, time;
+    vector<int> idx, next, sub_size, head, par, depth, inv, chain;
     vector<vector<int>> g;
-    vector<int> num, next, sub_size, head, par, depth, inv, chain;
 
     HeavyLightDecomposition() {}
-    HeavyLightDecomposition(int n)
-        : n(n),
+    HeavyLightDecomposition(int _n)
+        : n(_n),
           time(0),
-          g(n),
-          num(n, -1),
-          next(n, -1),
-          sub_size(n, 1),
-          head(n),
-          par(n),
-          depth(n),
-          inv(n),
-          chain(n) {}
+          idx(_n, -1),
+          next(_n, -1),
+          sub_size(_n, 1),
+          head(_n),
+          par(_n),
+          depth(_n),
+          inv(_n),
+          chain(_n),
+          g(_n) {}
 
+    void add_edge(int s, int t) {
+        g[s].push_back(t);
+        g[t].push_back(s);
+    }
     void build(vector<int> roots = vector<int>(1, 0)) {
         int c = 0;
         for (auto&& r : roots) {
             dfs(r);
             bfs(r, c++);
         }
-    }
-    void add_edge(int s, int t) {
-        g[s].push_back(t);
-        g[t].push_back(s);
     }
     void dfs(int r) {
         stack<P, deque<P>> s;
@@ -225,15 +229,14 @@ struct HeavyLightDecomposition {
         }
     }
     void bfs(int r, int c) {
-        int& k = time;
         queue<int> q({r});
         while (!q.empty()) {
             int h = q.front();
             q.pop();
             for (int u = h; u != -1; u = next[u]) {
                 chain[u] = c;
-                num[u] = k++;
-                inv[num[u]] = u;
+                idx[u] = time++;
+                inv[idx[u]] = u;
                 head[u] = h;
                 for (auto&& v : g[u]) {
                     if (v != par[u] && v != next[u]) q.push(v);
@@ -241,10 +244,10 @@ struct HeavyLightDecomposition {
             }
         }
     }
-    int for_each_vertex(int u, int v, const F& f) {
+    void for_each_vertex(int u, int v, const F& f) {
         while (true) {
-            if (num[u] > num[v]) swap(u, v);
-            f(max(num[head[v]], num[u]), num[v]);
+            if (idx[u] > idx[v]) swap(u, v);
+            f(max(idx[head[v]], idx[u]), idx[v]);
             if (head[u] != head[v]) {
                 v = par[head[v]];
             } else {
@@ -252,21 +255,21 @@ struct HeavyLightDecomposition {
             }
         }
     }
-    int for_each_edge(int u, int v, const F& f) {
+    void for_each_edge(int u, int v, const F& f) {
         while (true) {
-            if (num[u] > num[v]) swap(u, v);
+            if (idx[u] > idx[v]) swap(u, v);
             if (head[u] != head[v]) {
-                f(num[head[v]], num[v]);
+                f(idx[head[v]], idx[v]);
                 v = par[head[v]];
             } else {
-                if (u != v) f(num[u] + 1, num[v]);
+                if (u != v) f(idx[u] + 1, idx[v]);
                 break;
             }
         }
     }
     int lca(int u, int v) {
         while (true) {
-            if (num[u] > num[v]) swap(u, v);
+            if (idx[u] > idx[v]) swap(u, v);
             if (head[u] == head[v]) return u;
             v = par[head[v]];
         }

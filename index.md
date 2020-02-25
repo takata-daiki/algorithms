@@ -57,11 +57,11 @@ layout: default
 ### graphs
 
 * :heavy_check_mark: <a href="library/graphs/bellman_ford.hpp.html">graphs/bellman_ford.hpp</a>
-* :warning: <a href="library/graphs/biconnected_components.hpp.html">graphs/biconnected_components.hpp</a>
+* :heavy_check_mark: <a href="library/graphs/biconnected_components.hpp.html">graphs/biconnected_components.hpp</a>
 * :heavy_check_mark: <a href="library/graphs/dijkstra.hpp.html">graphs/dijkstra.hpp</a>
 * :heavy_check_mark: <a href="library/graphs/dinic.hpp.html">graphs/dinic.hpp</a>
 * :heavy_check_mark: <a href="library/graphs/ford_fulkerson.hpp.html">graphs/ford_fulkerson.hpp</a>
-* :warning: <a href="library/graphs/heavy_light_decomposition.hpp.html">graphs/heavy_light_decomposition.hpp</a>
+* :heavy_check_mark: <a href="library/graphs/heavy_light_decomposition.hpp.html">graphs/heavy_light_decomposition.hpp</a>
 * :heavy_check_mark: <a href="library/graphs/kruskal.hpp.html">graphs/kruskal.hpp</a>
 * :heavy_check_mark: <a href="library/graphs/lowest_common_ancestor.hpp.html">graphs/lowest_common_ancestor.hpp</a>
 * :heavy_check_mark: <a href="library/graphs/primal_dual.hpp.html">graphs/primal_dual.hpp</a>
@@ -127,9 +127,12 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/geometry/geometry.intersection.test.cpp.html">test/geometry/geometry.intersection.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometry/geometry.parallel_orthogonal.test.cpp.html">test/geometry/geometry.parallel_orthogonal.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graphs/bellman_ford.test.cpp.html">test/graphs/bellman_ford.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graphs/biconnected_components.articulation_points.test.cpp.html">test/graphs/biconnected_components.articulation_points.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graphs/biconnected_components.bridges.test.cpp.html">test/graphs/biconnected_components.bridges.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graphs/dijkstra.test.cpp.html">test/graphs/dijkstra.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graphs/dinic.test.cpp.html">test/graphs/dinic.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graphs/ford_fulkerson.test.cpp.html">test/graphs/ford_fulkerson.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graphs/heavy_light_decomposition.range_query_on_a_tree.test.cpp.html">test/graphs/heavy_light_decomposition.range_query_on_a_tree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graphs/kruskal.test.cpp.html">test/graphs/kruskal.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graphs/lowest_common_ancestor.test.cpp.html">test/graphs/lowest_common_ancestor.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graphs/primal_dual.test.cpp.html">test/graphs/primal_dual.test.cpp</a>

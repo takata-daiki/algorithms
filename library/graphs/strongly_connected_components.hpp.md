@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#e8706a28320e46fa20885a2933e42797">graphs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graphs/strongly_connected_components.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-24 22:28:03+09:00
+    - Last commit date: 2020-02-25 12:34:16+09:00
 
 
 
@@ -59,7 +59,7 @@ struct StronglyConnectedComponents {
     stack<int, deque<int>> stk;
 
     StronglyConnectedComponents(int _n)
-        : n(_n), in_stk(n, false), idx(n, -1), low(n, -1), g(_n) {}
+        : n(_n), in_stk(_n, false), idx(_n, -1), low(_n, -1), g(_n) {}
 
     void add_edge(int u, int v) { g[u].push_back(v); }
     void build() {
@@ -110,7 +110,7 @@ struct StronglyConnectedComponents {
     stack<int, deque<int>> stk;
 
     StronglyConnectedComponents(int _n)
-        : n(_n), in_stk(n, false), idx(n, -1), low(n, -1), g(_n) {}
+        : n(_n), in_stk(_n, false), idx(_n, -1), low(_n, -1), g(_n) {}
 
     void add_edge(int u, int v) { g[u].push_back(v); }
     void build() {
