@@ -19,6 +19,16 @@ struct Dinic {
         g[u].push_back({v, c, sz_v});
         g[v].push_back({u, 0, sz_u});
     }
+    int build(int s, int t) {
+        int flow = 0;
+        while (true) {
+            bfs(s);
+            if (level[t] < 0) break;
+            itr.assign(n, 0);
+            for (int f; (f = dfs(s, t, init)) > 0;) flow += f;
+        }
+        return flow;
+    }
     void bfs(int s) {
         level.assign(n, -1);
         queue<int> que({s});
@@ -50,15 +60,5 @@ struct Dinic {
             }
         }
         return 0;
-    }
-    int build(int s, int t) {
-        int flow = 0;
-        while (true) {
-            bfs(s);
-            if (level[t] < 0) break;
-            itr.assign(n, 0);
-            for (int f; (f = dfs(s, t, init)) > 0;) flow += f;
-        }
-        return flow;
     }
 };

@@ -21,6 +21,26 @@ struct PrimalDual {
         g[u].push_back({v, cap, cost, szV});
         g[v].push_back({u, 0, -cost, szU});
     }
+    int build(int s, int t, int f) {
+        int res = 0;
+        h.assign(n, 0);
+        while (f > 0) {
+            if (dijkstra(s, t) == init) return -1;
+            for (int i = 0; i < n; ++i) h[i] += dist[i];
+            int flow = f;
+            for (int u = t; u != s; u = pv[u]) {
+                flow = min(flow, g[pv[u]][pe[u]].cap);
+            }
+            f -= flow;
+            res += flow * h[t];
+            for (int u = t; u != s; u = pv[u]) {
+                Edge& e = g[pv[u]][pe[u]];
+                e.cap -= flow;
+                g[u][e.rev].cap += flow;
+            }
+        }
+        return res;
+    }
     int dijkstra(int s, int t) {
         dist = vector<int>(n, init);
         using Node = pair<int, int>;
@@ -44,25 +64,5 @@ struct PrimalDual {
             }
         }
         return dist[t];
-    }
-    int build(int s, int t, int f) {
-        int res = 0;
-        h.assign(n, 0);
-        while (f > 0) {
-            if (dijkstra(s, t) == init) return -1;
-            for (int i = 0; i < n; ++i) h[i] += dist[i];
-            int flow = f;
-            for (int u = t; u != s; u = pv[u]) {
-                flow = min(flow, g[pv[u]][pe[u]].cap);
-            }
-            f -= flow;
-            res += flow * h[t];
-            for (int u = t; u != s; u = pv[u]) {
-                Edge& e = g[pv[u]][pe[u]];
-                e.cap -= flow;
-                g[u][e.rev].cap += flow;
-            }
-        }
-        return res;
     }
 };

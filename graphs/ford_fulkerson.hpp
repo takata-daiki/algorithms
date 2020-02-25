@@ -19,6 +19,16 @@ struct FordFulkerson {
         g[u].push_back({v, c, sz_v});
         g[v].push_back({u, 0, sz_u});
     }
+    int build(int s, int t) {
+        int flow = 0;
+        while (true) {
+            used.assign(n, false);
+            int f = dfs(s, t, init);
+            if (f == 0) break;
+            flow += f;
+        }
+        return flow;
+    }
     int dfs(int u, int t, int c) {
         if (u == t) return c;
         used[u] = true;
@@ -34,15 +44,5 @@ struct FordFulkerson {
             }
         }
         return 0;
-    }
-    int build(int s, int t) {
-        int flow = 0;
-        while (true) {
-            used.assign(n, false);
-            int f = dfs(s, t, init);
-            if (f == 0) break;
-            flow += f;
-        }
-        return flow;
     }
 };

@@ -11,7 +11,7 @@ struct StronglyConnectedComponents {
     stack<int, deque<int>> stk;
 
     StronglyConnectedComponents(int _n)
-        : n(_n), in_stk(n, false), idx(n, -1), low(n, -1), g(_n) {}
+        : n(_n), in_stk(_n, false), idx(_n, -1), low(_n, -1), g(_n) {}
 
     void add_edge(int u, int v) { g[u].push_back(v); }
     void build() {
