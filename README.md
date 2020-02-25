@@ -7,7 +7,7 @@ See the [Docs](https://takata-daiki.github.io/algorithms/) for details.
 
 ## License
 
-Licensed under the MIT License, but you can use this repo without the copyright notice and the permission notice in your submissions for online judges.
+This repo is released under the [MIT License](https://github.com/takata-daiki/algorithms/blob/master/LICENSE), but you can use this repo without the copyright notice and the permission notice in your submissions for online judges.
 
 ## Reference
 
