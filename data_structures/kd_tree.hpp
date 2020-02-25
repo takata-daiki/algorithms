@@ -10,15 +10,15 @@ struct KdSegmentTree {
     vector<vector<T>> data;
 
     KdSegmentTree() {}
-    KdSegmentTree(int n_, vector<T> v) {
+    KdSegmentTree(int _n, vector<T> v) {
         n = 1;
-        while (n < n_) n *= 2;
+        while (n < _n) n *= 2;
         data.resize(2 * n - 1);
         build(v);
     }
     void build(vector<T> v) {
-        for (int i = 0; i < v.size(); ++i) data[i + n - 1].push_back(v[i]);
-        for (int i = n - 2; i >= 0; --i) {
+        for (int i = 0; i < v.size(); i++) data[i + n - 1].push_back(v[i]);
+        for (int i = n - 2; i >= 0; i--) {
             int lch = i * 2 + 1;
             int rch = i * 2 + 2;
             data[i].resize(data[lch].size() + data[rch].size());
@@ -52,11 +52,11 @@ struct KdTree {
     vector<pair<int, P>> ps;
     KdSegmentTree<P> seg;
 
-    KdTree(int n) : n(n), xs(n), ys(n), ps(n) {}
+    KdTree(int _n) : n(_n), xs(_n), ys(_n), ps(_n) {}
 
     void build() {
         sort(begin(ps), end(ps));
-        for (int i = 0; i < n; ++i) tie(xs[i], ys[i]) = ps[i];
+        for (int i = 0; i < n; i++) tie(xs[i], ys[i]) = ps[i];
         seg = KdSegmentTree<P>(n, ys);
     }
     void add_point(int x, int y, int i) { ps[i] = {x, {y, i}}; }
