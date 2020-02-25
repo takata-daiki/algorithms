@@ -1,5 +1,6 @@
 {
 "test/data_structures/binary_indexed_tree.test.cpp": "2020-02-24 17:58:17 +0900",
+"test/data_structures/kd_tree.test.cpp": "2020-02-25 13:56:30 +0900",
 "test/data_structures/lazy_segment_tree.max_add.test.cpp": "2020-02-24 18:12:30 +0900",
 "test/data_structures/lazy_segment_tree.max_update.test.cpp": "2020-02-24 18:12:30 +0900",
 "test/data_structures/lazy_segment_tree.min_add.test.cpp": "2020-02-24 18:12:30 +0900",
