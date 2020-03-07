@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#d939e7a6b17e374c1e3db59b4df2ae97">maths</a>
 * <a href="{{ site.github.repository_url }}/blob/master/maths/prime.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-02-24 17:58:17+09:00
+    - Last commit date: 2020-03-07 11:43:28+09:00
 
 
 
@@ -52,8 +52,8 @@ using namespace std;
 
 vector<int> sieve_of_eratosthenes(int n) {
     vector<int> prime(n + 1, 0);
-    for (int i = 2; i <= n; ++i) prime[i] = i;
-    for (int i = 2; i * i <= n; ++i) {
+    for (int i = 2; i <= n; i++) prime[i] = i;
+    for (int i = 2; i * i <= n; i++) {
         if (prime[i]) {
             for (int j = i * i; j <= n; j += i) prime[j] = 0;
         }
@@ -73,8 +73,8 @@ using namespace std;
 
 vector<int> sieve_of_eratosthenes(int n) {
     vector<int> prime(n + 1, 0);
-    for (int i = 2; i <= n; ++i) prime[i] = i;
-    for (int i = 2; i * i <= n; ++i) {
+    for (int i = 2; i <= n; i++) prime[i] = i;
+    for (int i = 2; i * i <= n; i++) {
         if (prime[i]) {
             for (int j = i * i; j <= n; j += i) prime[j] = 0;
         }
