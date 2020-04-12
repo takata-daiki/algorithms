@@ -26,6 +26,6 @@
 "test/graphs/strongly_connected_components.test.cpp": "2020-02-25 12:34:16 +0900",
 "test/maths/mod.combination.test.cpp": "2020-02-24 19:39:41 +0900",
 "test/maths/mod.extend_gcd.test.cpp": "2020-02-24 19:39:41 +0900",
-"test/maths/prime.sieve_of_eratosthenes.test.cpp": "2020-02-24 22:28:03 +0900",
+"test/maths/prime.sieve_of_eratosthenes.test.cpp": "2020-03-07 11:43:28 +0900",
 "test/strings/rolling_hash.test.cpp": "2020-02-24 17:58:17 +0900"
 }
