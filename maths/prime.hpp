@@ -7,7 +7,7 @@ vector<int> sieve_of_eratosthenes(int n) {
     for (int i = 2; i <= n; i++) prime[i] = i;
     for (int i = 2; i * i <= n; i++) {
         if (prime[i]) {
-            for (int j = i * i; j <= n; j += i) prime[j] = 0;
+            for (int j = 2 * i; j <= n; j += i) prime[j] = 0;
         }
     }
     // prime.erase(remove(begin(prime), end(prime), 0), end(prime));
