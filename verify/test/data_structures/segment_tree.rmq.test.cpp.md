@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#62fcabc588904eb64caeb606077fc022">test/data_structures</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/segment_tree.rmq.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-24 18:12:30+09:00
 
@@ -76,7 +77,7 @@ int main() {
 ```cpp
 #line 1 "test/data_structures/segment_tree.rmq.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_A"
-#line 2 "test/data_structures/../../data_structures/segment_tree.hpp"
+#line 2 "data_structures/segment_tree.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -130,8 +131,7 @@ struct SegmentTree {
         return monoid.merge(vl, vr);
     }
 };
-#line 2 "test/data_structures/../../monoids/min.hpp"
-#include <bits/stdc++.h>
+#line 3 "monoids/min.hpp"
 using namespace std;
 
 template <typename T>
@@ -142,7 +142,7 @@ struct min_monoid {
 };
 #line 4 "test/data_structures/segment_tree.rmq.test.cpp"
 
-#include <bits/stdc++.h>
+#line 6 "test/data_structures/segment_tree.rmq.test.cpp"
 using namespace std;
 
 int main() {

@@ -94,8 +94,7 @@ struct Kruskal {
 ```cpp
 #line 2 "graphs/kruskal.hpp"
 #include <bits/stdc++.h>
-#line 2 "graphs/../data_structures/union_find.hpp"
-#include <bits/stdc++.h>
+#line 3 "data_structures/union_find.hpp"
 using namespace std;
 
 struct UnionFind {

@@ -104,8 +104,7 @@ struct LowestCommonAncestor {
 ```cpp
 #line 2 "graphs/lowest_common_ancestor.hpp"
 #include <bits/stdc++.h>
-#line 2 "graphs/../data_structures/segment_tree.hpp"
-#include <bits/stdc++.h>
+#line 3 "data_structures/segment_tree.hpp"
 using namespace std;
 
 template <typename Monoid>
@@ -158,8 +157,7 @@ struct SegmentTree {
         return monoid.merge(vl, vr);
     }
 };
-#line 2 "graphs/../monoids/min_index.hpp"
-#include <bits/stdc++.h>
+#line 3 "monoids/min_index.hpp"
 using namespace std;
 
 template <typename T>

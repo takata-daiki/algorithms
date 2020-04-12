@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#2eaf8485dbfd46fcba24af27c0a63ff2">test/graphs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graphs/biconnected_components.bridges.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-25 12:34:16+09:00
 
@@ -78,7 +79,7 @@ int main() {
 ```cpp
 #line 1 "test/graphs/biconnected_components.bridges.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_3_B"
-#line 2 "test/graphs/../../graphs/biconnected_components.hpp"
+#line 2 "graphs/biconnected_components.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -124,7 +125,7 @@ struct BiconnectedComponents {
 };
 #line 3 "test/graphs/biconnected_components.bridges.test.cpp"
 
-#include <bits/stdc++.h>
+#line 5 "test/graphs/biconnected_components.bridges.test.cpp"
 using namespace std;
 
 int main() {

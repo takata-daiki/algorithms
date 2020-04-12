@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#2eaf8485dbfd46fcba24af27c0a63ff2">test/graphs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graphs/lowest_common_ancestor.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-25 12:34:16+09:00
 
@@ -87,10 +88,9 @@ int main() {
 ```cpp
 #line 1 "test/graphs/lowest_common_ancestor.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_C"
-#line 2 "test/graphs/../../graphs/lowest_common_ancestor.hpp"
+#line 2 "graphs/lowest_common_ancestor.hpp"
 #include <bits/stdc++.h>
-#line 2 "test/graphs/../../graphs/../data_structures/segment_tree.hpp"
-#include <bits/stdc++.h>
+#line 3 "data_structures/segment_tree.hpp"
 using namespace std;
 
 template <typename Monoid>
@@ -143,8 +143,7 @@ struct SegmentTree {
         return monoid.merge(vl, vr);
     }
 };
-#line 2 "test/graphs/../../graphs/../monoids/min_index.hpp"
-#include <bits/stdc++.h>
+#line 3 "monoids/min_index.hpp"
 using namespace std;
 
 template <typename T>
@@ -154,7 +153,7 @@ struct min_index_monoid {
     P identity() { return make_pair(numeric_limits<T>::max(), INT_MAX); }
     P merge(P a, P b) { return min(a, b); }
 };
-#line 5 "test/graphs/../../graphs/lowest_common_ancestor.hpp"
+#line 5 "graphs/lowest_common_ancestor.hpp"
 using namespace std;
 
 struct LowestCommonAncestor {
@@ -197,7 +196,7 @@ struct LowestCommonAncestor {
 };
 #line 3 "test/graphs/lowest_common_ancestor.test.cpp"
 
-#include <bits/stdc++.h>
+#line 5 "test/graphs/lowest_common_ancestor.test.cpp"
 using namespace std;
 
 int main() {

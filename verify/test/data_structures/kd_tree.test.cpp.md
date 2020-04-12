@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#62fcabc588904eb64caeb606077fc022">test/data_structures</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/kd_tree.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-25 13:56:30+09:00
 
@@ -84,7 +85,7 @@ int main() {
 ```cpp
 #line 1 "test/data_structures/kd_tree.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_C"
-#line 2 "test/data_structures/../../data_structures/kd_tree.hpp"
+#line 2 "data_structures/kd_tree.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -157,7 +158,7 @@ struct KdTree {
 };
 #line 3 "test/data_structures/kd_tree.test.cpp"
 
-#include <bits/stdc++.h>
+#line 5 "test/data_structures/kd_tree.test.cpp"
 using namespace std;
 
 int main() {

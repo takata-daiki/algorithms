@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#2eaf8485dbfd46fcba24af27c0a63ff2">test/graphs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graphs/kruskal.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-24 17:58:17+09:00
 
@@ -72,10 +73,9 @@ int main() {
 ```cpp
 #line 1 "test/graphs/kruskal.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_2_A"
-#line 2 "test/graphs/../../graphs/kruskal.hpp"
+#line 2 "graphs/kruskal.hpp"
 #include <bits/stdc++.h>
-#line 2 "test/graphs/../../graphs/../data_structures/union_find.hpp"
-#include <bits/stdc++.h>
+#line 3 "data_structures/union_find.hpp"
 using namespace std;
 
 struct UnionFind {
@@ -98,7 +98,7 @@ struct UnionFind {
         return true;
     }
 };
-#line 4 "test/graphs/../../graphs/kruskal.hpp"
+#line 4 "graphs/kruskal.hpp"
 using namespace std;
 
 template <typename T>
@@ -133,7 +133,7 @@ struct Kruskal {
 };
 #line 3 "test/graphs/kruskal.test.cpp"
 
-#include <bits/stdc++.h>
+#line 5 "test/graphs/kruskal.test.cpp"
 using namespace std;
 
 int main() {

@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#2eaf8485dbfd46fcba24af27c0a63ff2">test/graphs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graphs/heavy_light_decomposition.range_query_on_a_tree.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-25 12:34:16+09:00
 
@@ -124,8 +125,7 @@ int main() {
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/all/GRL_5_E"
 #include <bits/stdc++.h>
 
-#line 2 "test/graphs/../../data_structures/lazy_segment_tree.hpp"
-#include <bits/stdc++.h>
+#line 3 "data_structures/lazy_segment_tree.hpp"
 using namespace std;
 
 template <typename MonoidT, typename MonoidU, typename Action>
@@ -213,8 +213,7 @@ struct LazySegmentTree {
         return monoid_t.merge(vl, vr);
     }
 };
-#line 2 "test/graphs/../../graphs/heavy_light_decomposition.hpp"
-#include <bits/stdc++.h>
+#line 3 "graphs/heavy_light_decomposition.hpp"
 using namespace std;
 
 struct HeavyLightDecomposition {
@@ -326,8 +325,7 @@ struct HeavyLightDecomposition {
         return depth[u] + depth[v] - 2 * depth[lca(u, v)];
     }
 };
-#line 2 "test/graphs/../../monoids/affine.hpp"
-#include <bits/stdc++.h>
+#line 3 "monoids/affine.hpp"
 using namespace std;
 
 template <typename T>
@@ -341,8 +339,7 @@ struct affine_monoid {
         return make_pair(fst, snd);
     }
 };
-#line 2 "test/graphs/../../monoids/sum.hpp"
-#include <bits/stdc++.h>
+#line 3 "monoids/sum.hpp"
 using namespace std;
 
 template <typename T>
@@ -354,8 +351,7 @@ struct sum_monoid {
         return make_pair(a.first + b.first, a.second + b.second);
     }
 };
-#line 2 "test/graphs/../../monoids/sum_affine_action.hpp"
-#include <bits/stdc++.h>
+#line 3 "monoids/sum_affine_action.hpp"
 using namespace std;
 
 template <class T>

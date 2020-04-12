@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#62fcabc588904eb64caeb606077fc022">test/data_structures</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/lazy_segment_tree.min_add.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-24 18:12:30+09:00
 
@@ -83,7 +84,7 @@ int main() {
 ```cpp
 #line 1 "test/data_structures/lazy_segment_tree.min_add.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_2_H"
-#line 2 "test/data_structures/../../data_structures/lazy_segment_tree.hpp"
+#line 2 "data_structures/lazy_segment_tree.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -172,8 +173,7 @@ struct LazySegmentTree {
         return monoid_t.merge(vl, vr);
     }
 };
-#line 2 "test/data_structures/../../monoids/min.hpp"
-#include <bits/stdc++.h>
+#line 3 "monoids/min.hpp"
 using namespace std;
 
 template <typename T>
@@ -182,8 +182,7 @@ struct min_monoid {
     T identity() { return numeric_limits<T>::max(); }
     T merge(T a, T b) { return min(a, b); }
 };
-#line 2 "test/data_structures/../../monoids/plus.hpp"
-#include <bits/stdc++.h>
+#line 3 "monoids/plus.hpp"
 using namespace std;
 
 template <typename T>
@@ -192,8 +191,7 @@ struct plus_monoid {
     T identity() { return T(); };
     T merge(T a, T b) { return a + b; };
 };
-#line 2 "test/data_structures/../../monoids/min_plus_action.hpp"
-#include <bits/stdc++.h>
+#line 3 "monoids/min_plus_action.hpp"
 using namespace std;
 
 template <class T>
@@ -206,7 +204,7 @@ struct min_plus_action {
 };
 #line 6 "test/data_structures/lazy_segment_tree.min_add.test.cpp"
 
-#include <bits/stdc++.h>
+#line 8 "test/data_structures/lazy_segment_tree.min_add.test.cpp"
 using namespace std;
 
 int main() {

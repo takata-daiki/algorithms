@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#6f6f0638f7867790eb83eef8fd5b53f2">test/geometry</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/geometry/geometry.parallel_orthogonal.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-24 19:39:41+09:00
 
@@ -74,7 +75,7 @@ int main() {
 ```cpp
 #line 1 "test/geometry/geometry.parallel_orthogonal.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_2_A"
-#line 2 "test/geometry/../../geometry/geometry.hpp"
+#line 2 "geometry/geometry.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -155,7 +156,7 @@ struct Point {
 double Point::EPS = 1e-10;
 #line 3 "test/geometry/geometry.parallel_orthogonal.test.cpp"
 
-#include <bits/stdc++.h>
+#line 5 "test/geometry/geometry.parallel_orthogonal.test.cpp"
 using namespace std;
 
 int main() {

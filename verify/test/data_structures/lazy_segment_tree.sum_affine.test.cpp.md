@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#62fcabc588904eb64caeb606077fc022">test/data_structures</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/lazy_segment_tree.sum_affine.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-24 19:39:41+09:00
 
@@ -95,7 +96,7 @@ int main() {
 ```cpp
 #line 1 "test/data_structures/lazy_segment_tree.sum_affine.test.cpp"
 #define PROBLEM "https://judge.yosupo.jp/problem/range_affine_range_sum"
-#line 2 "test/data_structures/../../data_structures/lazy_segment_tree.hpp"
+#line 2 "data_structures/lazy_segment_tree.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -184,8 +185,7 @@ struct LazySegmentTree {
         return monoid_t.merge(vl, vr);
     }
 };
-#line 2 "test/data_structures/../../monoids/sum.hpp"
-#include <bits/stdc++.h>
+#line 3 "monoids/sum.hpp"
 using namespace std;
 
 template <typename T>
@@ -197,8 +197,7 @@ struct sum_monoid {
         return make_pair(a.first + b.first, a.second + b.second);
     }
 };
-#line 2 "test/data_structures/../../monoids/affine.hpp"
-#include <bits/stdc++.h>
+#line 3 "monoids/affine.hpp"
 using namespace std;
 
 template <typename T>
@@ -212,8 +211,7 @@ struct affine_monoid {
         return make_pair(fst, snd);
     }
 };
-#line 2 "test/data_structures/../../monoids/sum_affine_action.hpp"
-#include <bits/stdc++.h>
+#line 3 "monoids/sum_affine_action.hpp"
 using namespace std;
 
 template <class T>
@@ -224,8 +222,7 @@ struct sum_affine_action {
         return make_pair(a.first * b.first + a.second * b.second, a.second);
     }
 };
-#line 2 "test/data_structures/../../maths/mod.hpp"
-#include <bits/stdc++.h>
+#line 3 "maths/mod.hpp"
 using namespace std;
 
 struct ModInt {
@@ -291,7 +288,7 @@ vector<ModInt> ModInt::finv = vector<ModInt>();
 long long ModInt::MOD = 1e9 + 7;
 #line 7 "test/data_structures/lazy_segment_tree.sum_affine.test.cpp"
 
-#include <bits/stdc++.h>
+#line 9 "test/data_structures/lazy_segment_tree.sum_affine.test.cpp"
 using namespace std;
 using P = pair<ModInt, int>;
 

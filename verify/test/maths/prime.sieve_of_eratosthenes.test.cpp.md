@@ -29,8 +29,9 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#e0ab85639e314aaeb8f73754540baa5a">test/maths</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/maths/prime.sieve_of_eratosthenes.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-07 11:43:28+09:00
+    - Last commit date: 2020-04-13 00:48:15+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1276">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1276</a>
@@ -69,7 +70,7 @@ int main() {
 ```cpp
 #line 1 "test/maths/prime.sieve_of_eratosthenes.test.cpp"
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1276"
-#line 2 "test/maths/../../maths/prime.hpp"
+#line 2 "maths/prime.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -78,7 +79,7 @@ vector<int> sieve_of_eratosthenes(int n) {
     for (int i = 2; i <= n; i++) prime[i] = i;
     for (int i = 2; i * i <= n; i++) {
         if (prime[i]) {
-            for (int j = i * i; j <= n; j += i) prime[j] = 0;
+            for (int j = 2 * i; j <= n; j += i) prime[j] = 0;
         }
     }
     // prime.erase(remove(begin(prime), end(prime), 0), end(prime));
@@ -86,7 +87,7 @@ vector<int> sieve_of_eratosthenes(int n) {
 }
 #line 3 "test/maths/prime.sieve_of_eratosthenes.test.cpp"
 
-#include <bits/stdc++.h>
+#line 5 "test/maths/prime.sieve_of_eratosthenes.test.cpp"
 using namespace std;
 
 int main() {

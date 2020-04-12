@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#62fcabc588904eb64caeb606077fc022">test/data_structures</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/data_structures/union_find.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-24 17:58:17+09:00
 
@@ -74,7 +75,7 @@ int main() {
 ```cpp
 #line 1 "test/data_structures/union_find.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/all/DSL_1_A"
-#line 2 "test/data_structures/../../data_structures/union_find.hpp"
+#line 2 "data_structures/union_find.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -100,7 +101,7 @@ struct UnionFind {
 };
 #line 3 "test/data_structures/union_find.test.cpp"
 
-#include <bits/stdc++.h>
+#line 5 "test/data_structures/union_find.test.cpp"
 using namespace std;
 
 int main() {

@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#96cebfa45ba268d7f0532aaf888e8259">test/strings</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/strings/rolling_hash.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-24 17:58:17+09:00
 
@@ -70,7 +71,7 @@ int main() {
 ```cpp
 #line 1 "test/strings/rolling_hash.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/all/ALDS1_14_B"
-#line 2 "test/strings/../../strings/rolling_hash.hpp"
+#line 2 "strings/rolling_hash.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -118,7 +119,7 @@ vector<uint64_t> RollingHash::mod = {1000000007, 1000000009};
 vector<uint64_t> RollingHash::base = {1009, 1007};
 #line 3 "test/strings/rolling_hash.test.cpp"
 
-#include <bits/stdc++.h>
+#line 5 "test/strings/rolling_hash.test.cpp"
 using namespace std;
 
 int main() {

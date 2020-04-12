@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#e0ab85639e314aaeb8f73754540baa5a">test/maths</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/maths/mod.combination.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-24 19:39:41+09:00
 
@@ -66,7 +67,7 @@ int main() {
 ```cpp
 #line 1 "test/maths/mod.combination.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/all/DPL_5_D"
-#line 2 "test/maths/../../maths/mod.hpp"
+#line 2 "maths/mod.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -133,7 +134,7 @@ vector<ModInt> ModInt::finv = vector<ModInt>();
 long long ModInt::MOD = 1e9 + 7;
 #line 3 "test/maths/mod.combination.test.cpp"
 
-#include <bits/stdc++.h>
+#line 5 "test/maths/mod.combination.test.cpp"
 using namespace std;
 
 int main() {
